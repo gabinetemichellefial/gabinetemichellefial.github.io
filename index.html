@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0B1A2E">
+<title>Gabinete Digital · Vereadora Michelle Fial</title>
+<style>
+:root{--navy:#0B1A2E;--navy2:#13284A;--navy3:#1C3A66;--gold:#D4AF37;--gold2:#F0D27A;--red:#E63946;--green:#0A8F3C;--yellow:#F7C600;--cyan:#00B4D8;--paper:#F4EEDF;--bg:#F6F4EE;--card:#FFF;--ink:#14161C;--muted:#5F6673;--line:#E3DFD3;--r:16px;--sh:0 6px 24px rgba(11,26,46,.10)}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font:inherit}
+a{color:inherit}
+.wrap{max-width:1280px;margin:0 auto;padding:0 16px}
+header.top{background:radial-gradient(1200px 400px at 85% -10%,rgba(212,175,55,.16),transparent 60%),linear-gradient(160deg,#0B1F3A 0%,#0E2747 55%,#123158 100%);color:#fff;position:relative;overflow:hidden;border-bottom:3px solid #D4AF37}
+header.top:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(180deg,#000,transparent 85%);-webkit-mask-image:linear-gradient(180deg,#000,transparent 85%);pointer-events:none}
+.top-in{display:flex;align-items:center;gap:14px;padding:16px 0 14px;position:relative;z-index:1;border-bottom:1px solid #23406A}
+.logo{width:52px;height:60px;flex:none;filter:drop-shadow(0 4px 10px rgba(0,0,0,.35))}
+.logo svg{width:100%;height:100%;display:block}
+.brand{line-height:1.15;min-width:0}
+.brand small{display:block;font-size:10.5px;font-weight:800;letter-spacing:1.8px;color:#D4AF37;text-transform:uppercase}
+.brand b{display:block;font-weight:900;font-size:18px;letter-spacing:-.2px;margin:2px 0 1px}
+.brand span{display:block;font-size:12.5px;color:#B5C4DA;font-weight:600}
+.top-nav{margin-left:auto;display:flex;gap:8px;align-items:center}
+.chip{border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:#fff;border-radius:999px;padding:8px 14px;font-weight:700;font-size:13px;cursor:pointer}
+.chip.on{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+.hero{padding:26px 0 0;position:relative;z-index:1}
+.hero h1{font-size:clamp(26px,4.6vw,42px);line-height:1.08;margin:0 0 12px;font-weight:900;letter-spacing:-.9px;max-width:760px}
+.hero h1 em{font-style:normal;color:#D4AF37}
+.hero p{margin:0;max-width:660px;color:#B5C4DA;font-size:15.5px;line-height:1.55}
+.pills{display:grid;grid-template-columns:repeat(3,1fr);margin-top:22px;border-top:1px solid #23406A}
+.pill{display:flex;align-items:center;gap:10px;padding:14px 12px 16px 0;font-size:13px;font-weight:700;color:#E8ECF3}
+.pill+.pill{border-left:1px solid #23406A;padding-left:14px}
+.pill svg{width:20px;height:20px;flex:none;stroke:#D4AF37;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.pill small{display:block;font-weight:500;color:#B5C4DA;font-size:11.5px}
+@media(max-width:640px){.pills{grid-template-columns:1fr}.pill+.pill{border-left:0;border-top:1px solid #23406A;padding-left:0}.brand b{font-size:16px}.brand small{font-size:9.5px;letter-spacing:1.2px}.logo{width:44px;height:51px}.top-nav .chip{padding:7px 11px;font-size:12px}}
+main{padding:20px 0 60px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh);padding:20px}
+.card h2{margin:0 0 4px;font-size:19px;font-weight:800}
+.card h3{margin:0 0 4px}
+.sub{margin:0 0 14px;color:var(--muted);font-size:14px}
+.action{display:flex;gap:14px;align-items:center;cursor:pointer;border:1.5px solid var(--line);transition:.15s}
+.action:hover{border-color:var(--gold);transform:translateY(-2px)}
+.action .ic{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;flex:none;font-size:24px}
+.action h3{margin:0 0 3px;font-size:16.5px;font-weight:800}
+.action p{margin:0;color:var(--muted);font-size:13px}
+label{display:block;font-weight:700;font-size:13px;margin:12px 0 6px}
+label small{font-weight:500;color:var(--muted)}
+input,select,textarea{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:11px 12px;background:#fff;color:var(--ink);outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--navy3);box-shadow:0 0 0 3px rgba(28,58,102,.12)}
+textarea{min-height:100px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.cat{border:1.5px solid var(--line);border-radius:12px;padding:10px 6px;text-align:center;cursor:pointer;font-size:12px;font-weight:700;background:#fff;user-select:none}
+.cat .e{font-size:20px;display:block;margin-bottom:3px}
+.cat.on{border-color:var(--navy);background:var(--navy);color:#fff}
+.cat.sug{border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,175,55,.25)}
+.btn{border:0;border-radius:12px;padding:12px 18px;font-weight:800;cursor:pointer;display:inline-flex;align-items:center;gap:8px;justify-content:center;text-decoration:none}
+.btn.gold{background:var(--gold);color:var(--navy)}
+.btn.navy{background:var(--navy);color:#fff}
+.btn.green{background:var(--green);color:#fff}
+.btn.red{background:var(--red);color:#fff}
+.btn.ghost{background:transparent;border:1.5px solid var(--line);color:var(--ink)}
+.btn.sm{padding:8px 12px;font-size:13px;border-radius:10px}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn.full{width:100%}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted);margin-top:12px;line-height:1.45;font-weight:500;cursor:pointer}
+.check input{width:20px;height:20px;flex:none;margin-top:1px}
+.back{background:none;border:0;color:var(--navy3);font-weight:800;cursor:pointer;padding:0;margin-bottom:12px}
+.err{color:var(--red);font-size:13px;font-weight:700;margin-top:8px;min-height:18px}
+.photo{border:1.5px dashed #C9C2AE;border-radius:12px;padding:14px;text-align:center;color:var(--muted);font-size:13px;cursor:pointer;background:#FCFBF7}
+.photo img{max-width:100%;max-height:180px;border-radius:10px;display:block;margin:0 auto}
+.proto{background:linear-gradient(135deg,var(--navy),var(--navy3));color:#fff;border-radius:var(--r);padding:26px;text-align:center}
+.proto .n{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:clamp(22px,6vw,34px);font-weight:800;color:var(--gold);letter-spacing:1px;margin:8px 0}
+.okc{width:62px;height:62px;border-radius:50%;background:var(--green);display:grid;place-items:center;margin:0 auto 6px;font-size:30px}
+.steps{display:flex;margin:18px 0 6px}
+.st{flex:1;text-align:center;position:relative;font-size:10.5px;font-weight:700;color:var(--muted)}
+.st:before{content:"";position:absolute;top:13px;left:-50%;width:100%;height:3px;background:var(--line);z-index:0}
+.st:first-child:before{display:none}
+.st .d{width:28px;height:28px;border-radius:50%;background:#fff;border:3px solid var(--line);margin:0 auto 6px;position:relative;z-index:1;display:grid;place-items:center;font-size:13px}
+.st.done{color:var(--ink)}.st.done .d{background:var(--green);border-color:var(--green);color:#fff}.st.done:before{background:var(--green)}
+.st.cur .d{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.resp{background:var(--paper);border-left:4px solid var(--gold);border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.5;margin-top:12px}
+.stars{display:flex;gap:6px;font-size:30px;cursor:pointer;user-select:none}
+.stars span{color:#D8D2C2}.stars span.on{color:var(--gold)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:6px;box-shadow:var(--sh);position:sticky;top:8px;z-index:20}
+.tab{border:0;background:transparent;padding:9px 13px;border-radius:10px;font-weight:800;font-size:13.5px;cursor:pointer;color:var(--muted)}
+.tab.on{background:var(--navy);color:#fff}
+.tab .bd{background:var(--red);color:#fff;border-radius:999px;font-size:10.5px;padding:1px 6px;margin-left:4px}
+.kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:16px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 15px;box-shadow:var(--sh)}
+.kpi .l{font-size:11px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.kpi .v{font-size:27px;font-weight:900;margin-top:4px;letter-spacing:-.5px}
+.k1{border-top:4px solid var(--navy)}.k2{border-top:4px solid var(--red)}.k3{border-top:4px solid var(--yellow)}.k4{border-top:4px solid var(--green)}.k5{border-top:4px solid var(--cyan)}.k6{border-top:4px solid #8E44AD}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;align-items:center}
+.toolbar input,.toolbar select{width:auto;flex:1;min-width:130px;padding:9px 11px}
+.pg{display:grid;grid-template-columns:1.45fr 1fr;gap:16px;align-items:start}
+.list{display:flex;flex-direction:column;gap:8px;max-height:72vh;overflow:auto;padding-right:4px}
+.item{border:1.5px solid var(--line);border-radius:12px;padding:11px 13px;cursor:pointer;background:#fff}
+.item:hover{border-color:var(--navy3)}
+.item.sel{border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,175,55,.2)}
+.item .t{display:flex;justify-content:space-between;gap:8px;align-items:center}
+.mono{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;color:var(--muted);font-weight:700}
+.item .ds{font-size:14px;margin:6px 0 4px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.m{font-size:12px;color:var(--muted)}
+.tag{font-size:11px;font-weight:800;padding:4px 9px;border-radius:999px;white-space:nowrap;display:inline-block}
+.s-recebida{background:#FDE8EA;color:#B0202C}.s-analise{background:#FFF5CC;color:#7A5D00}.s-encaminhada{background:#E1F5FA;color:#00728A}.s-orgao{background:#EEE4FA;color:#5B2D8E}.s-cidadao{background:#FFE9D6;color:#8A4500}.s-resolvida{background:#E3F4E8;color:#0A6B30}.s-arquivada{background:#ECECEC;color:#555}
+.p-urgente{background:var(--red);color:#fff}.p-alta{background:#FFE1C2;color:#8A4500}
+.venc{background:#FDE8EA;color:#B0202C}
+.t-caso{background:#EEE4FA;color:#5B2D8E}
+.bars{display:flex;flex-direction:column;gap:8px}
+.bar{display:grid;grid-template-columns:130px 1fr 38px;gap:8px;align-items:center;font-size:12.5px;font-weight:700}
+.bar span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar .tr{height:10px;background:#EFECE3;border-radius:6px;overflow:hidden}
+.bar .fl{height:100%;border-radius:6px;background:linear-gradient(90deg,var(--navy3),var(--cyan))}
+.bar.bc .fl{background:linear-gradient(90deg,#B8902A,var(--gold))}
+.bar b{text-align:right}
+dl.kv{display:grid;grid-template-columns:118px 1fr;gap:6px 10px;font-size:13.5px;margin:12px 0}
+dl.kv dt{color:var(--muted);font-weight:700}dl.kv dd{margin:0;font-weight:600;word-break:break-word}
+.empty{color:var(--muted);text-align:center;padding:26px 10px;font-size:14px}
+.note{font-size:12px;color:var(--muted);line-height:1.5}
+.banner{background:#FFF5CC;border:1px solid #F0DC8A;color:#5E4A00;padding:10px 14px;border-radius:12px;font-size:13px;margin-bottom:14px}
+.alert{background:#FFF;padding:10px 12px;border-radius:10px;margin-bottom:8px;font-size:13.5px;cursor:pointer;border:1px solid var(--line);border-left:4px solid var(--red)}
+.alert.y{border-left-color:var(--yellow)}.alert.g{border-left-color:var(--green)}.alert.b{border-left-color:var(--cyan)}
+table.tb{width:100%;border-collapse:collapse;font-size:13.5px}
+table.tb th{text-align:left;font-size:11.5px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);padding:8px;border-bottom:2px solid var(--line)}
+table.tb td{padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+table.tb tr.cl{cursor:pointer}table.tb tr.cl:hover td{background:#FBF9F3}
+.tl{border-left:3px solid var(--line);margin:8px 0 0 6px;padding-left:14px}
+.tl div{position:relative;margin-bottom:10px;font-size:13px}
+.tl div:before{content:"";position:absolute;left:-21px;top:4px;width:11px;height:11px;border-radius:50%;background:var(--gold)}
+.map{height:420px;border-radius:14px;border:1px solid var(--line);background:#E9EEF3;overflow:hidden}
+.map.sm{height:230px}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(120px);background:var(--navy);color:#fff;padding:12px 18px;border-radius:12px;font-weight:700;font-size:14px;transition:.25s;opacity:0;z-index:90;box-shadow:var(--sh);max-width:92vw}
+.toast.on{transform:translateX(-50%) translateY(0);opacity:1}
+.modal{position:fixed;inset:0;background:rgba(11,26,46,.55);display:none;align-items:center;justify-content:center;padding:16px;z-index:80}
+.modal.on{display:flex}
+.modal>.card{max-width:680px;width:100%;max-height:88vh;overflow:auto}
+pre.out{background:#0F1B2D;color:#D7E3F4;padding:12px;border-radius:10px;font-size:12px;max-height:340px;overflow:auto;white-space:pre-wrap}
+.svc{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.svc a{display:block;border:1px solid var(--line);border-radius:12px;padding:10px;text-decoration:none;background:#FCFBF7}
+.svc b{display:block;font-size:18px;color:var(--navy3)}
+.svc span{font-size:12px;color:var(--muted)}
+.opt{display:block;width:100%;text-align:left;border:1.5px solid var(--line);background:#fff;border-radius:12px;padding:12px 14px;margin:6px 0;font-weight:700;cursor:pointer}
+.opt:hover{border-color:var(--gold)}
+/* funil (CRM) */
+.funil{display:grid;grid-template-columns:repeat(7,minmax(172px,1fr));gap:10px;align-items:start;overflow-x:auto;padding-bottom:6px}
+.fcol{background:#EFECE3;border-radius:14px;padding:10px;min-height:120px}
+.fcol h4{margin:2px 4px 10px;font-size:13px;display:flex;justify-content:space-between;align-items:center}
+.fcol h4 i{font-style:normal;background:#fff;border-radius:999px;padding:2px 9px;font-size:12px}
+.fcol.alvo{outline:3px dashed var(--gold);outline-offset:-3px}
+.fc{background:#fff;border:1.5px solid var(--line);border-left-width:5px;border-radius:10px;padding:9px 10px;margin-bottom:8px;cursor:grab;font-size:12.5px}
+.fc:active{cursor:grabbing}
+.fc:hover{border-color:var(--navy3)}
+.fc.drag{opacity:.45}
+.fc.atraso{animation:pulsar 1.6s ease-in-out infinite;border-color:var(--red)}
+@keyframes pulsar{0%,100%{box-shadow:0 0 0 0 rgba(230,57,70,.0)}50%{box-shadow:0 0 0 6px rgba(230,57,70,.28)}}
+.banner.urgente{animation:pulsaBanner 1.6s ease-in-out infinite;border-color:var(--red);background:#FDE8EA;color:#B0202C;font-weight:700}
+@keyframes pulsaBanner{0%,100%{box-shadow:0 0 0 0 rgba(230,57,70,0)}50%{box-shadow:0 0 0 5px rgba(230,57,70,.25)}}
+.bd.pisca{animation:pulsar 1.6s ease-in-out infinite}
+@media (prefers-reduced-motion: reduce){.fc.atraso,.banner.urgente,.bd.pisca{animation:none}}
+.fc .pr{font-family:ui-monospace,monospace;font-size:10.5px;color:var(--muted);font-weight:700}
+.fc .tt{font-weight:700;margin:3px 0;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.fc .mm{font-size:11px;color:var(--muted)}
+.fc .chips{display:flex;gap:4px;flex-wrap:wrap;margin-top:5px}
+.fc .chips span{font-size:10px;font-weight:800;padding:2px 7px;border-radius:999px;background:#F1EFE8}
+.subs{margin-top:10px}
+.subs label.si{display:flex;gap:8px;align-items:center;font-weight:600;font-size:13px;margin:5px 0;cursor:pointer}
+.subs label.si input{width:17px;height:17px;flex:none}
+.subs label.si.ok span{text-decoration:line-through;color:var(--muted)}
+.pbar{height:7px;background:#EFECE3;border-radius:5px;overflow:hidden;margin:4px 0 2px}
+.pbar i{display:block;height:100%;background:var(--green)}
+footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);font-size:12.5px;line-height:1.6}
+.hide{display:none!important}
+.hp{position:absolute;left:-5000px;width:1px;height:1px;opacity:0}
+@media (max-width:1050px){.funil{grid-template-columns:repeat(7,172px)}}
+@media (max-width:900px){.g2,.g3,.pg{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,1fr)}.row{grid-template-columns:1fr}.svc{grid-template-columns:repeat(2,1fr)}.cats{grid-template-columns:repeat(3,1fr)}.brand span{font-size:10.5px}}
+@media (max-width:700px){.tabs{flex-wrap:nowrap;overflow-x:auto;position:static;-webkit-overflow-scrolling:touch}.tab{white-space:nowrap;flex:none}.tabs>span{margin-left:8px!important}}
+@media (max-width:440px){.cats{grid-template-columns:repeat(2,1fr)}.top-in{flex-wrap:wrap}.top-nav{margin-left:0}}
+@media print{header.top,.tabs,.toolbar,.noprint,footer{display:none!important}.card{box-shadow:none;border:0}body{background:#fff}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="top-in">
+      <div class="logo" aria-hidden="true"><svg viewBox="0 0 52 60"><defs><linearGradient id="gdOuro" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9CC6A"/><stop offset="1" stop-color="#B8922A"/></linearGradient></defs><path d="M26 1.5 49 9v20.5C49 44 39.5 53.5 26 58.5 12.5 53.5 3 44 3 29.5V9z" fill="url(#gdOuro)"/><path d="M26 5.5 45.5 12v17.5C45.5 41.6 37.6 50 26 54.6 14.4 50 6.5 41.6 6.5 29.5V12z" fill="#0B1F3A"/><path d="M13 22 26 14l13 8z" fill="#fff"/><rect x="13" y="22.5" width="26" height="2.4" fill="#fff"/><g fill="#fff"><rect x="15" y="26.5" width="3" height="14"/><rect x="21" y="26.5" width="3" height="14"/><rect x="28" y="26.5" width="3" height="14"/><rect x="34" y="26.5" width="3" height="14"/></g><rect x="12" y="41.5" width="28" height="2.4" fill="#fff"/><rect x="10.5" y="45" width="31" height="2.2" fill="#D4AF37"/></svg></div>
+      <div class="brand"><small>Câmara Municipal de Vespasiano</small><b>Gabinete Vereadora Michelle Fial</b><span>Canal oficial de demandas do mandato</span></div>
+      <nav class="top-nav">
+        <button class="chip on" data-go="inicio" id="chCid">Cidadão</button>
+        <button class="chip" data-go="gabinete" id="chGab">Gabinete</button>
+      </nav>
+    </div>
+    <div class="hero" id="hero">
+      <h1>Sua demanda tem <em>protocolo, prazo e resposta</em>.</h1>
+      <p>Buraco, iluminação, lixo, saúde, transporte: registre o problema do seu bairro com foto, vídeo e localização. O gabinete analisa, cobra os órgãos responsáveis e você acompanha cada etapa.</p>
+      <div class="pills">
+        <div class="pill"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div>Atende 24h<small>Registre a qualquer hora</small></div></div>
+        <div class="pill"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg><div>Dados protegidos<small>Conforme a LGPD</small></div></div>
+        <div class="pill"><svg viewBox="0 0 24 24"><path d="M4 12h4l3-7 4 14 3-7h2"/></svg><div>Acompanhe cada etapa<small>Só com WhatsApp e nascimento</small></div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div id="demoBanner" class="banner hide">Modo demonstração: os dados ficam só neste navegador. Instalado na conta Google do gabinete, tudo vai para a planilha oficial. Acesso da equipe na demonstração: usuário <b>michelle</b>, senha <b>demo</b>.</div>
+
+  <!-- ===================== CIDADÃO ===================== -->
+  <section id="v-inicio">
+    <div class="g3">
+      <div class="card action" data-go="nova"><div class="ic" style="background:var(--navy);color:var(--gold)">＋</div><div><h3>Registrar demanda</h3><p>Conte o problema, mande foto, vídeo e localização.</p></div></div>
+      <div class="card action" data-go="minhas"><div class="ic" style="background:var(--gold);color:var(--navy)">🔎</div><div><h3>Minhas demandas</h3><p>Acompanhe com o WhatsApp e a data de nascimento.</p></div></div>
+      <div class="card action" data-go="mapa"><div class="ic" style="background:#E1F5FA">🗺️</div><div><h3>Mapa das demandas</h3><p>Veja o que já foi pedido no seu bairro e apoie.</p></div></div>
+      <div class="card action" data-go="consultas"><div class="ic" style="background:#E3F4E8">🗳️</div><div><h3>Consultas públicas</h3><p>Dê sua opinião sobre as prioridades da cidade.</p></div></div>
+      <div class="card action" id="aAgendar"><div class="ic" style="background:#FFF5CC">🗓️</div><div><h3>Falar com a vereadora</h3><p>Peça um horário de atendimento no gabinete.</p></div></div>
+      <div class="card action" id="aDenuncia"><div class="ic" style="background:#FDE8EA">🕶️</div><div><h3>Denúncia anônima</h3><p>Relate sem se identificar. Você recebe um código.</p></div></div>
+    </div>
+    <div class="card" style="margin-top:14px">
+      <h2>Como funciona</h2>
+      <div class="steps"><div class="st done"><div class="d">1</div>Você registra</div><div class="st done"><div class="d">2</div>Gabinete analisa</div><div class="st done"><div class="d">3</div>Cobra o órgão</div><div class="st done"><div class="d">4</div>Você recebe o retorno</div></div>
+      <p class="note" style="margin-top:12px">Se o mesmo problema for registrado por vários moradores, os pedidos são reunidos num mesmo caso: cada registro vira mais um comprovante na cobrança ao órgão responsável. O gabinete fiscaliza e cobra por indicações, ofícios e pedidos de informação; a execução do serviço é de responsabilidade do órgão competente.</p>
+    </div>
+    <div class="card" style="margin-top:14px">
+      <h2>Serviços úteis</h2>
+      <p class="sub">Para urgências e direitos sociais, procure diretamente o canal oficial:</p>
+      <div class="svc">
+        <a href="tel:190"><b>190</b><span>Polícia Militar</span></a>
+        <a href="tel:192"><b>192</b><span>SAMU</span></a>
+        <a href="tel:193"><b>193</b><span>Bombeiros</span></a>
+        <a href="tel:180"><b>180</b><span>Central de Atendimento à Mulher</span></a>
+        <a href="tel:100"><b>100</b><span>Disque Direitos Humanos</span></a>
+        <a href="tel:135"><b>135</b><span>INSS · aposentadoria, BPC, perícia</span></a>
+        <a href="tel:129"><b>129</b><span>Defensoria Pública de MG</span></a>
+        <a href="tel:155"><b>155</b><span>LigMinas · denúncia ambiental (opção 7)</span></a>
+        <a href="https://meu.inss.gov.br" target="_blank" rel="noopener"><b>Meu INSS</b><span>Aplicativo e site oficial</span></a>
+        <a href="https://consumidor.gov.br" target="_blank" rel="noopener"><b>Consumidor.gov</b><span>Reclamação contra empresas</span></a>
+        <a href="https://www.mpmg.mp.br" target="_blank" rel="noopener"><b>MPMG · 127</b><span>Ouvidoria do Ministério Público</span></a>
+        <a href="https://falabr.cgu.gov.br" target="_blank" rel="noopener"><b>Fala.BR</b><span>Ouvidoria do Governo Federal</span></a>
+      </div>
+      <p class="note" style="margin-top:10px">Cadastro Único, Bolsa Família e BPC: procure o CRAS mais próximo da sua casa.</p>
+    </div>
+  </section>
+
+  <section id="v-nova" class="hide">
+    <div class="card">
+      <button class="back" data-go="inicio">← Voltar</button>
+      <h2 id="novaTit">Registrar demanda</h2>
+      <p class="sub" id="novaSub">Leva menos de 3 minutos. Campos com * são obrigatórios.</p>
+      <form id="fNova" autocomplete="on">
+        <input class="hp" id="site" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label for="desc">Descreva o problema *</label>
+        <textarea id="desc" maxlength="3000" required placeholder="Ex.: buraco grande em frente ao número 120, já causou acidente de moto."></textarea>
+        <label>Tipo *  <small id="sugTxt"></small></label>
+        <div class="cats" id="cats"></div>
+        <label class="check"><input type="checkbox" id="anon"><span><b>Quero fazer anonimamente.</b> Não peça nome nem telefone; você recebe um código de 4 dígitos para acompanhar.</span></label>
+        <div id="boxIdent">
+          <div class="row">
+            <div><label for="nome">Seu nome *</label><input id="nome" maxlength="80" autocomplete="name"></div>
+            <div><label for="tel">WhatsApp *</label><input id="tel" inputmode="tel" placeholder="(31) 9 0000-0000" maxlength="20" autocomplete="tel"></div>
+          </div>
+          <div class="row">
+            <div><label for="nasc">Data de nascimento *</label><input id="nasc" type="date" autocomplete="bday"><span class="note">Com o WhatsApp + nascimento você acompanha seus pedidos sem decorar protocolo.</span></div>
+            <div><label for="tel2">Outro telefone <small>(opcional — de um familiar, se houver)</small></label><input id="tel2" inputmode="tel" maxlength="20"></div>
+          </div>
+          <div class="row">
+            <div><label for="cpf">CPF <small>(opcional — ajuda o gabinete a orientar você em órgãos como Consumidor.gov e INSS)</small></label><input id="cpf" inputmode="numeric" maxlength="14" placeholder="000.000.000-00"></div>
+            <div><label for="email">E-mail <small>(opcional)</small></label><input id="email" type="email" maxlength="100" autocomplete="email"></div>
+          </div>
+          <div class="row">
+            <div><label for="insta">Instagram <small>(opcional)</small></label><input id="insta" maxlength="60" placeholder="@seuperfil" autocapitalize="off"></div>
+            <div><label for="redes">Outra rede social <small>(opcional — TikTok, Facebook…)</small></label><input id="redes" maxlength="120" placeholder="TikTok @perfil · Facebook nome" autocapitalize="off"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div><label for="bairro">Bairro *</label><input id="bairro" list="dlBairros" maxlength="60" required placeholder="Comece a digitar e escolha na lista"></div>
+          <div><label for="end">Rua, número e ponto de referência</label><input id="end" maxlength="160"></div>
+        </div>
+        <label>Localização <small>(opcional — ajuda a equipe a achar o local)</small></label>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px"><button type="button" class="btn ghost sm" id="btnGPS">📍 Usar minha localização</button><button type="button" class="btn ghost sm" id="btnPick">🗺️ Marcar no mapa</button><span class="m" id="geoTxt" style="align-self:center"></span></div>
+        <div id="pickMap" class="map sm hide"></div>
+        <div id="dupBox"></div>
+        <label>Foto <small>(opcional)</small></label>
+        <div class="photo" id="photoBox">Toque para anexar uma foto<input type="file" id="foto" accept="image/*" class="hide"></div>
+        <label for="video">Vídeo <small>(opcional — cole o link do YouTube, Google Drive ou rede social)</small></label>
+        <input id="video" inputmode="url" maxlength="300" placeholder="https://youtu.be/...">
+        <div class="note" style="margin-top:4px">Gravou um vídeo do problema? <a href="#" id="comoVideo" style="font-weight:700;color:var(--navy3)">Veja como publicar no YouTube e colar o link aqui</a> — pode ser um vídeo completo, narrando e explicando tudo.</div>
+        <label>Documentos <small>(opcional — até 3 arquivos de 5 MB cada: PDF, foto de documento, Word)</small></label>
+        <div class="photo" id="anexoBox">Toque para anexar documentos<input type="file" id="anexo" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,application/pdf,image/jpeg,image/png" multiple class="hide"></div>
+        <div id="anexoLista"></div>
+        <label class="check"><input type="checkbox" id="lgpd"><span>Autorizo o Gabinete da Vereadora Michelle Fial a usar os dados informados somente para analisar esta demanda, cobrar os órgãos responsáveis, me orientar e me dar retorno, conforme a LGPD (Lei 13.709/2018). Posso pedir a exclusão a qualquer momento.</span></label>
+        <div class="err" id="errNova"></div>
+        <button class="btn gold full" id="btnEnviar" type="submit">Enviar e gerar protocolo</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="v-ok" class="hide">
+    <div class="proto">
+      <div class="okc">✓</div>
+      <div style="font-weight:800">Demanda registrada!</div>
+      <div class="n" id="okProto">—</div>
+      <div style="color:#D5DCE8;font-size:14px" id="okPin"></div>
+      <div id="okCaso" style="color:#F0D27A;font-size:14px;font-weight:700;margin-top:8px"></div>
+      <div style="display:flex;gap:8px;justify-content:center;margin-top:16px;flex-wrap:wrap">
+        <button class="btn gold sm" id="btnCopiar">Copiar protocolo</button>
+        <button class="btn sm" style="background:rgba(255,255,255,.12);color:#fff" data-go="minhas">Acompanhar</button>
+        <button class="btn sm" style="background:rgba(255,255,255,.12);color:#fff" data-go="inicio">Início</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="v-minhas" class="hide">
+    <div class="card">
+      <button class="back" data-go="inicio">← Voltar</button>
+      <h2>Minhas demandas</h2>
+      <p class="sub">Informe o WhatsApp usado no registro e a sua data de nascimento. Todas as suas demandas aparecem juntas — sem precisar do número do protocolo.</p>
+      <div class="row">
+        <div><label for="mTel">WhatsApp</label><input id="mTel" inputmode="tel" placeholder="(31) 9 0000-0000"></div>
+        <div><label for="mNasc">Data de nascimento</label><input id="mNasc" type="date"></div>
+      </div>
+      <div class="err" id="errMinhas"></div>
+      <button class="btn navy" id="btnMinhas">Ver minhas demandas</button>
+      <div style="margin-top:14px" class="note">Fez uma denúncia anônima ou prefere consultar pelo protocolo? <a href="#" id="lnkProto" style="font-weight:700;color:var(--navy3)">Consultar por protocolo e código</a></div>
+      <div id="minhasRes" style="margin-top:18px"></div>
+    </div>
+  </section>
+
+  <section id="v-consulta" class="hide">
+    <div class="card">
+      <button class="back" data-go="minhas">← Voltar</button>
+      <h2>Consultar por protocolo</h2>
+      <div class="row">
+        <div><label for="cProto">Protocolo</label><input id="cProto" placeholder="MF-2026-000001"></div>
+        <div><label for="cPin">4 últimos dígitos do WhatsApp <small>(ou código da denúncia anônima)</small></label><input id="cPin" inputmode="numeric" maxlength="4"></div>
+      </div>
+      <div class="err" id="errCons"></div>
+      <button class="btn navy" id="btnCons">Consultar</button>
+      <div id="consRes" style="margin-top:18px"></div>
+    </div>
+  </section>
+
+  <section id="v-mapa" class="hide">
+    <div class="card">
+      <button class="back" data-go="inicio">← Voltar</button>
+      <h2>Mapa das demandas</h2>
+      <p class="sub">Pedidos com localização dos últimos 90 dias. Se o problema já está no mapa, toque nele e clique em <b>“Também me afeta”</b> — ou registre o seu pedido no mesmo local: quanto mais registros, mais força tem a cobrança.</p>
+      <div class="toolbar"><select id="mpCat"><option value="">Todas as categorias</option></select><select id="mpSt"><option value="">Todos os status</option></select></div>
+      <div id="mapPub" class="map"></div>
+      <p class="note" style="margin-top:8px">Por privacidade, o mapa mostra só o tipo, o bairro e a situação, com posição aproximada. Nomes, telefones, fotos e relatos não são exibidos.</p>
+    </div>
+  </section>
+
+  <section id="v-consultas" class="hide">
+    <div class="card">
+      <button class="back" data-go="inicio">← Voltar</button>
+      <h2>Consultas públicas</h2>
+      <p class="sub">Sua opinião ajuda a definir as prioridades do mandato.</p>
+      <div id="cpLista"><div class="empty">Carregando…</div></div>
+    </div>
+  </section>
+
+  <section id="v-login" class="hide">
+    <div class="card" style="max-width:440px;margin:0 auto">
+      <h2>Acesso do gabinete</h2>
+      <p class="sub">Área restrita à equipe.</p>
+      <label for="lUser">Usuário <small>(seu CPF)</small></label><input id="lUser" autocomplete="username" autocapitalize="off" inputmode="numeric" placeholder="000.000.000-00">
+      <label for="lPass">Senha</label><input id="lPass" type="password" autocomplete="current-password">
+      <div class="err" id="errLogin"></div>
+      <button class="btn navy full" id="btnLogin">Entrar</button>
+    </div>
+  </section>
+
+  <!-- ===================== GABINETE ===================== -->
+  <section id="v-app" class="hide">
+    <div class="tabs" id="tabs"></div>
+    <div id="tabBody"></div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <b>Gabinete Digital · Vereadora Michelle Fial</b><br>
+  Canal de demandas do mandato na Câmara Municipal de Vespasiano/MG. Os dados enviados são usados apenas para o atendimento da demanda (LGPD, Lei 13.709/2018). Para corrigir ou excluir seus dados, peça ao gabinete.
+</footer>
+
+<datalist id="dlBairros"></datalist>
+<div class="modal" id="modal"><div class="card" id="modalCard"></div></div>
+<div class="toast" id="toast"></div>
+<script>window.GD_API="https://script.google.com/macros/s/AKfycbwWvwn0GfiOes2YSoLP7ysYxBE5ejLYde0dBsvbZW4xUqu3VcepJTtQis0p8xFGtI7IhA/exec";window.GD_PUBLIC="https://gabinetemichellefial.github.io/";</script>
+<script>
+(function(){
+"use strict";
+/* ============================== CONFIGURAÇÃO ============================== */
+const CATS=[
+ ["Buraco / asfalto","🕳️","buraco asfalto cratera pavimento calçamento cascalho patrolamento recapeamento"],
+ ["Iluminação pública","💡","poste lâmpada lampada luz apagad escuro iluminação"],
+ ["Lixo / limpeza","🗑️","lixo entulho mato capina limpeza coleta caçamba terreno sujo"],
+ ["Água / esgoto","🚰","água agua esgoto vazamento bueiro boca de lobo enchente alagamento copasa"],
+ ["Árvores / poda","🌳","árvore arvore poda galho queda risco supressão raiz"],
+ ["Saúde","🏥","posto ubs médico medico pediatra saúde remédio remedio consulta upa exame vacina"],
+ ["Educação","🎒","escola creche vaga professor merenda aluno ensino infiltração telhado"],
+ ["Transporte / trânsito","🚌","ônibus onibus linha ponto trânsito transito semáforo sinal quebra-molas faixa move"],
+ ["Segurança","🚨","assalto roubo furto segurança droga câmera camera polícia policia"],
+ ["Assistência social","🤝","cras cadúnico cadunico bolsa família bpc cesta assistência idoso deficiência"],
+ ["Consumidor","🛒","empresa cobrança indevida plano operadora banco loja produto consumidor procon"],
+ ["Meio ambiente / animais","🐾","animal cachorro gato dengue mosquito queimada escorpião desmatamento nascente"],
+ ["Falar com a vereadora","🗓️","agendar reunião reuniao conversar atendimento visita vereadora"],
+ ["Outros","📌",""]
+];
+const STATUS=["Cadastro","Instrução","Encaminhada","Resposta do órgão","Resposta ao cidadão","Resolvida","Arquivada"];
+/* dias máximos recomendados em cada fase (acima disso: alerta para toda a equipe) */
+const LIMITE_FASE={"Cadastro":2,"Instrução":5,"Encaminhada":3,"Resposta do órgão":20,"Resposta ao cidadão":2};
+/* como o cidadão vê cada fase */
+const PUB_FASES=[["Cadastro","Recebida"],["Instrução","Aguardando documentos"],["Encaminhada","Encaminhada ao órgão"],["Resposta do órgão","Aguardando o órgão"],["Resposta ao cidadão","Preparando a resposta"],["Resolvida","Resolvida"]];
+const PRIOR=["Baixa","Normal","Alta","Urgente"];
+const CANAIS=["WhatsApp","Presencial","Telefone","Rede social","Sessão/Evento","E-mail"];
+const BAIRROS=["Centro", "Alphaville", "Alphaville Vespasiano", "Angicos", "Área Rural de Vespasiano", "Bela Vista", "Bernardo de Souza", "Boa Vista", "Boa Vista II", "Bonsucesso", "Caieiras", "Campesino", "Célvia", "Central Park", "Chácaras Laranjeiras", "Cipriano", "Cipriano Velho", "Condomínio Mônaco", "Conjunto Habitacional Caieiras", "Conjunto Habitacional Morro Alto", "Distrito Industrial", "Do Ipê", "Fagundes", "Fazenda Bom Sucesso", "Fazenda Canavial Velho", "Gávea", "Gávea I", "Gávea II", "Gran Park", "Jardim Alterosa", "Jardim Bela Vista", "Jardim da Glória", "Jardim Daliana", "Jardim Encantado", "Jardim Imperial", "Jardim Itaú", "Jardim Paraíso", "Jequitibá", "Lar de Minas", "Lourdes", "Mangueiras", "Maria José", "Morro Alto", "Názia", "Názia 2ª Seção", "Názia I", "Nova Granja", "Nova Pampulha", "Nova Pampulha 3ª e 4ª Seção", "Nova York", "Novo Horizonte", "Parque Jardim Itaú", "Parque Jardim Maria José", "Parque Norte", "Pouso Alegre", "Residencial Clube dos Militares I", "Residencial Clube dos Militares II", "Residencial Park I", "Residencial Verde Valle", "Residencial Vilabela", "Rosa dos Ventos", "Santa Clara", "Santa Clara B", "Santa Clara II", "Santa Cruz", "Santa Maria", "Santo Antônio", "São Damião", "São Jorge", "Serra Azul", "Serra Dourada", "Suely", "Suely II", "Vale Formoso", "Vida Nova", "Vila Cruzeirinho", "Vila Esportiva", "Villas Park", "Vista Alegre"];
+const DOC_TIPOS=["Ofício","Ofício (reiteração)","Ofício (outros órgãos)","Indicação","Requerimento","Pedido de informação (LAI)","Projeto de Lei","Moção","Emenda","Outro"];
+const DOC_ST=["Rascunho","Protocolado","Aguardando resposta","Respondido","Arquivado"];
+const AG_TIPOS=["Sessão ordinária","Reunião","Visita a bairro","Audiência pública","Atendimento","Evento","Outro"];
+/* Subetapas padrão de cada fase do funil (editáveis por demanda) */
+const SUBETAPAS={
+ "Cadastro":["Ler o relato e conferir o local (bairro, rua, referência)","Conferir se veio foto, vídeo ou documento necessário","Listar o que está faltando no cadastro","Definir responsável e prioridade","Cadastro completo? Mover para Instrução ou direto para Encaminhada"],
+ "Instrução":["Enviar ao cidadão a lista do que falta (WhatsApp)","Anotar data da cobrança na nota interna","Receber e conferir os documentos enviados","Cobrar de novo se não responder em 3 dias","Sem retorno no prazo: avisar que será arquivada"],
+ "Encaminhada":["Gerar o documento (ofício, indicação ou requerimento)","Colher a assinatura da vereadora","Protocolar no órgão de destino","Anotar o número do protocolo do órgão","Confirmar que o órgão RECEBEU o encaminhamento"],
+ "Resposta do órgão":["Anotar o prazo regulamentar de resposta (padrão: 20 dias — LAI)","Cobrar o órgão perto do vencimento","Prazo vencido: gerar REITERAÇÃO","Registrar a resposta recebida no controle de documentos","Avaliar se a resposta resolve o problema"],
+ "Resposta ao cidadão":["Redigir a resposta em linguagem simples","Enviar pelo WhatsApp (ou pelo canal que a pessoa usou)","Registrar a forma e a data do envio na nota interna","Confirmar que a pessoa recebeu e entendeu","Pedir a avaliação (1 a 5 estrelas) e mover para Resolvida"],
+ "Resolvida":["Divulgar o resultado (prestação de contas)","Conferir se a avaliação chegou"],
+ "Arquivada":["Registrar o motivo do arquivamento","Comunicar o cidadão"]
+};
+/* Destinatários prontos (endereçamento no formato dos modelos do gabinete) */
+const DESTINOS=[
+ ["Prefeito Municipal","Prefeitura Municipal de Vespasiano","Excelentíssimo Senhor\n{PREFEITO}.\nPrefeito Municipal de Vespasiano","Excelentíssimo Senhor Prefeito,","oficio"],
+ ["Defesa Civil (Defesa Social)","Secretaria de Defesa Social (Defesa Civil)","À\nSecretaria de Defesa Social (Defesa Civil)\nPrefeitura Municipal de Vespasiano","",'oficio'],
+ ["Secretaria de Obras","Secretaria Municipal de Obras","À\nSecretaria Municipal de Obras\nPrefeitura Municipal de Vespasiano","","oficio"],
+ ["Secretaria de Serviços Urbanos","Secretaria Municipal de Serviços Urbanos","À\nSecretaria Municipal de Serviços Urbanos\nPrefeitura Municipal de Vespasiano","","oficio"],
+ ["Secretaria de Saúde","Secretaria Municipal de Saúde","À\nSecretaria Municipal de Saúde\nPrefeitura Municipal de Vespasiano","","oficio"],
+ ["Secretaria de Educação","Secretaria Municipal de Educação","À\nSecretaria Municipal de Educação\nPrefeitura Municipal de Vespasiano","","oficio"],
+ ["Secretaria de Desenvolvimento Social","Secretaria Municipal de Desenvolvimento Social","À\nSecretaria Municipal de Desenvolvimento Social\nPrefeitura Municipal de Vespasiano","","oficio"],
+ ["Secretaria de Meio Ambiente","Secretaria Municipal de Meio Ambiente","À\nSecretaria Municipal de Meio Ambiente\nPrefeitura Municipal de Vespasiano","","oficio"],
+ ["COPASA","COPASA","Ao Senhor\nGerente Regional da COPASA\nCompanhia de Saneamento de Minas Gerais – COPASA","Senhor Gerente,","padrao"],
+ ["CEMIG","CEMIG","Ao Senhor\nGerente Regional da CEMIG\nCompanhia Energética de Minas Gerais – CEMIG","Senhor Gerente,","padrao"],
+ ["Polícia Militar (Cia PM de Vespasiano)","Companhia Independente de PM – Vespasiano","Ao Senhor\nComandante da Companhia Independente de Polícia Militar de Vespasiano\nPolícia Militar de Minas Gerais – PMMG","Senhor Comandante,","padrao"],
+ ["Ministério Público (Promotoria de Vespasiano)","Promotoria de Justiça de Vespasiano","Ao(À) Excelentíssimo(a) Senhor(a)\nPromotor(a) de Justiça da Comarca de Vespasiano\nMinistério Público do Estado de Minas Gerais","Excelentíssimo(a) Senhor(a) Promotor(a),","padrao"],
+ ["IEF (meio ambiente estadual)","Instituto Estadual de Florestas – IEF","Ao Senhor\nSupervisor da Unidade Regional do Instituto Estadual de Florestas – IEF\nSistema Estadual de Meio Ambiente – Sisema/MG","Senhor Supervisor,","padrao"],
+ ["IGAM (recursos hídricos)","Instituto Mineiro de Gestão das Águas – IGAM","Ao Senhor\nDiretor-Geral do Instituto Mineiro de Gestão das Águas – IGAM\nSistema Estadual de Meio Ambiente – Sisema/MG","Senhor Diretor,","padrao"],
+ ["SEMAD (fiscalização ambiental)","Secretaria de Estado de Meio Ambiente – SEMAD","À\nDiretoria de Atendimento ao Cidadão e Órgãos de Controle – DADOC\nSecretaria de Estado de Meio Ambiente e Desenvolvimento Sustentável – SEMAD","Prezados Senhores,","padrao"],
+ ["Assembleia Legislativa de MG","Assembleia Legislativa do Estado de Minas Gerais","Ao Excelentíssimo Senhor\nPresidente da Assembleia Legislativa do Estado de Minas Gerais\nPalácio da Inconfidência – Belo Horizonte/MG","Excelentíssimo Senhor Presidente,","padrao"],
+ ["DER-MG (rodovias)","Departamento de Edificações e Estradas de Rodagem – DER/MG","Ao Senhor\nDiretor-Geral do DER/MG\nDepartamento de Edificações e Estradas de Rodagem de Minas Gerais","Senhor Diretor,","padrao"],
+ ["Outro órgão (preencher)","","Ao Senhor\n(nome do destinatário)\n(órgão)","Senhor(a),","padrao"]
+];
+const DEST_CAT={"Buraco / asfalto":3,"Iluminação pública":9,"Lixo / limpeza":3,"Água / esgoto":8,"Árvores / poda":1,"Saúde":4,"Educação":5,"Transporte / trânsito":3,"Segurança":10,"Assistência social":6,"Meio ambiente / animais":7,"Consumidor":0};
+/* Solução imediata: guias automáticos entregues na hora, sem depender de humano */
+const GUIAS={
+ "copasa":{t:"Água e esgoto — resolva agora com a COPASA",quando:"Falta d'água, vazamento, esgoto da COPASA, conta de água",
+  passos:["Ligue 115 (gratuito, 24 horas) e registre a ocorrência — falta d'água, vazamento ou esgoto. ANOTE O NÚMERO DO PROTOCOLO.","Se preferir, use o site www.copasa.com.br ou o aplicativo Copasa Digital.","Vazamento na rua ou esgoto a céu aberto: informe a rua, o número mais próximo e um ponto de referência.","Guarde o protocolo: se a COPASA não resolver no prazo que ela mesma informar, o gabinete cobra oficialmente com esse número."],
+  canais:[["Telefone 115 (24h, gratuito)","tel:115"],["www.copasa.com.br","https://www.copasa.com.br"]]},
+ "cemig":{t:"Energia elétrica — resolva agora com a CEMIG",quando:"Falta de energia em casa, fios caídos, conta de luz",
+  passos:["Ligue 116 (gratuito, 24 horas) e registre a falta de energia. ANOTE O NÚMERO DO PROTOCOLO.","Também dá para registrar pelo WhatsApp oficial da CEMIG: (31) 3506-1160, pelo aplicativo Cemig Atende ou pelo site www.cemig.com.br.","FIO CAÍDO NA RUA: não chegue perto, não toque — ligue 116 imediatamente e avise os vizinhos.","Poste de ILUMINAÇÃO PÚBLICA apagado (luz da rua) é com a Prefeitura: esta sua demanda no gabinete já cobre isso — nós cobramos.","Guarde o protocolo: se não resolverem, o gabinete cobra oficialmente com esse número."],
+  canais:[["Telefone 116 (24h, gratuito)","tel:116"],["WhatsApp CEMIG (31) 3506-1160","https://wa.me/553135061160"],["www.cemig.com.br","https://www.cemig.com.br"]]},
+ "consumidor":{t:"Problema com empresa — resolva agora (grátis, sem advogado)",quando:"Cobrança indevida, produto com defeito, plano, operadora, banco, loja",
+  passos:["Entre em www.consumidor.gov.br (site do governo, gratuito), faça login com a conta gov.br e registre a reclamação contra a empresa. A empresa tem até 10 dias para responder, e você ainda tem 20 dias para avaliar a resposta.","Escreva o que aconteceu, com datas e valores, e anexe foto da conta, do comprovante ou do produto.","Se não resolver, procure o PROCON da sua região.","Última etapa: o JUIZADO ESPECIAL (fórum de Vespasiano) julga causas de até 40 salários mínimos — e até 20 salários mínimos você entra SEM precisar de advogado, de graça. Leve documento, comprovantes e o número da reclamação do consumidor.gov.","O gabinete acompanha sua demanda: se travar em qualquer etapa, nos avise pelo protocolo."],
+  canais:[["www.consumidor.gov.br","https://www.consumidor.gov.br"],["Juizado Especial — Fórum de Vespasiano","https://www.tjmg.jus.br"]]},
+ "social":{t:"Benefícios sociais — onde resolver agora",quando:"Bolsa Família, CadÚnico, BPC, aposentadoria, auxílio",
+  passos:["Bolsa Família, CadÚnico e BPC começam no CRAS do seu bairro — leve documento, CPF de todos da casa e comprovante de endereço.","Aposentadoria, auxílio-doença, perícia e BPC: ligue 135 (INSS) ou use o aplicativo/site Meu INSS (meu.inss.gov.br) com a conta gov.br.","Anote o número do protocolo de tudo o que pedir.","Se o pedido for negado ou demorar além do prazo informado, traga o protocolo ao gabinete: cobramos oficialmente e orientamos os próximos passos (Defensoria 129)."],
+  canais:[["INSS — telefone 135","tel:135"],["meu.inss.gov.br","https://meu.inss.gov.br"],["Defensoria Pública — 129","tel:129"]]}
+};
+const GUIA_CAT={"Água / esgoto":"copasa","Iluminação pública":"cemig","Consumidor":"consumidor","Assistência social":"social"};
+const CENTRO=[-19.6918,-43.9233];
+const ST_COR={"Cadastro":"#E63946","Instrução":"#F7C600","Encaminhada":"#00B4D8","Resposta do órgão":"#8E44AD","Resposta ao cidadão":"#E67E22","Resolvida":"#0A8F3C","Arquivada":"#888"};
+const FASE_COR={"Cadastro":"var(--red)","Instrução":"var(--yellow)","Encaminhada":"var(--cyan)","Resposta do órgão":"#8E44AD","Resposta ao cidadão":"#E67E22","Resolvida":"var(--green)","Arquivada":"#999"};
+
+/* ============================== UTILITÁRIOS ============================== */
+const $=id=>document.getElementById(id);
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const dt=s=>{if(!s)return"";const d=new Date(s);if(isNaN(d))return esc(s);return d.toLocaleDateString("pt-BR")+" "+d.toLocaleTimeString("pt-BR",{hour:"2-digit",minute:"2-digit"})};
+const dd=s=>{if(!s)return"—";const p=String(s).slice(0,10).split("-");return p.length===3?p[2]+"/"+p[1]+"/"+p[0]:esc(s)};
+const hoje=()=>{const d=new Date();d.setMinutes(d.getMinutes()-d.getTimezoneOffset());return d.toISOString().slice(0,10)};
+const maisDias=n=>{const d=new Date(Date.now()+n*864e5);d.setMinutes(d.getMinutes()-d.getTimezoneOffset());return d.toISOString().slice(0,10)};
+const sc=s=>"s-"+({"Cadastro":"recebida","Instrução":"analise","Encaminhada":"encaminhada","Resposta do órgão":"orgao","Resposta ao cidadão":"cidadao","Resolvida":"resolvida","Arquivada":"arquivada"}[s]||"recebida");
+const aberta=x=>x.status!=="Resolvida"&&x.status!=="Arquivada";
+const conta=(arr,f)=>arr.reduce((o,x)=>{const k=f(x)||"—";o[k]=(o[k]||0)+1;return o},{});
+const dist=(a,b,c,d)=>{const R=6371e3,r=Math.PI/180,x=(d-b)*r*Math.cos((a+c)/2*r),y=(c-a)*r;return Math.sqrt(x*x+y*y)*R};
+const etapasDe=x=>{try{return JSON.parse(x.etapas||"{}")||{}}catch(e){return{}}};
+const anexosDe=x=>{try{return JSON.parse(x.anexos||"[]")||[]}catch(e){return[]}};
+const diasEm=s=>s?Math.max(0,Math.floor((Date.now()-new Date(s))/864e5)):0;
+const idadeDe=n=>{if(!/^\d{4}-\d{2}-\d{2}$/.test(String(n||"")))return null;const d=new Date(n+"T12:00:00"),h=new Date();let i=h.getFullYear()-d.getFullYear();if(h.getMonth()<d.getMonth()||(h.getMonth()===d.getMonth()&&h.getDate()<d.getDate()))i--;return i};
+const mmdd=n=>String(n||"").slice(5,10);
+function toast(m){const t=$("toast");t.textContent=m;t.classList.add("on");clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove("on"),2800)}
+function copiar(txt){try{navigator.clipboard.writeText(txt).then(()=>toast("Copiado!"),()=>toast("Selecione e copie manualmente"))}catch(e){toast("Selecione e copie manualmente")}}
+function modal(html){$("modalCard").innerHTML=html;$("modal").classList.add("on");$("modalCard").scrollTop=0}
+function fecha(){$("modal").classList.remove("on");$("modalCard").innerHTML=""}
+$("modal").addEventListener("click",e=>{if(e.target.id==="modal")fecha()});
+function ask(msg,ok){return new Promise(r=>{modal('<h2>Confirmar</h2><p>'+msg+'</p><div style="display:flex;gap:8px;margin-top:14px"><button class="btn red sm" id="askS">'+(ok||"Confirmar")+'</button><button class="btn ghost sm" id="askN">Cancelar</button></div>');$("askS").onclick=()=>{fecha();r(true)};$("askN").onclick=()=>{fecha();r(false)}})}
+function barras(obj,cls,max){const ks=Object.keys(obj).sort((a,b)=>obj[b]-obj[a]).slice(0,max||7),mx=ks.length?obj[ks[0]]:1;return ks.length?'<div class="bars">'+ks.map(k=>'<div class="bar '+(cls||"")+'"><span title="'+esc(k)+'">'+esc(k)+'</span><div class="tr"><div class="fl" style="width:'+Math.round(obj[k]/mx*100)+'%"></div></div><b>'+obj[k]+'</b></div>').join("")+'</div>':'<div class="empty">Sem dados no período.</div>'}
+function sugereCat(t){t=" "+String(t||"").toLowerCase()+" ";let best=null,bn=0;CATS.forEach(c=>{if(!c[2])return;let n=0;c[2].split(" ").forEach(w=>{if(w.length>2&&t.indexOf(w)>-1)n++});if(n>bn){bn=n;best=c[0]}});return best}
+function maskTel(el){el.addEventListener("input",()=>{let v=el.value.replace(/\D/g,"").slice(0,11);if(v.length>2)v="("+v.slice(0,2)+") "+v.slice(2,7)+(v.length>7?"-"+v.slice(7):"");el.value=v})}
+function maskCpf(el){el.addEventListener("input",()=>{let v=el.value.replace(/\D/g,"").slice(0,11);el.value=v.replace(/(\d{3})(\d)/,"$1.$2").replace(/(\d{3})\.(\d{3})(\d)/,"$1.$2.$3").replace(/\.(\d{3})(\d{1,2})$/,".$1-$2")})}
+$("dlBairros").innerHTML=BAIRROS.map(b=>'<option value="'+esc(b)+'">').join("");
+
+/* ============================== MAPA (Leaflet) ============================== */
+let leafP=null;
+function leaflet(){if(window.L)return Promise.resolve(window.L);if(leafP)return leafP;leafP=new Promise((ok,ko)=>{const c=document.createElement("link");c.rel="stylesheet";c.href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";document.head.appendChild(c);const s=document.createElement("script");s.src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";s.onload=()=>ok(window.L);s.onerror=()=>{leafP=null;ko(new Error("mapa indisponível"))};document.head.appendChild(s);setTimeout(()=>{if(!window.L){leafP=null;ko(new Error("mapa indisponível"))}},12000)});return leafP}
+function novoMapa(el,cb){if(!GAS){$(el).innerHTML='<div class="empty" style="padding-top:60px">🗺️ O mapa interativo (OpenStreetMap) funciona no aplicativo instalado.<br>Nesta demonstração ele fica desligado.'+(el==="pickMap"?'<br><br><button type="button" class="btn ghost sm" id="pickDemo">Usar um ponto de exemplo</button>':'')+'</div>';if($("pickDemo"))$("pickDemo").onclick=()=>setGeo(-19.6795,-43.9300,"Ponto de exemplo marcado ✓");return}
+ leaflet().then(L=>{const box=$(el);if(box._map){box._map.remove();box._map=null}box.innerHTML="";const m=L.map(box).setView(CENTRO,13);L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:"© OpenStreetMap"}).addTo(m);box._map=m;setTimeout(()=>m.invalidateSize(),150);cb(L,m)}).catch(()=>{$(el).innerHTML='<div class="empty">Não foi possível carregar o mapa agora.</div>'})}
+function pino(L,cor){return L.divIcon({className:"",html:'<div style="width:18px;height:18px;border-radius:50%;background:'+cor+';border:3px solid #fff;box-shadow:0 1px 6px rgba(0,0,0,.4)"></div>',iconSize:[18,18],iconAnchor:[9,9]})}
+
+/* ============================== BACKEND ============================== */
+const GAS=!!window.GD_API||(typeof google!=="undefined"&&google.script&&google.script.run);
+function call(fn,...a){if(window.GD_API)return fetch(window.GD_API,{method:"POST",credentials:"omit",redirect:"follow",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({fn:fn,args:a})}).then(r=>r.json()).catch(()=>{throw new Error("Sem conexão com o servidor. Verifique a internet e tente de novo.")}).then(j=>{if(!j||!j.ok)throw new Error(j&&j.erro||"Erro no servidor.");return j.data});if(GAS)return new Promise((ok,ko)=>{google.script.run.withSuccessHandler(ok).withFailureHandler(e=>ko(new Error(e&&e.message||String(e))))[fn](...a)});return new Promise((ok,ko)=>setTimeout(()=>{try{const r=LOCAL[fn](...a);ok(JSON.parse(JSON.stringify(r===undefined?null:r)))}catch(e){ko(e)}},120))}
+/* --- demonstração no navegador --- */
+const LKEY="gabdigital_mf_v3";let MEM=null;
+function db(){if(MEM)return MEM;try{const s=localStorage.getItem(LKEY);if(s){MEM=JSON.parse(s);(MEM.Demandas||[]).forEach(x=>{if(x.status==="Recebida")x.status="Cadastro";if(x.status==="Em análise")x.status="Instrução"});return MEM}}catch(e){}return MEM=semente()}
+function grava(){try{localStorage.setItem(LKEY,JSON.stringify(MEM))}catch(e){}}
+function uid(){return Math.random().toString(36).slice(2,12)}
+const CFG_DEMO={prefeito:"José Winston da Silva",assinatura:"Michelle C. A. Fial",cargo:"VEREADORA",endereco:"Praça JK, 08 – Centro",cep:"33.200-326",telefone:"(31) 99906-2694",email:"gabinetefial22@gmail.com",site:"www.camaravespasiano.mg.gov.br",proxOficio:160,proxIndicacao:137,proxRequerimento:22,ano:String(new Date().getFullYear())};
+function semente(){
+ const ano=new Date().getFullYear(),now=Date.now(),D=[],H=[];
+ const ex=[["Buraco / asfalto","Centro","Buraco grande na esquina, carros desviando pela contramão.","Resolvida",-19.6905,-43.9241,"Site",""],
+  ["Iluminação pública","Morro Alto","Três postes apagados na mesma rua há duas semanas.","Resposta do órgão",-19.6788,-43.9302,"WhatsApp","C-0001"],
+  ["Iluminação pública","Morro Alto","Rua da escola às escuras, poste queimado em frente ao 215.","Cadastro",-19.6790,-43.9299,"Site","C-0001"],
+  ["Lixo / limpeza","Nova Pampulha","Lote vago com entulho e mato alto, aparecendo escorpião.","Instrução",-19.7031,-43.9455,"Site",""],
+  ["Saúde","Angicos","Posto sem pediatra há um mês.","Cadastro","","","Presencial",""],
+  ["Transporte / trânsito","Santa Clara","Ônibus das 6h40 não está passando.","Cadastro",-19.6862,-43.9128,"Site",""],
+  ["Árvores / poda","Jardim da Glória","Árvore com risco de queda na Rua Silvestre, nº 61.","Resposta do órgão",-19.6731,-43.9189,"Site",""],
+  ["Água / esgoto","Caieiras","Esgoto a céu aberto na rua, mau cheiro forte.","Resposta ao cidadão",-19.6702,-43.9171,"Site",""],
+  ["Falar com a vereadora","Célvia","Associação de moradores pede reunião sobre a praça.","Cadastro","","","WhatsApp",""]];
+ ex.forEach((e,i)=>{const c=new Date(now-(ex.length-i)*864e5*3).toISOString(),p="MF-"+ano+"-"+String(i+1).padStart(6,"0");
+  D.push({protocolo:p,criado:c,canal:e[6],anonimo:"",nome:"Morador(a) exemplo "+(i+1),tel:"(31) 99999-"+String(1000+i),tel2:"",email:"",instagram:i%3?"":"@morador"+i,redes:"",nascimento:(i===0?(()=>{const td=new Date();return "1979-"+String(td.getMonth()+1).padStart(2,"0")+"-"+String(td.getDate()).padStart(2,"0")})():"1980-05-"+String(10+i).padStart(2,"0")),cpf:"",rg:"",contatoFamilia:"",pin:String(1000+i),bairro:e[1],endereco:i===6?"Rua Silvestre, nº 61":"",lat:String(e[4]),lng:String(e[5]),categoria:e[0],descricao:e[2],fotoId:"",video:i===6?"https://youtu.be/demo":"",anexos:"",caso:e[7],status:e[3],faseDesde:new Date(now-(i%4)*864e5*6).toISOString(),etapas:"{}",prioridade:i===6?"Urgente":i===4?"Alta":"Normal",responsavel:i%2?"Michelle Fial":"",prazo:new Date(now+(i-4)*864e5*3).toISOString().slice(0,10),oficio:["Encaminhada","Resposta do órgão","Resposta ao cidadão","Resolvida"].includes(e[3])?String(85+i)+"/"+ano:"",oficioUrl:"",indicacao:["Encaminhada","Resposta do órgão","Resposta ao cidadão","Resolvida"].includes(e[3])?"Protocolo "+(4500+i)+"/"+ano:"",resposta:e[3]==="Resolvida"?"Prefeitura executou o serviço após ofício do gabinete.":e[3]==="Encaminhada"?"Ofício enviado ao órgão responsável. Aguardamos resposta.":"",apoios:String(i%4),nota:e[3]==="Resolvida"?"5":"",avaliacao:"",resolvido:e[3]==="Resolvida"?new Date(now-i*864e5).toISOString():"",consentimento:"Sim",atualizado:new Date(now-i*3600e3).toISOString()});
+  H.push({id:uid(),protocolo:p,quando:c,usuario:"Cidadão (site)",acao:"Registro",detalhe:"Canal: "+e[6]});
+  if(e[3]!=="Cadastro")H.push({id:uid(),protocolo:p,quando:new Date(now-i*3600e3).toISOString(),usuario:"Michelle Fial",acao:"Status",detalhe:e[3]})});
+ return {seqD:{[ano]:ex.length},seqO:{[ano]:159},seqI:{[ano]:136},seqR:{[ano]:21},seqC:1,cfg:JSON.parse(JSON.stringify(CFG_DEMO)),
+  Casos:[{id:"C-0001",titulo:"Iluminação pública – Morro Alto",categoria:"Iluminação pública",bairro:"Morro Alto",endereco:"",lat:"-19.6788",lng:"-43.9302",status:"Aberto",criado:new Date(now-20*864e5).toISOString(),atualizado:""}],
+  Demandas:D,Historico:H,
+  Documentos:[{id:uid(),tipo:"Ofício",modelo:"oficio",numero:"86/"+ano,data:maisDias(-240),destinatario:"Secretaria de Defesa Social (Defesa Civil)",assunto:"Solicitação urgente de retirada de árvore com risco de queda – Rua Silvestre, nº 61 – Bairro Jardim da Glória",protocolo:"MF-"+ano+"-000007",caso:"",prazoResposta:maisDias(-220),status:"Aguardando resposta",resposta:"",link:"",criadoPor:"Michelle Fial",atualizado:""},
+   {id:uid(),tipo:"Ofício (reiteração)",modelo:"reiteracao",numero:"159/"+ano,data:maisDias(-42),destinatario:"Secretaria de Defesa Social (Defesa Civil)",assunto:"Reiteração do Ofício nº 86/"+ano+" – Retirada de árvore com risco de queda – Rua Silvestre, nº 61",protocolo:"MF-"+ano+"-000007",caso:"",prazoResposta:maisDias(-22),status:"Aguardando resposta",resposta:"",link:"",criadoPor:"Michelle Fial",atualizado:""},
+   {id:uid(),tipo:"Indicação",modelo:"indicacao",numero:"136/"+ano,data:maisDias(-24),destinatario:"Prefeito Municipal",assunto:"Pavimentação asfáltica das Ruas Eneias de Oliveira e Valdemar José da Silva – Bela Vista",protocolo:"",caso:"",prazoResposta:"",status:"Protocolado",resposta:"",link:"",criadoPor:"Michelle Fial",atualizado:""},
+   {id:uid(),tipo:"Requerimento",modelo:"requerimento",numero:"21/"+ano,data:maisDias(-200),destinatario:"Prefeitura Municipal e Secretaria competente",assunto:"Providências urgentes quanto às condições estruturais da Escola Municipal Maria Miguel Issa",protocolo:"",caso:"",prazoResposta:"",status:"Respondido",resposta:"Vistoria realizada; obras iniciadas.",link:"",criadoPor:"Michelle Fial",atualizado:""}],
+  Agenda:[{id:uid(),data:maisDias(1),hora:"18:00",titulo:"Reunião ordinária da Câmara",tipo:"Sessão ordinária",local:"Câmara Municipal",bairro:"Centro",participantes:"",notas:"",responsavel:"Michelle Fial",eventoId:"",atualizado:""},{id:uid(),data:maisDias(3),hora:"09:30",titulo:"Visita à rua do esgoto a céu aberto",tipo:"Visita a bairro",local:"Caieiras",bairro:"Caieiras",participantes:"Moradores",notas:"Levar ofício impresso",responsavel:"Michelle Fial",eventoId:"",atualizado:""}],
+  Contatos:[{id:uid(),nome:"Ouvidoria Municipal",cargo:"Ouvidoria",orgao:"Prefeitura Municipal de Vespasiano",telefone:"(31) 3629-9800",email:"",notas:"Telefone geral da Prefeitura",atualizado:""},{id:uid(),nome:"Ouvidoria do MPMG",cargo:"Ouvidoria",orgao:"Ministério Público de MG",telefone:"127",email:"ouvidoria@mpmg.mp.br",notas:"Denúncias e representações",atualizado:""}],
+  Consultas:[{id:uid(),titulo:"Prioridade para 2027",pergunta:"Qual deve ser a prioridade número 1 do mandato no próximo ano?",opcoes:"Escola em tempo integral\nSaúde nos postos\nAsfalto e iluminação\nSegurança",votos:JSON.stringify({"Escola em tempo integral":14,"Saúde nos postos":11,"Asfalto e iluminação":9,"Segurança":7}),ativa:"Sim",publica:"Sim",criado:new Date().toISOString(),atualizado:""}],
+  Usuarios:[{id:"u1",nome:"Michelle Fial",login:"michelle",perfil:"admin",ativo:"Sim",senha:"demo"},{id:"u2",nome:"Atendente (exemplo)",login:"atendente",perfil:"atendente",ativo:"Sim",senha:"demo"}]};
+}
+function lhist(p,u,a,d){db().Historico.push({id:uid(),protocolo:p,quando:new Date().toISOString(),usuario:u,acao:a,detalhe:d})}
+function lsess(t,adm){if(!t||!MEM||!MEM._s||MEM._s.t!==t)throw new Error("Sessão expirada. Entre de novo.");if(adm&&MEM._s.eu.perfil!=="admin")throw new Error("Somente o administrador pode fazer isso.");return MEM._s.eu}
+function lnormTel(t){let d=String(t||"").replace(/\D/g,"");if(d.length>11&&d.indexOf("55")===0)d=d.slice(2);return d.slice(-11)}
+function lrua(e){e=String(e||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");e=e.split(/,|-|n[ºo°]|\bnumero\b|\d/)[0].replace(/\b(rua|r\.|avenida|av\.|av|travessa|tv\.|alameda|praca|estrada|beco)\b/g,"").replace(/[^a-z ]/g," ").replace(/\s+/g," ").trim();return e.length>=4?e:""}
+function lcaso(x){const B=db();if(x.caso)return x.caso;B.seqC=(B.seqC||0)+1;const c={id:"C-"+String(B.seqC).padStart(4,"0"),titulo:x.categoria+" – "+(x.endereco?x.endereco+", ":"")+x.bairro,categoria:x.categoria,bairro:x.bairro,endereco:x.endereco,lat:x.lat,lng:x.lng,status:"Aberto",criado:new Date().toISOString(),atualizado:""};B.Casos.push(c);x.caso=c.id;lhist(x.protocolo,"Sistema","Caso","Caso "+c.id+" aberto");return c.id}
+function lpub(x){const H=db().Historico.filter(h=>h.protocolo===x.protocolo&&(h.acao==="Status"||h.acao==="Registro")).map(h=>({quando:h.quando,detalhe:h.acao==="Registro"?"Demanda registrada":h.detalhe}));return{protocolo:x.protocolo,criado:x.criado,categoria:x.categoria,bairro:x.bairro,endereco:x.endereco,status:x.status,resposta:x.resposta,indicacao:x.indicacao,oficio:x.oficio,atualizado:x.atualizado,nota:x.nota,apoios:x.apoios,video:x.video?"Sim":"",anexos:anexosDe(x).length,etapas:H}}
+function lreg(d,canal,usuario,prior){const B=db(),ano=new Date().getFullYear();const anon=!!d.anonimo;const tel=anon?"":String(d.tel||"");
+ if(!d.categoria||!d.bairro||!d.descricao||(!anon&&!d.nome))throw new Error("Preencha os campos obrigatórios.");
+ if(!anon&&tel.replace(/\D/g,"").length<10)throw new Error("Informe o WhatsApp com DDD.");
+ if(!anon&&!d.nascimento&&canal==="Site")throw new Error("Informe a data de nascimento: com ela e o WhatsApp você acompanha seus pedidos sem precisar do protocolo.");
+ const cpf=String(d.cpf||"").replace(/\D/g,"");if(cpf&&cpf.length!==11)throw new Error("CPF inválido. Confira os números.");
+ if(d.video&&!/^https:\/\/(www\.|m\.|vm\.)?(youtube\.com|youtu\.be|drive\.google\.com|photos\.app\.goo\.gl|photos\.google\.com|instagram\.com|tiktok\.com|facebook\.com|fb\.watch)\//i.test(String(d.video).trim()))throw new Error("O link do vídeo precisa ser do YouTube, Google Drive, Google Fotos, Instagram, TikTok ou Facebook (começando com https://).");
+ (d.anexos||[]).forEach(a=>{if((a.tam||0)>5*1024*1024)throw new Error("Cada documento pode ter no máximo 5 MB.")});
+ B.seqD[ano]=(B.seqD[ano]||0)+1;const p="MF-"+ano+"-"+String(B.seqD[ano]).padStart(6,"0"),t=new Date().toISOString();
+ const pin=tel?tel.replace(/\D/g,"").slice(-4):String(1000+Math.floor(Math.random()*9000));
+ let autoResp="";const gg=GUIA_CAT[d.categoria];
+ if(gg){const g=GUIAS[gg];autoResp="ORIENTAÇÃO IMEDIATA (automática) — "+g.t+":\n"+g.passos.map((x,i)=>(i+1)+". "+x).join("\n")+"\nSua demanda continua registrada no gabinete: se não resolver por esses canais, nós cobramos oficialmente."}
+ const x={protocolo:p,criado:t,canal,anonimo:anon?"Sim":"",nome:anon?"Anônimo":d.nome,tel,tel2:anon?"":String(d.tel2||""),email:anon?"":String(d.email||""),instagram:anon?"":String(d.instagram||""),redes:anon?"":String(d.redes||""),nascimento:anon?"":String(d.nascimento||""),cpf:anon?"":(cpf?cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/,"$1.$2.$3-$4"):""),rg:anon?"":String(d.rg||""),contatoFamilia:anon?"":String(d.contatoFamilia||""),pin,bairro:d.bairro,endereco:d.endereco||"",lat:d.lat?String(d.lat):"",lng:d.lng?String(d.lng):"",categoria:d.categoria,descricao:d.descricao,fotoId:d.foto||"",video:d.video||"",anexos:d.anexos&&d.anexos.length?JSON.stringify(d.anexos.map(a=>({id:uid(),nome:a.nome,tipo:a.tipo,tam:a.tam,data:a.data}))):"",caso:"",status:"Cadastro",faseDesde:t,etapas:"{}",prioridade:prior||"Normal",responsavel:"",prazo:maisDias(20),oficio:"",oficioUrl:"",indicacao:"",resposta:autoResp,apoios:"0",nota:"",avaliacao:"",resolvido:"",consentimento:"Sim — "+t,atualizado:t};
+ if(d.junto){const y=B.Demandas.find(z=>z.protocolo===String(d.junto).toUpperCase());if(y&&y.categoria===x.categoria)x.caso=lcaso(y)}
+ if(!x.caso){const rua=lrua(x.endereco);const par=B.Demandas.filter(z=>z.categoria===x.categoria&&z.status!=="Arquivada"&&((x.lat&&z.lat&&dist(+x.lat,+x.lng,+z.lat,+z.lng)<=100)||(rua&&z.bairro.toLowerCase()===x.bairro.toLowerCase()&&lrua(z.endereco)===rua))).sort((a,b)=>a.criado<b.criado?1:-1)[0];if(par)x.caso=lcaso(par)}
+ B.Demandas.push(x);lhist(p,usuario,"Registro","Canal: "+canal+(x.caso?" · caso "+x.caso:""));if(autoResp)lhist(p,"Sistema","Solução imediata","Orientação automática entregue no ato do registro ("+d.categoria+")");grava();return x}
+const LOCAL={
+ criarDemanda(d){if(!d.consentimento)throw new Error("É preciso autorizar o uso dos dados para registrar a demanda.");const x=lreg(d,"Site","Cidadão (site)","Normal");return{protocolo:x.protocolo,pin:x.pin,caso:x.caso}},
+ minhasDemandas(tel,nasc){const t=lnormTel(tel);if(t.length<10||!/^\d{4}-\d{2}-\d{2}$/.test(String(nasc||"")))throw new Error("Informe o WhatsApp com DDD e a data de nascimento.");return db().Demandas.filter(x=>x.nascimento===nasc&&lnormTel(x.tel)===t).sort((a,b)=>a.criado<b.criado?1:-1).map(lpub)},
+ consultarDemanda(p,pin){const x=db().Demandas.find(y=>y.protocolo===String(p).trim().toUpperCase());if(!x||x.pin!==String(pin).replace(/\D/g,""))return null;return lpub(x)},
+ avaliarDemanda(p,pin,nota,txt,tel,nasc){const x=db().Demandas.find(y=>y.protocolo===p);const ok=x&&((pin&&x.pin===String(pin))||(tel&&lnormTel(x.tel)===lnormTel(tel)&&x.nascimento===nasc));if(!ok)throw new Error("Protocolo não encontrado.");if(x.status!=="Resolvida")throw new Error("A avaliação fica disponível quando a demanda é resolvida.");x.nota=String(nota);x.avaliacao=txt||"";lhist(p,"Cidadão","Avaliação",nota+" estrela(s)"+(txt?" — "+txt:""));grava();return true},
+ mapaPublico(){const B=db(),regs={};B.Demandas.forEach(x=>{if(x.caso)regs[x.caso]=(regs[x.caso]||0)+1});return B.Demandas.filter(x=>x.lat&&x.lng&&x.status!=="Arquivada").map(x=>({p:x.protocolo,k:x.caso,r:x.caso?regs[x.caso]:1,c:x.categoria,b:x.bairro,s:x.status,a:Number(x.apoios||0),d:x.criado,lat:Math.round(x.lat*1000)/1000,lng:Math.round(x.lng*1000)/1000}))},
+ apoiar(p){const x=db().Demandas.find(y=>y.protocolo===p);if(!x)throw new Error("Demanda não encontrada.");x.apoios=String(Number(x.apoios||0)+1);grava();return Number(x.apoios)},
+ consultasAtivas(){return db().Consultas.filter(c=>c.ativa==="Sim").map(c=>{const r={id:c.id,titulo:c.titulo,pergunta:c.pergunta,opcoes:c.opcoes.split(/\n|\|/).map(s=>s.trim()).filter(Boolean)};if(c.publica==="Sim")r.votos=JSON.parse(c.votos||"{}");return r})},
+ votar(id,op){const c=db().Consultas.find(x=>x.id===id);if(!c)throw new Error("Consulta encerrada.");const v=JSON.parse(c.votos||"{}");v[op]=(v[op]||0)+1;c.votos=JSON.stringify(v);grava();return c.publica==="Sim"?v:true},
+ login(u,s){let u1=String(u).trim().toLowerCase();const dg1=u1.replace(/\D/g,"");if(dg1.length===11)u1=dg1;const x=db().Usuarios.find(y=>y.login===u1&&y.ativo!=="Não"&&y.senha===s);if(!x)return null;const t=uid();MEM._s={t,eu:{id:x.id,nome:x.nome,perfil:x.perfil,login:x.login}};return{token:t,eu:MEM._s.eu}},
+ sair(){return true},
+ painel(t){const eu=lsess(t),B=db();return{eu,url:location.href.split("?")[0].split("#")[0],cfg:B.cfg,Demandas:B.Demandas.map(x=>Object.assign({},x,{fotoId:x.fotoId?"local":"",anexos:JSON.stringify(anexosDe(x).map(a=>({id:a.id,nome:a.nome,tipo:a.tipo,tam:a.tam})))})),Casos:B.Casos,Documentos:B.Documentos,Agenda:B.Agenda,Contatos:B.Contatos,Consultas:B.Consultas,Usuarios:B.Usuarios.map(u=>({id:u.id,nome:u.nome,login:u.login,perfil:u.perfil,ativo:u.ativo}))}},
+ novaDemandaInterna(t,d){const eu=lsess(t);if(!d.consentimento)throw new Error("Confirme que o cidadão autorizou o uso dos dados (LGPD).");const x=lreg(d,d.canal||"Presencial",eu.nome,d.prioridade);return{protocolo:x.protocolo,pin:x.pin,caso:x.caso,demanda:Object.assign({},x,{fotoId:x.fotoId?"local":""})}},
+ atualizarDemanda(t,p,c,nota){const eu=lsess(t),x=db().Demandas.find(y=>y.protocolo===p);if(!x)throw new Error("Demanda não encontrada.");
+  const R={status:"Fase",prioridade:"Prioridade",responsavel:"Responsável",prazo:"Prazo",indicacao:"Protocolo no órgão",resposta:"Resposta ao cidadão",categoria:"Categoria",bairro:"Bairro"};
+  let stMudou=false;
+  Object.keys(R).forEach(k=>{if(k in c&&c[k]!==x[k]){x[k]=c[k];if(k==="status"){stMudou=true;x.resolvido=c[k]==="Resolvida"?new Date().toISOString():"";x.faseDesde=new Date().toISOString();lhist(p,eu.nome,"Status",c[k])}else lhist(p,eu.nome,"Alteração",R[k]+": "+(c[k]||"—"))}});
+  if("etapas"in c)x.etapas=JSON.stringify(c.etapas||{});
+  if(!stMudou){let auto="";
+   if(x.status==="Encaminhada"&&c.indicacao)auto="Resposta do órgão";
+   else if(x.status==="Resposta do órgão"&&c.resposta)auto="Resposta ao cidadão";
+   if(auto){x.status=auto;x.faseDesde=new Date().toISOString();lhist(p,eu.nome,"Status",auto+" (automático)")}}
+  if(nota)lhist(p,eu.nome,"Nota interna",nota);
+  x.atualizado=new Date().toISOString();grava();return Object.assign({},x,{fotoId:x.fotoId?"local":""})},
+ historico(t,p){lsess(t);return db().Historico.filter(h=>h.protocolo===p)},
+ fotoDemanda(t,p){lsess(t);const x=db().Demandas.find(y=>y.protocolo===p);return x&&x.fotoId||""},
+ anexoDemanda(t,p,id){lsess(t);const x=db().Demandas.find(y=>y.protocolo===p);const a=x?anexosDe(x).find(z=>z.id===id):null;if(!a)throw new Error("Anexo não encontrado.");return{nome:a.nome,tipo:a.tipo,url:"",data:a.data||""}},
+ vincularCaso(t,p,alvo){const eu=lsess(t),B=db(),x=B.Demandas.find(y=>y.protocolo===p);if(!x)throw new Error("Demanda não encontrada.");
+  let caso="";alvo=String(alvo||"").trim();
+  if(alvo==="novo"){x.caso="";caso=lcaso(x)}
+  else if(/^C-\d+$/.test(alvo)){if(!B.Casos.find(c=>c.id===alvo))throw new Error("Caso não encontrado.");caso=alvo}
+  else if(alvo){const y=B.Demandas.find(z=>z.protocolo===alvo.toUpperCase());if(!y)throw new Error("Demanda não encontrada.");caso=lcaso(y)}
+  x.caso=caso;lhist(p,eu.nome,"Caso",caso?"Vinculada ao caso "+caso:"Desvinculada");grava();
+  return{demanda:Object.assign({},x),casos:B.Casos,demandas:B.Demandas}},
+ gerarDocumento(t,p){const eu=lsess(t),B=db(),ano=new Date().getFullYear();
+  const SEQ={oficio:"seqO",reiteracao:"seqO",padrao:"seqO",indicacao:"seqI",requerimento:"seqR"}[p.modelo];
+  if(!SEQ)throw new Error("Modelo inválido.");
+  if(!p.assunto||!p.corpo)throw new Error("Preencha o assunto e o texto do documento.");
+  B[SEQ][ano]=(B[SEQ][ano]||0)+1;const num=p.numero||(B[SEQ][ano]+"/"+ano);
+  const TIPO={oficio:"Ofício",reiteracao:"Ofício (reiteração)",padrao:"Ofício (outros órgãos)",indicacao:"Indicação",requerimento:"Requerimento"}[p.modelo];
+  const base=p.protocolo?B.Demandas.find(x=>x.protocolo===p.protocolo):null;
+  const casoId=p.caso||(base&&base.caso)||"";
+  const d={id:uid(),tipo:TIPO,modelo:p.modelo,numero:num,data:hoje(),destinatario:p.orgao||String(p.destinatario||"").split("\n").filter(Boolean).slice(-2).join(" – "),assunto:p.assunto,protocolo:base?base.protocolo:"",caso:casoId,prazoResposta:SEQ==="seqO"?maisDias(20):"",status:"Rascunho",resposta:"",link:"",criadoPor:eu.nome,atualizado:new Date().toISOString()};
+  B.Documentos.push(d);
+  const grupo=casoId?B.Demandas.filter(x=>x.caso===casoId):(base?[base]:[]);
+  grupo.forEach(x=>{if(base&&x.protocolo===base.protocolo&&SEQ==="seqO"){x.oficio=num}
+   const ST2=["Cadastro","Instrução","Encaminhada"];
+   if(ST2.indexOf(x.status)>-1&&x.status!=="Encaminhada"){x.status="Encaminhada";x.faseDesde=new Date().toISOString();lhist(x.protocolo,eu.nome,"Status","Encaminhada (automático — documento gerado)")}
+   lhist(x.protocolo,eu.nome,"Documento",TIPO+" nº "+num+" gerado")});
+  grava();
+  return{numero:num,url:"",texto:docTexto(p.modelo,num,p,B.cfg),documento:d,demandas:B.Demandas.map(x=>Object.assign({},x))}},
+ configuracoes(t){lsess(t);return db().cfg},
+ salvarConfig(t,c){lsess(t,true);const B=db();Object.keys(CFG_DEMO).forEach(k=>{if(c[k]!=null&&k!=="ano")B.cfg[k]=c[k]});["proxOficio","proxIndicacao","proxRequerimento"].forEach((k,i)=>{const n=parseInt(c[k],10);if(n>0)B[["seqO","seqI","seqR"][i]][new Date().getFullYear()]=n-1});B.cfg.proxOficio=(B.seqO[new Date().getFullYear()]||0)+1;B.cfg.proxIndicacao=(B.seqI[new Date().getFullYear()]||0)+1;B.cfg.proxRequerimento=(B.seqR[new Date().getFullYear()]||0)+1;grava();return B.cfg},
+ salvar(t,col,o){const eu=lsess(t),B=db(),ano=new Date().getFullYear();if(col==="Consultas"&&eu.perfil==="atendente")throw new Error("Consultas públicas são geridas pela coordenação.");let x=o.id?B[col].find(y=>y.id===o.id):null;const novo=!x;if(novo)x={id:uid()};Object.keys(o).forEach(k=>{if(k!=="id"&&k!=="votos"&&k!=="calendario")x[k]=o[k]});
+  if(col==="Documentos"){if(/^Ofício/.test(x.tipo)&&!x.numero){B.seqO[ano]=(B.seqO[ano]||0)+1;x.numero=B.seqO[ano]+"/"+ano}if(x.tipo==="Indicação"&&!x.numero){B.seqI[ano]=(B.seqI[ano]||0)+1;x.numero=B.seqI[ano]+"/"+ano}if(x.tipo==="Requerimento"&&!x.numero){B.seqR[ano]=(B.seqR[ano]||0)+1;x.numero=B.seqR[ano]+"/"+ano}if(!x.data)x.data=hoje();if(!x.criadoPor)x.criadoPor=eu.nome}
+  if(col==="Consultas"){if(novo)x.votos="{}";if(String(x.opcoes||"").split(/\n|\|/).filter(s=>s.trim()).length<2)throw new Error("Informe pelo menos duas opções, uma por linha.")}
+  x.atualizado=new Date().toISOString();if(novo)B[col].push(x);grava();return Object.assign({},x)},
+ excluir(t,col,id){const eu=lsess(t);if(eu.perfil==="atendente")throw new Error("Exclusões são feitas pela coordenação.");if((col==="Documentos"||col==="Consultas")&&eu.perfil!=="admin")throw new Error("Somente o administrador pode excluir este registro.");db()[col]=db()[col].filter(x=>x.id!==id);grava();return true},
+ anonimizarDemanda(t,p){const eu=lsess(t,true),x=db().Demandas.find(y=>y.protocolo===p);Object.assign(x,{nome:"[dados removidos — LGPD]",tel:"",tel2:"",email:"",instagram:"",redes:"",nascimento:"",cpf:"",rg:"",contatoFamilia:"",endereco:"",fotoId:"",anexos:"",video:"",anonimo:"Sim"});lhist(p,eu.nome,"LGPD","Dados pessoais removidos a pedido do titular");grava();return Object.assign({},x)},
+ salvarUsuario(t,u,s){const eu=lsess(t,true),B=db();const dv=c=>{if(/^(\d)\1{10}$/.test(c))return false;for(let j=9;j<11;j++){let soma=0;for(let i=0;i<j;i++)soma+=+c[i]*(j+1-i);if(+c[j]!==((soma*10)%11)%10)return false}return true};u.login=String(u.login||"").trim().toLowerCase().replace(/\s+/g,"");const dg2=u.login.replace(/\D/g,"");if(dg2.length===11){if(!dv(dg2))throw new Error("O CPF informado como usuário é inválido.");u.login=dg2}if(["admin","equipe","atendente"].indexOf(u.perfil)<0)u.perfil="atendente";if(!u.login||!u.nome)throw new Error("Informe nome e usuário (recomendado: o CPF).");if(B.Usuarios.some(x=>x.login===u.login&&x.id!==u.id))throw new Error("Este usuário já existe.");let x=u.id?B.Usuarios.find(y=>y.id===u.id):null;if(!x){if(!s||s.length<8)throw new Error("Defina uma senha com pelo menos 8 caracteres.");x={id:uid()};B.Usuarios.push(x)}if(x.id===eu.id&&(u.perfil!=="admin"||u.ativo==="Não"))throw new Error("Você não pode remover o seu próprio acesso de administrador.");Object.assign(x,{nome:u.nome,login:u.login.toLowerCase(),perfil:u.perfil,ativo:u.ativo});if(s)x.senha=s;grava();return{id:x.id,nome:x.nome,login:x.login,perfil:x.perfil,ativo:x.ativo}},
+ trocarSenha(t,a,n){const eu=lsess(t),x=db().Usuarios.find(y=>y.id===eu.id);if(x.senha!==a)throw new Error("Senha atual incorreta.");if(!n||n.length<8)throw new Error("A nova senha precisa ter pelo menos 8 caracteres.");x.senha=n;grava();return true}
+};
+/* Prévia do texto dos documentos na demonstração (no app instalado o Google Docs monta o arquivo). */
+function docTexto(modelo,num,p,C){
+ const d=new Date(),M=["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"];
+ const data=d.getDate()+" de "+M[d.getMonth()]+" de "+d.getFullYear();
+ const dest=String(p.destinatario||"").trim(),corpo=String(p.corpo||"").trim(),ass="\n\n"+C.assinatura+"\n"+C.cargo;
+ if(modelo==="indicacao")return"CÂMARA MUNICIPAL DE VESPASIANO\n"+C.endereco+"\nCEP – "+C.cep+" / Telefax: "+C.telefone+"\nEmail: "+C.email+"\nSite: "+C.site+"\n\nINDICAÇÃO N°"+num+"\n\n"+(dest||"Excelentíssimo Senhor\n"+C.prefeito+".\nPrefeito Municipal de Vespasiano")+"\n\nMichelle Fial, Vereadora que este subscreve, nos termos regimentais em vigor, INDICA a Vossa Excelência, ouvido em plenário\n\nExcelentíssimo Senhor Presidente da Câmara Municipal de Vespasiano,\n\n"+corpo+"\n\nCordialmente,\n\nVespasiano MG, "+data+"."+ass;
+ if(modelo==="requerimento")return"CÂMARA MUNICIPAL DE VESPASIANO\n\nREQUERIMENTO Nº "+num+"\n\nAssunto: "+p.assunto+"\n\nSenhor Presidente,\nSenhores Vereadores,\n\n"+corpo+"\n\nVespasiano MG, "+data+"."+ass;
+ if(modelo==="padrao")return"CÂMARA MUNICIPAL DE VESPASIANO\nGabinete da Vereadora Michelle Fial\n\nOfício nº "+num+" – GAB/VMF\n\nVespasiano, "+data+".\n\n"+dest+"\n\nAssunto: "+p.assunto+"\n\n"+(p.vocativo||"Senhor(a),")+"\n\n"+corpo+"\n\n"+(p.fecho||"Atenciosamente,")+"\n\n"+C.assinatura+"\nVereadora – Câmara Municipal de Vespasiano/MG";
+ return"CÂMARA MUNICIPAL DE VESPASIANO\n\nOFÍCIO Nº "+num+"\n\n"+dest+"\n\nAssunto: "+p.assunto+"\n\n"+corpo+"\n\nSem mais para o momento, aguardo providências.\n\nCordialmente,\n\nVespasiano MG, "+data+"."+ass;
+}
+if(!GAS)$("demoBanner").classList.remove("hide");
+window.__GD={CATS,STATUS,PRIOR,CANAIS,BAIRROS,DOC_TIPOS,DOC_ST,AG_TIPOS,SUBETAPAS,DESTINOS,DEST_CAT,CENTRO,ST_COR,FASE_COR,$,esc,dt,dd,hoje,maisDias,sc,aberta,conta,dist,etapasDe,anexosDe,diasEm,toast,copiar,modal,fecha,ask,barras,sugereCat,maskTel,maskCpf,novoMapa,pino,GAS,call,docTexto,idadeDe,mmdd,LIMITE_FASE,PUB_FASES,GUIAS,GUIA_CAT};
+})();
+(function(){
+"use strict";
+const G=window.__GD,{CATS,STATUS,PRIOR,CANAIS,SUBETAPAS,DESTINOS,DEST_CAT,ST_COR,PUB_FASES,GUIAS,GUIA_CAT,$,esc,dt,dd,hoje,maisDias,sc,toast,copiar,modal,fecha,ask,sugereCat,maskTel,maskCpf,novoMapa,pino,GAS,call,dist}=G;
+
+/* ============================== NAVEGAÇÃO ============================== */
+const PUB=["inicio","nova","ok","minhas","consulta","mapa","consultas","login","app"];
+const S=window.__GS={token:"",eu:null,D:null,tab:"funil",sel:null,url:"",cfg:null};
+function show(v){
+  if(v==="gabinete")v=S.token?"app":"login";
+  PUB.forEach(x=>$("v-"+x).classList.toggle("hide",x!==v));
+  const gab=v==="login"||v==="app";
+  $("hero").classList.toggle("hide",gab||v==="ok"||v==="mapa");
+  $("chCid").classList.toggle("on",!gab);$("chGab").classList.toggle("on",gab);
+  window.scrollTo(0,0);
+  if(v==="app")window.__carregar();
+  if(v==="mapa")mapaPub();
+  if(v==="consultas")consultasPub();
+}
+G.show=show;
+document.addEventListener("click",e=>{const g=e.target.closest("[data-go]");if(g){e.preventDefault();if(g.dataset.go==="nova")novaReset();show(g.dataset.go)}});
+
+/* ============================== NOVA DEMANDA ============================== */
+const F={cat:"",foto:"",lat:"",lng:"",anexos:[]};
+$("cats").innerHTML=CATS.map(c=>'<div class="cat" data-c="'+esc(c[0])+'"><span class="e">'+c[1]+'</span>'+esc(c[0])+'</div>').join("");
+function setCat(c){F.cat=c;document.querySelectorAll("#cats .cat").forEach(x=>x.classList.toggle("on",x.dataset.c===c));verDup()}
+$("cats").addEventListener("click",e=>{const c=e.target.closest(".cat");if(c)setCat(c.dataset.c)});
+$("desc").addEventListener("input",()=>{const s=sugereCat($("desc").value);document.querySelectorAll("#cats .cat").forEach(x=>x.classList.toggle("sug",x.dataset.c===s&&!F.cat));$("sugTxt").textContent=s&&!F.cat?"· sugestão: "+s+" (toque para confirmar)":""});
+$("anon").addEventListener("change",()=>$("boxIdent").classList.toggle("hide",$("anon").checked));
+maskTel($("tel"));maskTel($("tel2"));maskTel($("mTel"));maskCpf($("cpf"));
+function novaReset(cat,anon){$("fNova").reset();F.cat="";F.foto="";F.lat="";F.lng="";F.anexos=[];document.querySelectorAll("#cats .cat").forEach(x=>x.classList.remove("on","sug"));$("sugTxt").textContent="";$("geoTxt").textContent="";$("dupBox").innerHTML="";$("anexoLista").innerHTML="";$("pickMap").classList.add("hide");$("errNova").textContent="";resetFoto();$("boxIdent").classList.remove("hide");$("novaTit").textContent="Registrar demanda";$("novaSub").textContent="Leva menos de 3 minutos. Campos com * são obrigatórios.";if(cat)setCat(cat);if(anon){$("anon").checked=true;$("boxIdent").classList.add("hide");$("novaTit").textContent="Denúncia anônima";$("novaSub").textContent="Você não precisa se identificar. Guarde o protocolo e o código para acompanhar."}}
+G.novaReset=novaReset;
+$("aAgendar").addEventListener("click",()=>{novaReset("Falar com a vereadora");$("novaTit").textContent="Falar com a vereadora";$("novaSub").textContent="Diga o assunto e os melhores dias e horários. A equipe entra em contato pelo WhatsApp para marcar.";$("desc").placeholder="Assunto da conversa e melhores dias/horários para você.";show("nova")});
+$("aDenuncia").addEventListener("click",()=>{novaReset("",true);show("nova")});
+function resetFoto(){$("photoBox").innerHTML='Toque para anexar uma foto<input type="file" id="foto" accept="image/*" class="hide">';$("foto").addEventListener("change",onFoto)}
+$("photoBox").addEventListener("click",e=>{if(e.target.id!=="foto")$("foto").click()});
+function onFoto(){const f=this.files&&this.files[0];if(!f)return;const rd=new FileReader();rd.onload=()=>{const img=new Image();img.onload=()=>{const k=Math.min(1,1280/Math.max(img.width,img.height)),cv=document.createElement("canvas");cv.width=Math.round(img.width*k);cv.height=Math.round(img.height*k);cv.getContext("2d").drawImage(img,0,0,cv.width,cv.height);F.foto=cv.toDataURL("image/jpeg",.72);$("photoBox").innerHTML='<img src="'+F.foto+'" alt="Foto anexada"><div style="margin-top:6px">Toque para trocar</div><input type="file" id="foto" accept="image/*" class="hide">';$("foto").addEventListener("change",onFoto)};img.src=rd.result};rd.readAsDataURL(f)}
+resetFoto();
+/* anexos de documentos (até 3 × 5 MB) */
+$("anexoBox").addEventListener("click",e=>{if(e.target.id!=="anexo")$("anexo").click()});
+$("anexo").addEventListener("change",function(){
+  const fs=[...(this.files||[])];this.value="";
+  for(const f of fs){
+    if(F.anexos.length>=3){toast("No máximo 3 documentos.");break}
+    if(f.size>5*1024*1024){toast("“"+f.name+"” passa de 5 MB. Igual à Justiça: cada arquivo até 5 MB.");continue}
+    if(!/\.(pdf|jpe?g|png|docx?)$/i.test(f.name)){toast("Use PDF, JPG, PNG ou Word.");continue}
+    const rd=new FileReader();
+    rd.onload=()=>{F.anexos.push({nome:f.name,tipo:f.type||"application/pdf",tam:f.size,data:rd.result});listaAnexos()};
+    rd.readAsDataURL(f);
+  }
+});
+function listaAnexos(){$("anexoLista").innerHTML=F.anexos.map((a,i)=>'<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;border:1px solid var(--line);border-radius:10px;padding:7px 10px;margin-top:6px;font-size:13px"><span>📎 '+esc(a.nome)+' <span class="m">('+(a.tam/1048576).toFixed(1).replace(".",",")+' MB)</span></span><button type="button" class="btn ghost sm" data-rm="'+i+'">Remover</button></div>').join("")}
+$("anexoLista").addEventListener("click",e=>{const b=e.target.closest("[data-rm]");if(b){F.anexos.splice(+b.dataset.rm,1);listaAnexos()}});
+/* como publicar no YouTube */
+$("comoVideo").addEventListener("click",e=>{e.preventDefault();modal('<h2>Como publicar seu vídeo no YouTube e colar o link aqui</h2>'+
+ '<p class="sub">O YouTube é gratuito e aceita vídeos longos — dá para narrar e explicar tudo com calma.</p>'+
+ '<div class="tl">'+
+ '<div><b>1. Abra o aplicativo do YouTube</b> no celular e entre com sua conta do Google (a mesma do Gmail).</div>'+
+ '<div><b>2. Toque no botão “+” (Criar)</b> e escolha <b>Enviar vídeo</b>. Selecione o vídeo na galeria.</div>'+
+ '<div><b>3. Em “Visibilidade”, escolha “Não listado”.</b> Assim o vídeo não aparece em buscas: só vê quem tem o link. Se preferir, pode deixar “Público”.</div>'+
+ '<div><b>4. Toque em Enviar</b> e aguarde terminar o envio.</div>'+
+ '<div><b>5. Abra o vídeo, toque em “Compartilhar” → “Copiar link”</b> e cole o link no campo Vídeo do formulário.</div>'+
+ '</div>'+
+ '<p class="note">Vídeos de mais de 15 minutos exigem conta verificada por telefone no YouTube (youtube.com/verify, grátis e rápido). Também aceitamos link do Google Drive ou Google Fotos (toque em Compartilhar → “Qualquer pessoa com o link”), Instagram, TikTok e Facebook.</p>'+
+ '<button class="btn gold sm" id="cvOk" style="margin-top:10px">Entendi</button>');$("cvOk").onclick=fecha});
+function setGeo(la,ln,txt){F.lat=la.toFixed(6);F.lng=ln.toFixed(6);$("geoTxt").textContent=txt||"Local marcado ✓";verDup()}
+window.setGeo=setGeo;
+$("btnGPS").addEventListener("click",()=>{if(!navigator.geolocation){$("geoTxt").textContent="Seu aparelho não permitiu. Use “Marcar no mapa”.";return}$("geoTxt").textContent="Localizando…";navigator.geolocation.getCurrentPosition(p=>{setGeo(p.coords.latitude,p.coords.longitude,"Localização capturada ✓ (precisão ~"+Math.round(p.coords.accuracy)+" m)");if(!$("pickMap").classList.contains("hide"))abrePick()},()=>{$("geoTxt").textContent="Não foi possível obter a localização. Use “Marcar no mapa”."},{enableHighAccuracy:true,timeout:15000})});
+$("btnPick").addEventListener("click",()=>{$("pickMap").classList.remove("hide");abrePick()});
+function abrePick(){novoMapa("pickMap",(L,m)=>{let mk=null;const put=(la,ln)=>{if(mk)mk.setLatLng([la,ln]);else mk=L.marker([la,ln]).addTo(m)};if(F.lat){put(+F.lat,+F.lng);m.setView([+F.lat,+F.lng],17)}m.on("click",e=>{put(e.latlng.lat,e.latlng.lng);setGeo(e.latlng.lat,e.latlng.lng,"Local marcado no mapa ✓")})})}
+let PUBMAP=null;
+function verDup(){if(!F.cat||!F.lat)return;(PUBMAP?Promise.resolve(PUBMAP):call("mapaPublico").then(r=>PUBMAP=r)).then(arr=>{const p=arr.filter(x=>x.c===F.cat&&x.s!=="Resolvida"&&dist(+F.lat,+F.lng,x.lat,x.lng)<200);$("dupBox").innerHTML=p.length?'<div class="resp" style="margin-top:10px"><b>Já existe pedido parecido a menos de 200 m'+(p[0].r>1?" ("+p[0].r+" registros no mesmo caso)":"")+'.</b> Pode registrar o seu mesmo assim: os pedidos são reunidos num caso só, e cada registro vira mais um comprovante na cobrança. Se preferir, apenas apoie:<br>'+p.slice(0,3).map(x=>'<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:8px"><span class="m">'+esc(x.c)+' · '+esc(x.b)+' · '+esc(x.s)+' · '+x.a+' apoio(s)</span><button type="button" class="btn ghost sm" data-ap="'+esc(x.p)+'">Também me afeta</button></div>').join("")+'</div>':""}).catch(()=>{})}
+$("dupBox").addEventListener("click",e=>{const b=e.target.closest("[data-ap]");if(!b)return;b.disabled=true;call("apoiar",b.dataset.ap).then(n=>{b.textContent="Apoio registrado ("+n+")";toast("Obrigado! Seu apoio foi registrado.")}).catch(x=>{b.disabled=false;toast(x.message)})});
+$("fNova").addEventListener("submit",e=>{e.preventDefault();const er=$("errNova");er.textContent="";const anon=$("anon").checked;
+ const d={site:$("site").value,categoria:F.cat,anonimo:anon,nome:$("nome").value.trim(),tel:$("tel").value.trim(),tel2:$("tel2").value.trim(),nascimento:$("nasc").value,cpf:$("cpf").value.trim(),email:$("email").value.trim(),instagram:$("insta").value.trim(),redes:$("redes").value.trim(),bairro:$("bairro").value.trim(),endereco:$("end").value.trim(),descricao:$("desc").value.trim(),lat:F.lat,lng:F.lng,foto:F.foto,video:$("video").value.trim(),anexos:F.anexos,consentimento:$("lgpd").checked};
+ if(!d.descricao){er.textContent="Descreva o problema.";return}if(!d.categoria){er.textContent="Escolha o tipo.";return}
+ if(!anon){if(!d.nome){er.textContent="Informe seu nome.";return}if(d.tel.replace(/\D/g,"").length<10){er.textContent="Informe o WhatsApp com DDD.";return}if(!d.nascimento){er.textContent="Informe a data de nascimento — é com ela que você acompanha seus pedidos.";return}}
+ if(!d.bairro){er.textContent="Informe o bairro.";return}if(!d.consentimento){er.textContent="É preciso autorizar o uso dos dados para registrar a demanda.";return}
+ const b=$("btnEnviar");b.disabled=true;b.textContent="Enviando…";
+ call("criarDemanda",d).then(r=>{$("okProto").textContent=r.protocolo;$("okPin").innerHTML=anon?'Seu código de acompanhamento: <b style="color:#F0D27A;font-size:20px">'+esc(r.pin)+'</b><br>Anote o protocolo e o código. Sem eles não é possível acompanhar.':'Para acompanhar, basta entrar em <b>Minhas demandas</b> com seu WhatsApp e data de nascimento. Não precisa decorar o protocolo.';$("okCaso").textContent=r.caso?"Este local já tem outros registros: seu pedido entrou no caso "+r.caso+" e reforça a cobrança.":"";const gOk=GUIA_CAT[d.categoria];S._gOk=gOk||"";$("mTel").value=anon?"":d.tel;$("mNasc").value=anon?"":d.nascimento;$("cProto").value=r.protocolo;$("cPin").value=r.pin;PUBMAP=null;novaReset();show("ok");if(S._gOk)setTimeout(()=>abreGuia(S._gOk),400)}).catch(x=>{er.textContent=x.message}).then(()=>{b.disabled=false;b.textContent="Enviar e gerar protocolo"})});
+$("btnCopiar").addEventListener("click",()=>copiar($("okProto").textContent));
+
+/* ============================== MINHAS DEMANDAS / CONSULTA ============================== */
+function cardDemanda(it,chave){
+ const o=PUB_FASES.map(f=>f[0]),i=o.indexOf(it.status);
+ const steps=it.status==="Arquivada"?'<div class="resp" style="border-color:#999">Demanda arquivada.</div>':'<div class="steps">'+PUB_FASES.map((f,k)=>'<div class="st '+(k<i?"done":k===i?"cur done":"")+'"><div class="d">'+(k<=i?"✓":k+1)+'</div>'+f[1]+'</div>').join("")+'</div>'+(it.status==="Instrução"?'<div class="resp" style="border-color:var(--yellow)"><b>Estamos aguardando documentos ou informações suas.</b> Responda a mensagem do gabinete no WhatsApp para o pedido andar.</div>':'');
+ let av="";
+ if(it.status==="Resolvida")av=it.nota?'<div class="resp">Obrigado pela avaliação: '+"★".repeat(+it.nota)+'</div>':'<div class="card" style="margin-top:12px;box-shadow:none"><b>O problema foi resolvido? Avalie o atendimento</b><div class="stars" data-stars="'+esc(it.protocolo)+'">'+[1,2,3,4,5].map(n=>'<span data-n="'+n+'">★</span>').join("")+'</div><textarea data-avtxt="'+esc(it.protocolo)+'" style="min-height:60px;margin-top:8px" placeholder="Comentário (opcional)"></textarea><button class="btn gold sm" data-av="'+esc(it.protocolo)+'" style="margin-top:8px">Enviar avaliação</button></div>';
+ return '<div class="card" style="box-shadow:none;margin-bottom:12px"><div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap"><b class="mono" style="font-size:15px;color:var(--ink)">'+esc(it.protocolo)+'</b><span class="tag '+sc(it.status)+'">'+esc(it.status)+'</span></div><div class="note" style="margin-top:4px">'+esc(it.categoria)+' · '+esc(it.bairro)+' · aberto em '+dt(it.criado)+(Number(it.apoios)?' · '+it.apoios+' apoio(s)':'')+(it.anexos?' · 📎 '+it.anexos+' documento(s)':'')+(it.video?' · 🎬 vídeo':'')+'</div>'+steps+(it.oficio?'<div class="note">Ofício do gabinete: <b>'+esc(it.oficio)+'</b></div>':'')+(it.indicacao?'<div class="note">Protocolo no órgão: <b>'+esc(it.indicacao)+'</b></div>':'')+(it.resposta?'<div class="resp"><b>Resposta do gabinete:</b><br>'+esc(it.resposta).replace(/\n/g,'<br>')+'</div>':'<div class="resp">Sua demanda foi recebida e está na fila de análise da equipe.</div>')+(it.etapas&&it.etapas.length?'<div class="tl" style="margin-top:14px">'+it.etapas.map(h=>'<div><b>'+esc(h.detalhe)+'</b><br><span class="m">'+dt(h.quando)+'</span></div>').join("")+'</div>':'')+av+(GUIA_CAT[it.categoria]?'<p style="margin:8px 0 0"><button class="btn gold sm" data-guia="'+GUIA_CAT[it.categoria]+'">📄 Abrir guia passo a passo (imprimir)</button></p>':'')+'<div class="note" style="margin-top:8px">Última atualização: '+dt(it.atualizado)+'</div></div>';
+}
+function ligaAvaliacao(box,extra){box.querySelectorAll('[data-guia]').forEach(b=>b.onclick=()=>G.abreGuia(b.dataset.guia));
+ box.querySelectorAll("[data-stars]").forEach(st=>{st._n=0;st.addEventListener("click",e=>{const s=e.target.closest("[data-n]");if(!s)return;st._n=+s.dataset.n;st.querySelectorAll("span").forEach(x=>x.classList.toggle("on",+x.dataset.n<=st._n))})});
+ box.querySelectorAll("[data-av]").forEach(b=>b.addEventListener("click",()=>{const p=b.dataset.av,st=box.querySelector('[data-stars="'+p+'"]'),tx=box.querySelector('[data-avtxt="'+p+'"]');if(!st._n){toast("Escolha de 1 a 5 estrelas");return}
+  const args=extra?["avaliarDemanda",p,"",st._n,tx.value.trim(),extra.tel,extra.nasc]:["avaliarDemanda",p,$("cPin").value.replace(/\D/g,""),st._n,tx.value.trim()];
+  call(...args).then(()=>{toast("Avaliação registrada. Obrigado!");if(extra)minhas();else consultar()}).catch(x=>toast(x.message))}));
+}
+function minhas(){const tel=$("mTel").value.trim(),nasc=$("mNasc").value;$("errMinhas").textContent="";
+ if(tel.replace(/\D/g,"").length<10||!nasc){$("errMinhas").textContent="Informe o WhatsApp com DDD e a data de nascimento.";return}
+ $("minhasRes").innerHTML='<div class="empty">Buscando…</div>';
+ call("minhasDemandas",tel,nasc).then(arr=>{if(!arr.length){$("minhasRes").innerHTML='<div class="empty">Nenhuma demanda encontrada com esse WhatsApp e essa data de nascimento.<br>Confira os dados ou registre uma nova demanda.</div>';return}
+  $("minhasRes").innerHTML='<p class="sub">'+arr.length+' demanda(s) encontrada(s):</p>'+arr.map(it=>cardDemanda(it,"m")).join("");
+  ligaAvaliacao($("minhasRes"),{tel,nasc});
+ }).catch(x=>{$("minhasRes").innerHTML="";$("errMinhas").textContent=x.message})}
+$("btnMinhas").addEventListener("click",minhas);
+$("lnkProto").addEventListener("click",e=>{e.preventDefault();show("consulta")});
+function consultar(){const p=$("cProto").value.trim().toUpperCase(),f=$("cPin").value.replace(/\D/g,"");$("errCons").textContent="";if(!p||f.length!==4){$("errCons").textContent="Informe o protocolo e os 4 dígitos.";return}$("consRes").innerHTML='<div class="empty">Consultando…</div>';
+ call("consultarDemanda",p,f).then(it=>{if(!it){$("consRes").innerHTML='<div class="empty">Protocolo não encontrado. Confira o número e os dígitos.</div>';return}
+  $("consRes").innerHTML=cardDemanda(it);ligaAvaliacao($("consRes"),null);
+ }).catch(x=>{$("consRes").innerHTML="";$("errCons").textContent="Erro na consulta: "+x.message})}
+$("btnCons").addEventListener("click",consultar);
+G.consultar=consultar;
+
+/* ============================== MAPA PÚBLICO E CONSULTAS ============================== */
+CATS.forEach(c=>$("mpCat").insertAdjacentHTML("beforeend",'<option>'+esc(c[0])+'</option>'));
+STATUS.filter(s=>s!=="Arquivada").forEach(s=>$("mpSt").insertAdjacentHTML("beforeend",'<option>'+s+'</option>'));
+["mpCat","mpSt"].forEach(id=>$(id).addEventListener("change",()=>mapaPub()));
+function mapaPub(){call("mapaPublico").then(arr=>{PUBMAP=arr;const c=$("mpCat").value,s=$("mpSt").value;const f=arr.filter(x=>(!c||x.c===c)&&(!s||x.s===s));novoMapa("mapPub",(L,m)=>{const pts=[];f.forEach(x=>{pts.push([x.lat,x.lng]);const mk=L.marker([x.lat,x.lng],{icon:pino(L,ST_COR[x.s]||"#333")}).addTo(m);mk.bindPopup('<b>'+esc(x.c)+'</b><br>'+esc(x.b)+' · '+esc(x.s)+(x.r>1?'<br><b>'+x.r+' moradores já registraram este caso</b>':'')+'<br><span style="color:#666">Desde '+dd(x.d)+' · <span id="ap_'+esc(x.p)+'">'+x.a+'</span> apoio(s)</span><br><button class="btn gold sm" style="margin-top:6px" data-apm="'+esc(x.p)+'">Também me afeta</button>')});if(pts.length)m.fitBounds(pts,{padding:[30,30],maxZoom:15});m.on("popupopen",ev=>{const b=ev.popup.getElement().querySelector("[data-apm]");if(b)b.onclick=()=>{b.disabled=true;call("apoiar",b.dataset.apm).then(n=>{b.textContent="Apoio registrado";const sp=document.getElementById("ap_"+b.dataset.apm);if(sp)sp.textContent=n}).catch(x=>{b.disabled=false;toast(x.message)})}})})}).catch(x=>{$("mapPub").innerHTML='<div class="empty">'+esc(x.message)+'</div>'})}
+function votei(id){try{return localStorage.getItem("cpv_"+id)}catch(e){return S["cpv_"+id]}}
+function marcaVoto(id,o){try{localStorage.setItem("cpv_"+id,o)}catch(e){S["cpv_"+id]=o}}
+function consultasPub(){call("consultasAtivas").then(cs=>{if(!cs.length){$("cpLista").innerHTML='<div class="empty">Nenhuma consulta aberta no momento.</div>';return}$("cpLista").innerHTML=cs.map(c=>{const v=votei(c.id);return'<div class="card" style="box-shadow:none;margin-bottom:12px"><h3>'+esc(c.titulo)+'</h3><p class="sub">'+esc(c.pergunta)+'</p>'+(v?resultado(c,v):c.opcoes.map(o=>'<button class="opt" data-cp="'+esc(c.id)+'" data-op="'+esc(o)+'">'+esc(o)+'</button>').join(""))+'</div>'}).join("");$("cpLista").querySelectorAll("[data-cp]").forEach(b=>b.addEventListener("click",()=>{const id=b.dataset.cp,o=b.dataset.op;$("cpLista").querySelectorAll('[data-cp="'+id+'"]').forEach(x=>x.disabled=true);call("votar",id,o).then(()=>{marcaVoto(id,o);toast("Voto registrado. Obrigado!");consultasPub()}).catch(x=>toast(x.message))}))}).catch(x=>{$("cpLista").innerHTML='<div class="empty">'+esc(x.message)+'</div>'})}
+function resultado(c,v){if(!c.votos)return'<div class="resp">Seu voto (“'+esc(v)+'”) foi registrado. O resultado será divulgado pelo gabinete.</div>';const tot=Object.values(c.votos).reduce((a,b)=>a+b,0)||1;return'<div class="resp" style="margin-bottom:8px">Você votou em “'+esc(v)+'”.</div><div class="bars">'+c.opcoes.map(o=>{const n=c.votos[o]||0;return'<div class="bar"><span>'+esc(o)+'</span><div class="tr"><div class="fl" style="width:'+Math.round(n/tot*100)+'%"></div></div><b>'+Math.round(n/tot*100)+'%</b></div>'}).join("")+'</div>'}
+
+/* guia de solução imediata (modal imprimível) */
+function abreGuia(id,extra){const g=GUIAS[id];if(!g)return;
+ modal('<div id="guiaPrint"><div style="display:flex;gap:10px;align-items:center;margin-bottom:6px"><div class="logo">MF</div><div><b>Gabinete Digital · Vereadora Michelle Fial</b><br><span class="m">Guia de solução imediata — Vespasiano/MG</span></div></div>'+
+ '<h2 style="margin-top:8px">'+esc(g.t)+'</h2><p class="sub">'+esc(g.quando)+'. Você não precisa esperar: siga os passos agora. Sua demanda CONTINUA registrada no gabinete — se não resolver, nós cobramos oficialmente.</p>'+
+ '<div class="tl">'+g.passos.map((p,i)=>'<div><b>'+(i+1)+'. </b>'+esc(p)+'</div>').join("")+'</div>'+
+ '<h3 style="font-size:14px;margin-top:10px">Canais oficiais</h3>'+g.canais.map(c=>'<a class="btn ghost sm" style="margin:2px 6px 2px 0" href="'+esc(c[1])+'" target="_blank" rel="noopener">'+esc(c[0])+'</a>').join("")+(extra||'')+'</div>'+
+ '<div style="display:flex;gap:8px;margin-top:14px" class="noprint"><button class="btn navy sm" onclick="window.print()">🖨️ Imprimir / salvar em PDF</button><button class="btn ghost sm" id="gX">Fechar</button></div>');
+ $("gX").onclick=fecha}
+G.abreGuia=abreGuia;
+/* entrada por link */
+function abrirPorParametros(par){if(par.p){$("cProto").value=String(par.p).toUpperCase();show("consulta");$("cPin").focus()}else if(par.v==="gabinete")show("gabinete");else if(par.v==="nova"){novaReset();show("nova")}else if(par.v==="mapa")show("mapa");else if(par.v==="minhas")show("minhas")}
+if(!window.GD_API&&GAS&&google.script.url)google.script.url.getLocation(l=>abrirPorParametros(l.parameter||{}));
+else{const q={};location.search.replace(/^\?/,"").split("&").forEach(kv=>{const p=kv.split("=");if(p[0])q[p[0]]=decodeURIComponent(p[1]||"")});if(location.hash==="#gabinete")q.v="gabinete";abrirPorParametros(q)}
+})();
+(function(){
+"use strict";
+const G=window.__GD,S=window.__GS,{CATS,STATUS,PRIOR,CANAIS,SUBETAPAS,DESTINOS,DEST_CAT,DOC_TIPOS,DOC_ST,AG_TIPOS,ST_COR,FASE_COR,LIMITE_FASE,$,esc,dt,dd,hoje,maisDias,sc,aberta,conta,dist,etapasDe,anexosDe,diasEm,toast,copiar,modal,fecha,ask,barras,sugereCat,maskTel,maskCpf,novoMapa,pino,GAS,call,docTexto,show}=Object.assign({},G,{show:G.show});
+
+/* ============================== LOGIN E CARGA ============================== */
+$("btnLogin").addEventListener("click",entrar);$("lPass").addEventListener("keydown",e=>{if(e.key==="Enter")entrar()});
+function entrar(){$("errLogin").textContent="";call("login",$("lUser").value,$("lPass").value).then(r=>{if(!r){$("errLogin").textContent="Usuário ou senha incorretos.";return}S.token=r.token;S.eu=r.eu;$("lPass").value="";show("app")}).catch(x=>$("errLogin").textContent=x.message)}
+function carregar(){$("tabBody").innerHTML='<div class="empty">Carregando…</div>';const tm=setTimeout(()=>{if(!S.D)$("tabBody").innerHTML='<div class="empty">Está demorando… <button class="btn ghost sm" onclick="location.reload()">Recarregar</button></div>'},15000);call("painel",S.token).then(d=>{clearTimeout(tm);S.D=d;S.eu=d.eu;S.url=window.GD_PUBLIC||d.url;S.cfg=d.cfg;renderTabs();renderTab()}).catch(x=>{clearTimeout(tm);if(/sess/i.test(x.message)){S.token="";show("login");$("errLogin").textContent=x.message}else $("tabBody").innerHTML='<div class="empty">Erro: '+esc(x.message)+'</div>'})}
+window.__carregar=carregar;
+const TABS=[["funil","Funil"],["demandas","Demandas"],["casos","Casos"],["mapa","Mapa"],["documentos","Documentos"],["agenda","Agenda"],["contatos","Contatos"],["consultas","Consultas"],["relatorios","Relatórios"],["equipe","Equipe"],["config","Ajustes"]];
+function renderTabs(){const D=S.D,nov=D.Demandas.filter(x=>x.status==="Cadastro").length;
+ const oc=S.eu.perfil==="admin"?[]:S.eu.perfil==="atendente"?["consultas","relatorios","equipe","config"]:["equipe","config"];if(oc.indexOf(S.tab)>=0)S.tab="funil";
+ $("tabs").innerHTML=TABS.filter(t=>oc.indexOf(t[0])<0).map(t=>'<button class="tab'+(S.tab===t[0]?" on":"")+'" data-tab="'+t[0]+'">'+t[1]+(t[0]==="funil"&&nov?'<span class="bd'+(S.D.Demandas.some(x=>{const l=LIMITE_FASE[x.status];return aberta(x)&&l!=null&&diasEm(x.faseDesde||x.criado)>l})?' pisca':'')+'">'+nov+'</span>':'')+'</button>').join("")+'<span style="margin-left:auto;display:flex;gap:6px;align-items:center"><span class="m">'+esc(S.eu.nome)+'</span><button class="tab" id="tSenha">Minha senha</button><button class="tab" id="tSair">Sair</button></span>';
+ $("tSair").onclick=()=>{call("sair",S.token).catch(()=>{});S.token="";S.D=null;S.sel=null;show("inicio")};$("tSenha").onclick=minhaSenha}
+$("tabs").addEventListener("click",e=>{const t=e.target.closest("[data-tab]");if(!t)return;S.tab=t.dataset.tab;renderTabs();renderTab()});
+function vai(tab,sel){S.tab=tab;if(sel!==undefined)S.sel=sel;renderTabs();renderTab();window.scrollTo(0,0)}
+function renderTab(){({funil:tFunil,demandas:tDemandas,casos:tCasos,mapa:tMapa,documentos:tDocs,agenda:tAgenda,contatos:tContatos,consultas:tConsultas,relatorios:tRel,equipe:tEquipe,config:tConfig}[S.tab]||tFunil)()}
+function subst(col,o,k){k=k||"id";const a=S.D[col],i=a.findIndex(x=>x[k]===o[k]);if(i>-1)a[i]=o;else a.push(o)}
+function salvaDemanda(p,c,nota){return call("atualizarDemanda",S.token,p,c,nota||"").then(r=>{subst("Demandas",r,"protocolo");return r})}
+function pctEtapas(x){const done=etapasDe(x)[x.status]||[],tot=(SUBETAPAS[x.status]||[]).length;return tot?Math.round(done.length/tot*100):0}
+
+/* ============================== FUNIL (CRM) ============================== */
+const FF={cat:"",bai:"",resp:"",q:""};
+function pessoas(){const vis={},out=[];S.D.Demandas.forEach(x=>{if(x.anonimo||!x.tel)return;const k=String(x.tel).replace(/\D/g,"");if(!k)return;if(!vis[k])out.push(vis[k]={nome:x.nome,tel:x.tel,nascimento:x.nascimento,bairro:x.bairro,instagram:x.instagram||"",n:0});vis[k].n++;if(x.nascimento)vis[k].nascimento=x.nascimento});return out}
+function waNiver(p){let tel=String(p.tel||"").replace(/\D/g,"");if(tel.length<=11)tel="55"+tel;const n=(p.nome||"").split(" ")[0];
+ const m="Olá, "+n+"! 🎉 Aqui é do Gabinete da Vereadora Michelle Fial. Hoje o dia é todo seu: FELIZ ANIVERSÁRIO! 🎂 Desejamos a você e à sua família muita saúde, paz e conquistas. Conte sempre com o nosso gabinete. Um grande abraço!";
+ return "https://wa.me/"+tel+"?text="+encodeURIComponent(m)}
+function nivers(){const hj=G.mmdd(hoje());const ps=pessoas().filter(p=>p.nascimento);const hoje_=ps.filter(p=>G.mmdd(p.nascimento)===hj);
+ const prox=[];for(let k=1;k<=7;k++){const d=new Date(Date.now()+k*864e5);const md=String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");ps.filter(p=>G.mmdd(p.nascimento)===md).forEach(p=>prox.push(Object.assign({dias:k},p)))}
+ return {hoje:hoje_,prox}}
+function tFunil(){const D=S.D.Demandas,h=hoje(),us=S.D.Usuarios.filter(u=>u.ativo!=="Não");const nv=nivers();
+ const bs=[...new Set(D.map(x=>x.bairro).filter(Boolean))].sort();
+ const venc=D.filter(x=>aberta(x)&&x.prazo&&x.prazo<h).length;const paradas=D.filter(x=>{const l=LIMITE_FASE[x.status];return aberta(x)&&l!=null&&diasEm(x.faseDesde||x.criado)>l}).length;
+ const docV=S.D.Documentos.filter(d=>["Protocolado","Aguardando resposta"].includes(d.status)&&d.prazoResposta&&d.prazoResposta<h).length;
+ $("tabBody").innerHTML='<div class="toolbar"><input id="ffq" placeholder="Buscar protocolo, nome, relato…" value="'+esc(FF.q)+'"><select id="ffc"><option value="">Categoria</option>'+CATS.map(c=>'<option'+(c[0]===FF.cat?" selected":"")+'>'+esc(c[0])+'</option>').join("")+'</select><select id="ffb"><option value="">Bairro</option>'+bs.map(b=>'<option'+(b===FF.bai?" selected":"")+'>'+esc(b)+'</option>').join("")+'</select><select id="ffr"><option value="">Responsável</option><option'+(FF.resp==="—"?" selected":"")+' value="—">Sem responsável</option>'+us.map(u=>'<option'+(u.nome===FF.resp?" selected":"")+'>'+esc(u.nome)+'</option>').join("")+'</select><button class="btn gold sm" id="fNovaInt">+ Registrar atendimento</button><button class="btn ghost sm" id="fAtu">Atualizar</button></div>'+
+ ((venc||docV||paradas)?'<div class="banner urgente">⚠️ '+(paradas?paradas+' demanda(s) paradas além do limite da fase (⏰ nos cartões). ':'')+(venc?venc+' com prazo interno vencido. ':'')+(docV?docV+' documento(s) sem resposta do órgão no prazo — gerar reiteração.':'')+'</div>':'')+
+ (nv.hoje.length?'<div class="card" style="margin-bottom:14px;border-left:5px solid var(--gold)"><h2 style="font-size:16px">🎂 Aniversariantes de hoje</h2><p class="sub" style="margin-bottom:8px">Mensagem pronta — é só clicar para enviar os parabéns pelo WhatsApp.</p>'+nv.hoje.map(p=>'<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;border:1px solid var(--line);border-radius:10px;padding:8px 12px;margin-top:6px"><span><b>'+esc(p.nome)+'</b>'+(G.idadeDe(p.nascimento)!=null?' · faz '+G.idadeDe(p.nascimento)+' anos':'')+' · '+esc(p.bairro)+(p.instagram?' · '+esc(p.instagram):'')+'</span><a class="btn green sm" href="'+waNiver(p)+'" target="_blank" rel="noopener">🎉 Enviar parabéns</a></div>').join("")+'</div>':'')+
+ (nv.prox.length?'<p class="note" style="margin:-6px 0 12px 4px">Próximos aniversários: '+nv.prox.slice(0,6).map(p=>esc(p.nome.split(" ")[0])+" ("+dd(p.nascimento).slice(0,5)+")").join(" · ")+'</p>':'')+
+ '<div class="funil" id="funil">'+STATUS.map(st=>{
+   const cards=fFiltra().filter(x=>x.status===st).sort((a,b)=>PRIOR.indexOf(b.prioridade)-PRIOR.indexOf(a.prioridade)||(a.criado<b.criado?-1:1));
+   return '<div class="fcol" data-st="'+st+'"><h4><span>'+st+(LIMITE_FASE[st]!=null?' <small style="font-weight:600;color:var(--muted)">até '+LIMITE_FASE[st]+'d</small>':'')+'</span> <i>'+cards.length+'</i></h4>'+cards.map(x=>{
+     const d=diasEm(x.faseDesde||x.criado),pct=pctEtapas(x),vencida=aberta(x)&&x.prazo&&x.prazo<h,lim=LIMITE_FASE[st],estourou=aberta(x)&&lim!=null&&d>lim;
+     return '<div class="fc'+(estourou||vencida?' atraso':'')+'" draggable="true" data-p="'+esc(x.protocolo)+'" style="border-left-color:'+FASE_COR[st]+'"><span class="pr">'+esc(x.protocolo)+'</span><div class="tt">'+esc(x.descricao)+'</div><div class="pbar"><i style="width:'+pct+'%"></i></div><div class="mm">'+esc(x.categoria)+' · '+esc(x.bairro)+'</div><div class="chips">'+(x.prioridade==="Urgente"||x.prioridade==="Alta"?'<span style="background:#FDE8EA;color:#B0202C">'+x.prioridade+'</span>':'')+(vencida?'<span style="background:#FDE8EA;color:#B0202C">prazo vencido</span>':'')+(x.caso?'<span style="background:#EEE4FA;color:#5B2D8E">'+esc(x.caso)+'</span>':'')+(+x.apoios?'<span>👥 '+x.apoios+'</span>':'')+(estourou?'<span style="background:#FDE8EA;color:#B0202C">⏰ '+d+'d na fase (limite '+lim+'d)</span>':'<span>'+d+'d na fase</span>')+(x.responsavel?'<span>'+esc(x.responsavel.split(" ")[0])+'</span>':'')+'</div></div>';
+   }).join("")+'</div>'}).join("")+'</div>'+
+ '<p class="note" style="margin-top:10px">Arraste um cartão para mudar a demanda de fase, ou toque nele para abrir os detalhes e as subetapas. A barrinha verde mostra o avanço das subetapas da fase.</p>';
+ [["ffq","q"],["ffc","cat"],["ffb","bai"],["ffr","resp"]].forEach(([id,k])=>$(id).addEventListener(id==="ffq"?"input":"change",()=>{FF[k]=$(id).value;tFunil()}));
+ $("fNovaInt").onclick=novaInterna;$("fAtu").onclick=carregar;
+ const funil=$("funil");let dragP=null;
+ funil.addEventListener("click",e=>{const c=e.target.closest(".fc");if(c)abrirDemanda(c.dataset.p)});
+ funil.addEventListener("dragstart",e=>{const c=e.target.closest(".fc");if(!c)return;dragP=c.dataset.p;c.classList.add("drag");e.dataTransfer.effectAllowed="move"});
+ funil.addEventListener("dragend",e=>{const c=e.target.closest(".fc");if(c)c.classList.remove("drag");funil.querySelectorAll(".fcol").forEach(x=>x.classList.remove("alvo"))});
+ funil.addEventListener("dragover",e=>{const col=e.target.closest(".fcol");if(!col||!dragP)return;e.preventDefault();funil.querySelectorAll(".fcol").forEach(x=>x.classList.toggle("alvo",x===col))});
+ funil.addEventListener("drop",e=>{const col=e.target.closest(".fcol");if(!col||!dragP)return;e.preventDefault();const st=col.dataset.st,p=dragP;dragP=null;
+  const x=S.D.Demandas.find(y=>y.protocolo===p);if(!x||x.status===st)return tFunil();
+  salvaDemanda(p,{status:st}).then(r=>{toast(p+" → "+st);renderTabs();tFunil();if(st==="Resolvida"&&r.tel)ask("Avisar o cidadão pelo WhatsApp que a demanda foi resolvida?","Abrir WhatsApp").then(ok=>{if(ok)window.open(waLink(r),"_blank","noopener")})}).catch(e2=>{toast("Erro: "+e2.message);tFunil()})});
+}
+function fFiltra(){const q=FF.q.toLowerCase();return S.D.Demandas.filter(x=>(!FF.cat||x.categoria===FF.cat)&&(!FF.bai||x.bairro===FF.bai)&&(!FF.resp||(FF.resp==="—"?!x.responsavel:x.responsavel===FF.resp))&&(!q||(x.protocolo+" "+x.nome+" "+x.descricao+" "+x.bairro).toLowerCase().includes(q)))}
+
+/* ============================== LISTA DE DEMANDAS ============================== */
+const FD={q:"",st:"",ab:"1",cat:"",bai:"",can:"",pri:"",resp:"",caso:"",im:"",i1:"",i2:"",d1:"",d2:""};
+function tDemandas(){
+ const bs=[...new Set(S.D.Demandas.map(x=>x.bairro).filter(Boolean))].sort(),us=S.D.Usuarios.filter(u=>u.ativo!=="Não");
+ $("tabBody").innerHTML='<div class="toolbar"><input id="dq" placeholder="Buscar nome, protocolo, relato, CPF, @rede…" value="'+esc(FD.q)+'"><select id="dab"><option value="1">Só abertas</option><option value="">Todas</option></select><select id="dst"><option value="">Fase</option>'+STATUS.map(s=>'<option'+(s===FD.st?" selected":"")+'>'+s+'</option>').join("")+'</select><select id="dcat"><option value="">Categoria</option>'+CATS.map(c=>'<option'+(c[0]===FD.cat?" selected":"")+'>'+esc(c[0])+'</option>').join("")+'</select><select id="dbai"><option value="">Bairro</option>'+bs.map(b=>'<option'+(b===FD.bai?" selected":"")+'>'+esc(b)+'</option>').join("")+'</select><button class="btn gold sm" id="dNovaInt">+ Registrar atendimento</button>'+(S.eu.perfil!=="atendente"?'<button class="btn ghost sm" id="dCSV">Exportar</button>':'')+'</div>'+
+ '<div class="toolbar"><select id="dcan"><option value="">Canal</option>'+CANAIS.map(c=>'<option'+(c===FD.can?" selected":"")+'>'+c+'</option>').join("")+'</select><select id="dpri"><option value="">Prioridade</option>'+PRIOR.map(p=>'<option'+(p===FD.pri?" selected":"")+'>'+p+'</option>').join("")+'</select><select id="dresp"><option value="">Responsável</option><option value="—"'+(FD.resp==="—"?" selected":"")+'>Sem responsável</option>'+us.map(u=>'<option'+(u.nome===FD.resp?" selected":"")+'>'+esc(u.nome)+'</option>').join("")+'</select><select id="dim"><option value="">Com foto/vídeo/anexo?</option><option value="foto"'+(FD.im==="foto"?" selected":"")+'>Com foto</option><option value="video"'+(FD.im==="video"?" selected":"")+'>Com vídeo</option><option value="anexo"'+(FD.im==="anexo"?" selected":"")+'>Com documentos</option><option value="caso"'+(FD.im==="caso"?" selected":"")+'>Em caso (repetidas)</option></select><input id="di1" type="number" min="0" placeholder="Idade de" style="max-width:90px" value="'+esc(FD.i1)+'"><input id="di2" type="number" min="0" placeholder="até" style="max-width:80px" value="'+esc(FD.i2)+'"><input id="dd1" type="date" title="Registradas de" value="'+esc(FD.d1)+'"><input id="dd2" type="date" title="até" value="'+esc(FD.d2)+'"><button class="btn ghost sm" id="dLimpa">Limpar filtros</button></div>'+
+ '<div class="m" id="dRes" style="margin:0 0 8px 4px"></div><div class="card" style="padding:12px"><div class="list" id="dLista"></div></div>';
+ $("dab").value=FD.ab;
+ [["dq","q"],["dab","ab"],["dst","st"],["dcat","cat"],["dbai","bai"],["dcan","can"],["dpri","pri"],["dresp","resp"],["dim","im"],["di1","i1"],["di2","i2"],["dd1","d1"],["dd2","d2"]].forEach(([id,k])=>$(id).addEventListener(id==="dq"||id==="di1"||id==="di2"?"input":"change",()=>{FD[k]=$(id).value;dLista()}));
+ $("dLimpa").onclick=()=>{Object.keys(FD).forEach(k=>FD[k]=k==="ab"?"1":"");tDemandas()};
+ $("dNovaInt").onclick=novaInterna;
+ if($("dCSV"))$("dCSV").onclick=()=>exportar(dFiltra(),["protocolo","criado","canal","status","prioridade","responsavel","prazo","categoria","bairro","endereco","nome","tel","tel2","email","instagram","redes","cpf","descricao","caso","apoios","oficio","indicacao","resposta","nota","atualizado"],"demandas");
+ $("dLista").addEventListener("click",e=>{const it=e.target.closest(".item");if(it)abrirDemanda(it.dataset.p)});
+ dLista();
+}
+function dFiltra(){const q=FD.q.toLowerCase();return S.D.Demandas.filter(x=>{
+ if(FD.ab&&!aberta(x))return false;
+ if(FD.st&&x.status!==FD.st)return false;
+ if(FD.cat&&x.categoria!==FD.cat)return false;
+ if(FD.bai&&x.bairro!==FD.bai)return false;
+ if(FD.can&&x.canal!==FD.can)return false;
+ if(FD.pri&&x.prioridade!==FD.pri)return false;
+ if(FD.resp&&(FD.resp==="—"?x.responsavel:x.responsavel!==FD.resp))return false;
+ if(FD.im==="foto"&&!x.fotoId)return false;
+ if(FD.im==="video"&&!x.video)return false;
+ if(FD.im==="anexo"&&!anexosDe(x).length)return false;
+ if(FD.im==="caso"&&!x.caso)return false;
+ if(FD.i1!==""||FD.i2!==""){const i=G.idadeDe(x.nascimento);if(i==null)return false;if(FD.i1!==""&&i<+FD.i1)return false;if(FD.i2!==""&&i>+FD.i2)return false}
+ if(FD.d1&&x.criado.slice(0,10)<FD.d1)return false;
+ if(FD.d2&&x.criado.slice(0,10)>FD.d2)return false;
+ if(q&&!(x.protocolo+" "+x.nome+" "+x.descricao+" "+x.bairro+" "+x.endereco+" "+(x.cpf||"")+" "+(x.instagram||"")+" "+(x.redes||"")+" "+(x.caso||"")).toLowerCase().includes(q))return false;
+ return true}).sort((a,b)=>b.criado>a.criado?1:-1)}
+function dLista(){const f=dFiltra(),h=hoje();if($("dRes"))$("dRes").textContent=f.length+" demanda(s) com esses filtros";$("dLista").innerHTML=f.length?f.map(x=>'<div class="item" data-p="'+esc(x.protocolo)+'"><div class="t"><span class="mono">'+esc(x.protocolo)+'</span><span>'+(x.caso?'<span class="tag t-caso">'+esc(x.caso)+'</span> ':'')+(aberta(x)&&x.prazo&&x.prazo<h?'<span class="tag venc">Vencida</span> ':'')+'<span class="tag '+sc(x.status)+'">'+esc(x.status)+'</span></span></div><div class="ds">'+esc(x.descricao)+'</div><div class="m">'+esc(x.categoria)+' · '+esc(x.bairro)+' · '+esc(x.canal)+' · '+dt(x.criado)+(x.responsavel?' · '+esc(x.responsavel):'')+'</div></div>').join(""):'<div class="empty">Nenhuma demanda.</div>'}
+
+/* ============================== DETALHE DA DEMANDA (modal) ============================== */
+function waGuia(x){const g=G.GUIAS[G.GUIA_CAT[x.categoria]];let tel=String(x.tel||"").replace(/\D/g,"");if(!tel)return"#";if(tel.length<=11)tel="55"+tel;
+ const m="Olá, "+(x.nome||"").split(" ")[0]+"! Aqui é do Gabinete da Vereadora Michelle Fial, sobre a demanda "+x.protocolo+". Enquanto acompanhamos, você já pode resolver agora:\n\n"+g.t.toUpperCase()+"\n"+g.passos.map((p,i)=>(i+1)+". "+p).join("\n")+"\n\nSe não resolver por aí, nos avise que o gabinete cobra oficialmente.";
+ return "https://wa.me/"+tel+"?text="+encodeURIComponent(m)}
+function waLink(x){let tel=String(x.tel||"").replace(/\D/g,"");if(!tel)return"";if(tel.length<=11)tel="55"+tel;const n=(x.nome||"").split(" ")[0],link=S.url?S.url+"?v=minhas":"";let m;
+ if(x.status==="Resolvida"||x.status==="Resposta ao cidadão")m="Olá, "+n+"! Aqui é do Gabinete da Vereadora Michelle Fial. Sobre a sua demanda "+x.protocolo+" ("+x.categoria+"): "+(x.resposta||"temos uma resposta para você.")+" Você pode avaliar o atendimento em: "+link;
+ else if(x.status==="Instrução")m="Olá, "+n+"! Aqui é do Gabinete da Vereadora Michelle Fial, sobre a demanda "+x.protocolo+" ("+x.categoria+"). Para dar andamento, precisamos que você nos envie alguns documentos ou informações. Pode responder por aqui mesmo. Obrigado!";
+ else if(x.status==="Resposta do órgão")m="Olá, "+n+"! Aqui é do Gabinete da Vereadora Michelle Fial. Sua demanda "+x.protocolo+" ("+x.categoria+") já foi protocolada no órgão responsável"+(x.oficio?" (ofício "+x.oficio+")":"")+" e estamos cobrando a resposta dentro do prazo. Acompanhe: "+link;
+ else if(x.status==="Encaminhada")m="Olá, "+n+"! Aqui é do Gabinete da Vereadora Michelle Fial. Sua demanda "+x.protocolo+" ("+x.categoria+") foi encaminhada ao órgão responsável"+(x.oficio?" pelo ofício "+x.oficio:"")+". Assim que houver resposta, avisamos. Acompanhe: "+link;
+ else m="Olá, "+n+"! Aqui é do Gabinete da Vereadora Michelle Fial. Recebemos sua demanda "+x.protocolo+" sobre "+x.categoria+" no bairro "+x.bairro+". Vamos analisar e te dar retorno. Acompanhe: "+link;
+ return"https://wa.me/"+tel+"?text="+encodeURIComponent(m)}
+function abrirDemanda(p){
+ const x=S.D.Demandas.find(d=>d.protocolo===p);if(!x)return;
+ const us=S.D.Usuarios.filter(u=>u.ativo!=="Não"),wa=waLink(x),anx=anexosDe(x);
+ const irmas=x.caso?S.D.Demandas.filter(y=>y.caso===x.caso&&y.protocolo!==p):[];
+ const subs=SUBETAPAS[x.status]||[],done=etapasDe(x)[x.status]||[];
+ modal('<div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><div><h3 style="margin:0">'+esc(x.categoria)+'</h3><span class="mono">'+esc(x.protocolo)+'</span>'+(x.caso?' <span class="tag t-caso">'+esc(x.caso)+' · '+(irmas.length+1)+' registro(s)</span>':'')+'</div><span class="tag '+sc(x.status)+'">'+esc(x.status)+'</span></div>'+
+ '<dl class="kv"><dt>Cidadão</dt><dd>'+esc(x.nome)+(x.anonimo?' <span class="tag s-arquivada">anônimo</span>':'')+'</dd>'+
+ '<dt>WhatsApp</dt><dd>'+(x.tel?esc(x.tel)+' · <a href="'+wa+'" target="_blank" rel="noopener" style="color:var(--green);font-weight:800">enviar atualização</a>':'—')+(x.tel2?'<br>'+esc(x.tel2)+' (outro)':'')+'</dd>'+
+ (x.email?'<dt>E-mail</dt><dd>'+esc(x.email)+'</dd>':'')+
+ (x.instagram||x.redes?'<dt>Redes</dt><dd>'+[x.instagram?'<a href="https://instagram.com/'+esc(x.instagram.replace(/^@/,""))+'" target="_blank" rel="noopener">'+esc(x.instagram)+'</a>':'',esc(x.redes)].filter(Boolean).join(" · ")+'</dd>':'')+
+ (x.cpf?'<dt>CPF</dt><dd>'+esc(x.cpf)+'</dd>':'')+(x.nascimento?'<dt>Nascimento</dt><dd>'+dd(x.nascimento)+'</dd>':'')+
+ '<dt>Local</dt><dd>'+esc(x.bairro)+(x.endereco?' · '+esc(x.endereco):'')+(x.lat?' · <a href="https://maps.google.com/?q='+esc(x.lat)+','+esc(x.lng)+'" target="_blank" rel="noopener">mapa</a>':'')+'</dd>'+
+ '<dt>Aberta em</dt><dd>'+dt(x.criado)+' · '+esc(x.canal)+' · '+(+x.apoios||0)+' apoio(s)</dd>'+(x.nota?'<dt>Avaliação</dt><dd>'+"★".repeat(+x.nota)+(x.avaliacao?' — '+esc(x.avaliacao):'')+'</dd>':'')+'</dl>'+
+ '<div class="resp" style="margin-top:0">'+esc(x.descricao)+'</div>'+
+ (x.video?'<p style="margin:8px 0 0"><a class="btn ghost sm" href="'+esc(x.video)+'" target="_blank" rel="noopener">🎬 Ver vídeo enviado</a></p>':'')+(G.GUIA_CAT[x.categoria]?'<div class="resp" style="border-color:var(--green)"><b>✅ Solução imediata já entregue automaticamente</b> no ato do registro (guia '+esc(G.GUIAS[G.GUIA_CAT[x.categoria]].t)+'). <button class="btn ghost sm" data-guia="'+G.GUIA_CAT[x.categoria]+'">Ver guia</button> <a class="btn green sm" target="_blank" rel="noopener" href="'+waGuia(x)+'">Reenviar pelo WhatsApp</a></div>':'')+
+ (x.fotoId?'<div id="dxFoto" style="margin-top:8px"><button class="btn ghost sm" id="dxBtnFoto">📷 Ver foto</button></div>':'')+
+ (anx.length?'<div style="margin-top:8px">'+anx.map(a=>'<button class="btn ghost sm" data-anx="'+esc(a.id)+'" style="margin:2px 4px 2px 0">📎 '+esc(a.nome)+'</button>').join("")+'</div>':'')+
+ (irmas.length?'<div class="resp" style="border-color:#8E44AD"><b>Mesmo caso:</b> '+irmas.map(y=>'<a href="#" data-irma="'+esc(y.protocolo)+'">'+esc(y.protocolo)+'</a>').join(", ")+'<div class="note">Cada registro é mais um comprovante na cobrança. Gere um documento citando todos.</div></div>':'')+
+ '<h3 style="margin-top:14px;font-size:14px">Subetapas da fase “'+esc(x.status)+'”</h3><div class="subs" id="dxSubs">'+subs.map((s,i)=>'<label class="si'+(done.indexOf(i)>-1?" ok":"")+'"><input type="checkbox" data-si="'+i+'"'+(done.indexOf(i)>-1?" checked":"")+'><span>'+esc(s)+'</span></label>').join("")+'</div>'+
+ '<div class="row" style="margin-top:8px"><div><label>Fase</label><select id="dxSt">'+STATUS.map(s=>'<option'+(s===x.status?" selected":"")+'>'+s+'</option>').join("")+'</select></div><div><label>Prioridade</label><select id="dxPr">'+PRIOR.map(s=>'<option'+(s===x.prioridade?" selected":"")+'>'+s+'</option>').join("")+'</select></div></div>'+
+ '<div class="row"><div><label>Responsável</label><select id="dxRe"><option value="">—</option>'+us.map(u=>'<option'+(u.nome===x.responsavel?" selected":"")+'>'+esc(u.nome)+'</option>').join("")+'</select></div><div><label>Prazo interno</label><input id="dxPz" type="date" value="'+esc(x.prazo)+'"></div></div>'+
+ '<div class="resp" style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap"><span><b>Documento oficial</b><br><span class="note">Ofício, reiteração, indicação ou requerimento, nos modelos do gabinete.</span></span><span style="display:flex;gap:6px;flex-wrap:wrap">'+(x.oficioUrl?'<a class="btn ghost sm" href="'+esc(x.oficioUrl)+'" target="_blank" rel="noopener">Abrir '+esc(x.oficio)+'</a>':'')+'<button class="btn navy sm" id="dxDoc">Gerar documento</button></span></div>'+
+ '<label>Protocolo no órgão</label><input id="dxInd" value="'+esc(x.indicacao)+'" placeholder="Ex.: Protocolo 4567/2026 em 10/11/2026">'+
+ '<label>Resposta ao cidadão <small>(aparece na consulta pública)</small></label><textarea id="dxResp" style="min-height:70px">'+esc(x.resposta)+'</textarea>'+
+ '<label>Nota interna <small>(só a equipe vê)</small></label><input id="dxNota">'+
+ '<div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap"><button class="btn gold" id="dxSalvar">Salvar</button><button class="btn ghost sm" id="dxCaso">Vincular a caso…</button>'+(S.eu.perfil==="admin"&&!x.anonimo?'<button class="btn ghost sm" id="dxLGPD" style="color:var(--red)">LGPD: remover dados</button>':'')+'<button class="btn ghost sm" id="dxFechar" style="margin-left:auto">Fechar</button></div>'+
+ '<h3 style="margin-top:16px;font-size:14px">Histórico</h3><div class="tl" id="dxHist"><div class="m">Carregando…</div></div>');
+ $("dxFechar").onclick=fecha;
+ call("historico",S.token,p).then(h=>{$("dxHist").innerHTML=h.length?h.sort((a,b)=>a.quando>b.quando?-1:1).map(i=>'<div><b>'+esc(i.acao)+'</b> — '+esc(i.detalhe)+'<br><span class="m">'+dt(i.quando)+' · '+esc(i.usuario)+'</span></div>').join(""):'<div class="m">Sem registros.</div>'}).catch(()=>{});
+ if($("dxBtnFoto"))$("dxBtnFoto").onclick=()=>{$("dxFoto").innerHTML='<div class="m">Carregando…</div>';call("fotoDemanda",S.token,p).then(src=>{$("dxFoto").innerHTML=src?'<img src="'+src+'" style="max-width:100%;border-radius:10px">':'<div class="m">Foto indisponível.</div>'}).catch(e=>$("dxFoto").innerHTML='<div class="m">'+esc(e.message)+'</div>')};
+ $("modalCard").querySelectorAll("[data-anx]").forEach(b=>b.onclick=()=>{b.disabled=true;call("anexoDemanda",S.token,p,b.dataset.anx).then(a=>{b.disabled=false;if(a.url)window.open(a.url,"_blank","noopener");else if(a.data){const w=window.open("","_blank");if(w&&/^data:application\/pdf/.test(a.data))w.document.write('<iframe src="'+a.data+'" style="border:0;width:100vw;height:100vh"></iframe>');else if(w&&/^data:image/.test(a.data))w.document.write('<img src="'+a.data+'" style="max-width:100%">');else toast("No app instalado o documento abre no Drive.")}else toast("No app instalado o documento abre no Drive.")}).catch(e=>{b.disabled=false;toast(e.message)})});
+ $("modalCard").querySelectorAll("[data-guia]").forEach(b=>b.onclick=()=>G.abreGuia(b.dataset.guia));$("modalCard").querySelectorAll("[data-irma]").forEach(a=>a.onclick=e=>{e.preventDefault();abrirDemanda(a.dataset.irma)});
+ $("dxSubs").addEventListener("change",e=>{const cb=e.target.closest("[data-si]");if(!cb)return;cb.parentElement.classList.toggle("ok",cb.checked);
+  const ets=etapasDe(x);ets[x.status]=[...$("dxSubs").querySelectorAll("[data-si]")].filter(c=>c.checked).map(c=>+c.dataset.si);
+  const tot=(SUBETAPAS[x.status]||[]).length,nxt=STATUS[STATUS.indexOf(x.status)+1];
+  const completa=tot>0&&ets[x.status].length===tot&&nxt&&x.status!=="Resolvida"&&x.status!=="Arquivada";
+  salvaDemanda(p,completa?{etapas:ets,status:nxt}:{etapas:ets}).then(r=>{
+   if(completa){toast("✅ Fase concluída — movida automaticamente para “"+nxt+"”");renderTabs();if(S.tab==="funil")tFunil();abrirDemanda(p);
+    if((nxt==="Resolvida"||nxt==="Resposta ao cidadão")&&r.tel)setTimeout(()=>ask("Avisar o cidadão pelo WhatsApp?","Abrir WhatsApp").then(ok=>{if(ok)window.open(waLink(r),"_blank","noopener")}),300)}
+   else if(S.tab==="funil")tFunil()}).catch(er=>toast(er.message))});
+ $("dxDoc").onclick=()=>{fecha();dlgDocumento({protocolo:p})};
+ $("dxCaso").onclick=()=>dlgCaso(x);
+ if($("dxLGPD"))$("dxLGPD").onclick=()=>ask("Remover nome, contatos, CPF, redes, foto, vídeo e anexos desta demanda? Não pode ser desfeito.","Remover dados").then(ok=>{if(ok)call("anonimizarDemanda",S.token,p).then(r=>{subst("Demandas",r,"protocolo");toast("Dados removidos");fecha();renderTab()}).catch(e=>toast(e.message))});
+ $("dxSalvar").onclick=function(){const b=this;b.disabled=true;const c={status:$("dxSt").value,prioridade:$("dxPr").value,responsavel:$("dxRe").value,prazo:$("dxPz").value,indicacao:$("dxInd").value.trim(),resposta:$("dxResp").value.trim()};
+  salvaDemanda(p,c,$("dxNota").value.trim()).then(r=>{toast("Demanda atualizada");renderTabs();renderTab();fecha();if(c.status!==x.status&&r.tel)ask("Fase alterada para “"+esc(c.status)+"”. Avisar o cidadão pelo WhatsApp?","Abrir WhatsApp").then(ok=>{if(ok)window.open(waLink(r),"_blank","noopener")})}).catch(e=>{toast("Erro: "+e.message);b.disabled=false})};
+}
+function dlgCaso(x){
+ const abertos=S.D.Casos.filter(c=>c.status!=="Encerrado");
+ modal('<h2>Vincular ao mesmo caso</h2><p class="sub">Reúna pedidos do mesmo problema no mesmo local. O vínculo aparece para a equipe e soma registros na cobrança.</p>'+
+ '<label>Escolher caso existente</label><select id="vcSel"><option value="">—</option>'+abertos.map(c=>'<option value="'+esc(c.id)+'"'+(c.id===x.caso?" selected":"")+'>'+esc(c.id)+' · '+esc(c.titulo)+'</option>').join("")+'</select>'+
+ '<label>Ou informar o protocolo de outra demanda do mesmo problema</label><input id="vcProto" placeholder="MF-2026-000002">'+
+ '<div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap"><button class="btn gold sm" id="vcOk">Vincular</button><button class="btn ghost sm" id="vcNovo">Criar caso novo</button>'+(x.caso?'<button class="btn ghost sm" id="vcDes" style="color:var(--red)">Desvincular</button>':'')+'<button class="btn ghost sm" id="vcX" style="margin-left:auto">Cancelar</button></div><div class="err" id="vcErr"></div>');
+ $("vcX").onclick=()=>{fecha();abrirDemanda(x.protocolo)};
+ const faz=alvo=>call("vincularCaso",S.token,x.protocolo,alvo).then(r=>{S.D.Casos=r.casos;S.D.Demandas=r.demandas;toast("Pronto");fecha();abrirDemanda(x.protocolo)}).catch(e=>$("vcErr").textContent=e.message);
+ $("vcOk").onclick=()=>faz($("vcProto").value.trim()||$("vcSel").value);
+ $("vcNovo").onclick=()=>faz("novo");
+ if($("vcDes"))$("vcDes").onclick=()=>faz("");
+}
+function novaInterna(){modal('<h2>Registrar atendimento</h2><p class="sub">Demanda recebida por WhatsApp, telefone, presencialmente ou em evento.</p><div class="row"><div><label>Canal</label><select id="niC">'+CANAIS.map(c=>'<option>'+c+'</option>').join("")+'</select></div><div><label>Prioridade</label><select id="niP">'+PRIOR.map(p=>'<option'+(p==="Normal"?" selected":"")+'>'+p+'</option>').join("")+'</select></div></div><label>Tipo</label><select id="niT">'+CATS.map(c=>'<option>'+esc(c[0])+'</option>').join("")+'</select><div class="row"><div><label>Nome</label><input id="niN"></div><div><label>WhatsApp</label><input id="niW" inputmode="tel"></div></div><div class="row"><div><label>Nascimento <small>(p/ consulta do cidadão)</small></label><input id="niNa" type="date"></div><div><label>CPF <small>(opcional)</small></label><input id="niCpf" inputmode="numeric" maxlength="14"></div></div><div class="row"><div><label>Instagram / redes <small>(opcional)</small></label><input id="niRe"></div><div><label>Outro telefone <small>(opcional)</small></label><input id="niW2" inputmode="tel"></div></div><div class="row"><div><label>Bairro</label><input id="niB" list="dlBairros"></div><div><label>Endereço / referência</label><input id="niE"></div></div><label>Relato</label><textarea id="niD"></textarea><label>Link de vídeo <small>(opcional)</small></label><input id="niV" inputmode="url"><label class="check"><input type="checkbox" id="niL"><span>O cidadão autorizou o uso dos dados para esta demanda (LGPD).</span></label><div class="err" id="niErr"></div><div style="display:flex;gap:8px;margin-top:10px"><button class="btn gold sm" id="niOk">Registrar</button><button class="btn ghost sm" id="niX">Cancelar</button></div>');
+ G.maskTel($("niW"));G.maskTel($("niW2"));G.maskCpf($("niCpf"));
+ $("niD").addEventListener("input",()=>{const s=sugereCat($("niD").value);if(s)$("niT").value=s});$("niX").onclick=fecha;
+ $("niOk").onclick=function(){const d={canal:$("niC").value,prioridade:$("niP").value,categoria:$("niT").value,nome:$("niN").value.trim(),tel:$("niW").value.trim(),tel2:$("niW2").value.trim(),nascimento:$("niNa").value,cpf:$("niCpf").value.trim(),redes:$("niRe").value.trim(),bairro:$("niB").value.trim(),endereco:$("niE").value.trim(),descricao:$("niD").value.trim(),video:$("niV").value.trim(),consentimento:$("niL").checked};this.disabled=true;call("novaDemandaInterna",S.token,d).then(r=>{S.D.Demandas.push(r.demanda);fecha();toast("Registrada: "+r.protocolo+(r.caso?" (caso "+r.caso+")":""));renderTabs();renderTab()}).catch(e=>{$("niErr").textContent=e.message;this.disabled=false})}}
+window.__ABD={abrirDemanda,novaInterna,waLink,vai,salvaDemanda,subst,carregar,renderTabs,renderTab,fFiltra,tFunil};
+})();
+(function(){
+"use strict";
+const G=window.__GD,S=window.__GS,A=window.__ABD;
+const {CATS,STATUS,PRIOR,SUBETAPAS,DESTINOS,DEST_CAT,DOC_TIPOS,DOC_ST,AG_TIPOS,ST_COR,$,esc,dt,dd,hoje,maisDias,sc,aberta,conta,etapasDe,diasEm,toast,copiar,modal,fecha,ask,barras,novoMapa,pino,GAS,call}=G;
+const {abrirDemanda,vai,subst,carregar,renderTabs,renderTab}=A;
+
+/* ============================== CASOS ============================== */
+window.tCasos=function(){
+ const D=S.D.Demandas,casos=S.D.Casos.slice();
+ casos.forEach(c=>{c._ds=D.filter(x=>x.caso===c.id);c._ab=c._ds.filter(aberta).length});
+ casos.sort((a,b)=>b._ds.length-a._ds.length);
+ $("tabBody").innerHTML='<div class="card"><h2>Casos (pedidos reunidos)</h2><p class="sub">Quando vários moradores reclamam do mesmo problema no mesmo local, os pedidos ficam juntos num caso. Cada registro é um comprovante a mais para a Prefeitura ou outro órgão. Para reiterar, gere um novo documento do caso — o pedido anterior continua registrado.</p>'+
+ (casos.length?'<div style="overflow:auto"><table class="tb"><thead><tr><th>Caso</th><th>Título</th><th>Registros</th><th>Abertas</th><th>Documentos</th><th></th></tr></thead><tbody>'+casos.map(c=>{
+   const docs=S.D.Documentos.filter(d=>d.caso===c.id);
+   return '<tr><td class="mono">'+esc(c.id)+'</td><td><b>'+esc(c.titulo)+'</b><br><span class="m">'+esc(c.bairro)+(c.endereco?' · '+esc(c.endereco):'')+'</span><br><span class="m">'+c._ds.map(x=>'<a href="#" data-abre="'+esc(x.protocolo)+'">'+esc(x.protocolo)+'</a>').join(" · ")+'</span></td><td><b style="font-size:17px">'+c._ds.length+'</b></td><td>'+c._ab+'</td><td>'+(docs.length?docs.map(d=>esc(d.tipo)+" "+esc(d.numero)).join("<br>"):"—")+'</td><td><button class="btn navy sm" data-doc="'+esc(c.id)+'">Gerar documento</button></td></tr>'}).join("")+'</tbody></table></div>':'<div class="empty">Nenhum caso ainda. Os casos nascem sozinhos quando chegam pedidos repetidos, ou pelo botão “Vincular a caso…” na demanda.</div>')+'</div>';
+ $("tabBody").querySelectorAll("[data-abre]").forEach(a=>a.onclick=e=>{e.preventDefault();abrirDemanda(a.dataset.abre)});
+ $("tabBody").querySelectorAll("[data-doc]").forEach(b=>b.onclick=()=>dlgDocumento({caso:b.dataset.doc}));
+};
+
+/* ============================== GERADOR DE DOCUMENTOS ============================== */
+window.dlgDocumento=function(pre){
+ pre=pre||{};
+ const C=S.cfg||{},D=S.D.Demandas;
+ const base=pre.protocolo?D.find(x=>x.protocolo===pre.protocolo):null;
+ const casoId=pre.caso||(base&&base.caso)||"";
+ const grupo=casoId?D.filter(x=>x.caso===casoId):(base?[base]:[]);
+ const caso=casoId?S.D.Casos.find(c=>c.id===casoId):null;
+ const ref=base||grupo[0]||{};
+ const docsAnt=S.D.Documentos.filter(d=>(casoId&&d.caso===casoId)||(base&&d.protocolo===base.protocolo)).filter(d=>/^Ofício/.test(d.tipo));
+ const pad=ref.categoria!=null&&DEST_CAT[ref.categoria]!=null?DEST_CAT[ref.categoria]:0;
+ modal('<h2>Gerar documento</h2><p class="sub">'+(grupo.length>1?'Caso '+esc(casoId)+' — '+grupo.length+' registros entram como comprovantes.':base?'Demanda '+esc(base.protocolo)+'.':'Documento avulso.')+' O texto sai nos modelos do gabinete, pronto no Google Docs para revisar e assinar.</p>'+
+ '<label>Modelo</label><select id="gdM"><option value="oficio">Ofício (Prefeitura e secretarias)</option><option value="reiteracao"'+(docsAnt.length?' selected':'')+'>Reiteração de ofício anterior</option><option value="indicacao">Indicação (ao Prefeito, via plenário)</option><option value="requerimento">Requerimento (à Mesa da Câmara)</option><option value="padrao">Ofício a outros órgãos (PM, MP, IEF, IGAM, ALMG…)</option></select>'+
+ '<div id="gdReitBox" class="hide"><label>Reiterar qual documento?</label><select id="gdReit">'+docsAnt.map(d=>'<option value="'+esc(d.numero)+'" data-dest="'+esc(d.destinatario)+'">'+esc(d.tipo)+' nº '+esc(d.numero)+' — '+esc(d.assunto).slice(0,70)+'</option>').join("")+'<option value="">(informar manualmente no texto)</option></select></div>'+
+ '<label>Destinatário</label><select id="gdD">'+DESTINOS.map((d,i)=>'<option value="'+i+'"'+(i===pad?' selected':'')+'>'+esc(d[0])+'</option>').join("")+'</select>'+
+ '<label>Endereçamento <small>(edite se precisar)</small></label><textarea id="gdEnd" style="min-height:70px"></textarea>'+
+ '<label>Assunto</label><input id="gdA" maxlength="300">'+
+ '<label>Texto do documento <small>(pode editar à vontade; use • para listas)</small></label><textarea id="gdC" style="min-height:220px"></textarea>'+
+ '<div class="row"><div><label class="check" style="margin-top:4px"><input type="checkbox" id="gdF" checked><span>Incluir fotos dos moradores</span></label></div><div><label class="check" style="margin-top:4px"><input type="checkbox" id="gdV" checked><span>Incluir links dos vídeos</span></label></div></div>'+
+ '<div class="err" id="gdErr"></div><div style="display:flex;gap:8px;margin-top:10px"><button class="btn navy" id="gdOk">Gerar no Google Docs</button><button class="btn ghost sm" id="gdX">Cancelar</button></div>');
+ const descr=x=>"— Protocolo "+x.protocolo+", registrado em "+dd(x.criado.slice(0,10))+(x.nome&&!x.anonimo?" por "+x.nome:"")+": "+x.descricao;
+ function local(){return (ref.endereco?ref.endereco+", ":"")+(ref.bairro||"")}
+ function montar(){
+  const m=$("gdM").value,d=DESTINOS[+$("gdD").value];
+  $("gdReitBox").classList.toggle("hide",m!=="reiteracao");
+  $("gdEnd").value=(d[2]||"").replace("{PREFEITO}",C.prefeito||"Prefeito Municipal");
+  const cat=ref.categoria||"(assunto)";
+  if(m==="reiteracao"){
+   const sel=$("gdReit").selectedOptions[0],numAnt=sel?sel.value:"";
+   if(sel&&sel.dataset.dest){const i=DESTINOS.findIndex(x=>x[1]===sel.dataset.dest);if(i>-1){$("gdD").value=i;$("gdEnd").value=(DESTINOS[i][2]||"").replace("{PREFEITO}",C.prefeito||"")}}
+   $("gdA").value="Reiteração do Ofício nº "+(numAnt||"____")+" – "+cat+" – "+local();
+   $("gdC").value="Venho, por meio deste, reiterar a solicitação encaminhada através do Ofício nº "+(numAnt||"____")+", referente a "+cat.toLowerCase()+" em "+local()+", sem que, até a presente data, tenha sido adotada providência efetiva.\n\nA situação persiste e se agrava, conforme os registros recebidos pelo gabinete:\n"+grupo.map(descr).join("\n")+"\n\nDiante da gravidade da situação, solicito, em caráter de URGÊNCIA, a adoção das medidas necessárias, bem como informações sobre as providências adotadas e a previsão para execução do serviço.";
+  }else if(m==="indicacao"){
+   $("gdA").value="Indicação – "+cat+" – "+local();
+   $("gdC").value="A Vereadora que esta subscreve, no uso de suas atribuições legais e regimentais, vem, respeitosamente, à presença de Vossa Excelência INDICAR ao Poder Executivo Municipal, por meio da Secretaria competente, que seja realizada, COM URGÊNCIA, a devida providência quanto a "+cat.toLowerCase()+" em "+local()+".\n\nJUSTIFICATIVA:\n\nA presente indicação atende a reivindicação legítima dos moradores, registrada no Gabinete Digital:\n"+grupo.map(descr).join("\n")+"\n\nA ausência de providência compromete a mobilidade, a segurança e a qualidade de vida da população.\n\nDiante do exposto, REQUER-SE PROVIDÊNCIA URGENTE do Poder Executivo Municipal, garantindo solução efetiva e duradoura para a comunidade.";
+  }else if(m==="requerimento"){
+   $("gdA").value="Providências urgentes – "+cat+" – "+local();
+   $("gdC").value="O(a) Vereador(a) que este subscreve, no uso de suas atribuições legais, vem, respeitosamente, requerer à Prefeitura Municipal e à Secretaria competente providências URGENTES quanto a "+cat.toLowerCase()+" em "+local()+", conforme registros recebidos pelo gabinete:\n"+grupo.map(descr).join("\n")+"\n\nDiante do exposto, requer-se:\n1. Vistoria técnica imediata no local;\n2. Execução urgente das providências cabíveis;\n3. Envio a este gabinete de relatório das providências adotadas e do prazo previsto para a solução.";
+  }else{
+   $("gdA").value=(m==="padrao"?"Solicitação de providências – ":"Requerimento de providências – ")+cat+" – "+local()+(grupo.length?" (Protocolo"+(grupo.length>1?"s":"")+" "+grupo.map(x=>x.protocolo).join(", ")+")":"");
+   $("gdC").value="Venho, por meio deste, no exercício da função fiscalizadora atribuída ao Poder Legislativo Municipal (art. 31 da Constituição Federal), encaminhar demanda"+(grupo.length>1?"s":"")+" recebida"+(grupo.length>1?"s":"")+" de munícipes por meio do Gabinete Digital e solicitar providências quanto ao seguinte:\n\nLocal: "+local()+".\nNatureza: "+cat+".\n\nRegistros recebidos:\n"+grupo.map(descr).join("\n")+(grupo.length>1?"\n\nRessalta-se que o mesmo problema foi registrado por "+grupo.length+" vezes, o que demonstra a dimensão coletiva da demanda.":"")+"\n\nSolicito, ainda, que sejam informadas a este gabinete, no prazo de 20 (vinte) dias, as medidas adotadas e a previsão para a solução, nos termos do art. 11 da Lei nº 12.527/2011 (Lei de Acesso à Informação).";
+  }
+ }
+ montar();
+ $("gdM").onchange=montar;$("gdD").onchange=()=>{const d=DESTINOS[+$("gdD").value];$("gdEnd").value=(d[2]||"").replace("{PREFEITO}",C.prefeito||"")};
+ if($("gdReit"))$("gdReit").onchange=montar;
+ $("gdX").onclick=fecha;
+ $("gdOk").onclick=function(){const b=this;b.disabled=true;b.textContent="Gerando…";
+  const d=DESTINOS[+$("gdD").value];
+  const p={modelo:$("gdM").value,protocolo:base?base.protocolo:"",caso:casoId,destinatario:$("gdEnd").value,orgao:d[1]||"",vocativo:d[3]||"",assunto:$("gdA").value.trim(),corpo:$("gdC").value,fotos:$("gdF").checked,videos:$("gdV").checked};
+  call("gerarDocumento",S.token,p).then(r=>{subst("Documentos",r.documento);if(r.demandas)S.D.Demandas=r.demandas;
+   if(r.url){modal('<h2>'+esc(r.documento.tipo)+' nº '+esc(r.numero)+' gerado</h2><p class="sub">Está na pasta do gabinete no Google Drive e entrou no controle de Documentos (situação: Rascunho). Revise, assine e protocole; depois registre o protocolo do órgão na demanda.</p><div style="display:flex;gap:8px;margin-top:12px"><a class="btn navy sm" href="'+esc(r.url)+'" target="_blank" rel="noopener">Abrir no Google Docs</a><button class="btn ghost sm" id="gdF2">Fechar</button></div>');$("gdF2").onclick=()=>{fecha();renderTab()}}
+   else{modal('<h2>'+esc(r.documento.tipo)+' nº '+esc(r.numero)+'</h2><p class="sub">Prévia da demonstração. No app instalado, o documento é criado no Google Docs com as logomarcas e as fotos, pronto para imprimir.</p><pre class="out">'+esc(r.texto)+'</pre><div style="display:flex;gap:8px;margin-top:12px"><button class="btn gold sm" id="gdCp">Copiar</button><button class="btn ghost sm" id="gdF2">Fechar</button></div>');$("gdCp").onclick=()=>copiar(r.texto);$("gdF2").onclick=()=>{fecha();renderTab()}}
+  }).catch(e=>{$("gdErr").textContent=e.message;b.disabled=false;b.textContent="Gerar no Google Docs"})};
+};
+
+/* ============================== MAPA (equipe) ============================== */
+window.tMapa=function(){$("tabBody").innerHTML='<div class="card"><div class="toolbar"><select id="tmS"><option value="ab">Abertas</option><option value="">Todas</option>'+STATUS.map(s=>'<option>'+s+'</option>').join("")+'</select><select id="tmC"><option value="">Todas as categorias</option>'+CATS.map(c=>'<option>'+esc(c[0])+'</option>').join("")+'</select><span class="m">● vermelho: recebida · amarelo: em análise · azul: encaminhada · verde: resolvida</span></div><div id="mapEq" class="map" style="height:62vh"></div><p class="note" id="semGeo"></p></div>';
+ const draw=()=>{const s=$("tmS").value,c=$("tmC").value;const f=S.D.Demandas.filter(x=>(s==="ab"?aberta(x):!s||x.status===s)&&(!c||x.categoria===c));const g=f.filter(x=>x.lat&&x.lng);$("semGeo").textContent=(f.length-g.length)+" demanda(s) sem localização não aparecem no mapa.";
+  novoMapa("mapEq",(L,m)=>{const pts=[];g.forEach(x=>{pts.push([+x.lat,+x.lng]);L.marker([+x.lat,+x.lng],{icon:pino(L,ST_COR[x.status])}).addTo(m).bindPopup('<b>'+esc(x.protocolo)+'</b>'+(x.caso?' · '+esc(x.caso):'')+'<br>'+esc(x.categoria)+' · '+esc(x.bairro)+'<br>'+esc(x.status)+'<br><a href="#" data-abre="'+esc(x.protocolo)+'">Abrir demanda</a>')});if(pts.length)m.fitBounds(pts,{padding:[30,30],maxZoom:15});m.on("popupopen",ev=>{const a=ev.popup.getElement().querySelector("[data-abre]");if(a)a.onclick=e=>{e.preventDefault();abrirDemanda(a.dataset.abre)}})})};
+ $("tmS").onchange=draw;$("tmC").onchange=draw;draw()};
+
+/* ============================== FORMULÁRIOS GENÉRICOS ============================== */
+const FORMS={
+ Documentos:[["tipo","Tipo","select",DOC_TIPOS],["numero","Número","text","deixe em branco para numerar automaticamente"],["data","Data","date"],["destinatario","Destinatário / órgão","text"],["assunto","Assunto","textarea"],["protocolo","Demanda vinculada (protocolo)","text"],["caso","Caso vinculado (ex.: C-0001)","text"],["prazoResposta","Prazo para resposta","date"],["status","Situação","select",DOC_ST],["resposta","Resumo da resposta recebida","textarea"],["link","Link do documento (Docs, Drive, portal)","text"]],
+ Agenda:[["titulo","Título","text"],["data","Data","date"],["hora","Hora","time"],["tipo","Tipo","select",AG_TIPOS],["local","Local","text"],["bairro","Bairro","bairro"],["participantes","Participantes","text"],["responsavel","Responsável","user"],["notas","Anotações","textarea"],["calendario","Enviar também para o Google Agenda","check"]],
+ Contatos:[["nome","Nome","text"],["cargo","Cargo","text"],["orgao","Órgão","text"],["telefone","Telefone","text"],["email","E-mail","text"],["notas","Observações","textarea"]],
+ Consultas:[["titulo","Título","text"],["pergunta","Pergunta","textarea"],["opcoes","Opções (uma por linha)","textarea"],["ativa","Aberta para votação?","select",["Sim","Não"]],["publica","Mostrar o resultado ao público?","select",["Não","Sim"]]]
+};
+const NOMES={Documentos:"documento",Agenda:"compromisso",Contatos:"contato",Consultas:"consulta"};
+function formulario(col,o){o=o||{};const us=S.D.Usuarios.filter(u=>u.ativo!=="Não");
+ modal('<h2>'+(o.id?"Editar ":"Novo ")+NOMES[col]+'</h2>'+FORMS[col].map(f=>{const id="ff_"+f[0],v=o[f[0]]==null?"":o[f[0]];
+  if(f[2]==="select")return'<label for="'+id+'">'+f[1]+'</label><select id="'+id+'">'+f[3].map(x=>'<option'+(x===v?" selected":"")+'>'+esc(x)+'</option>').join("")+'</select>';
+  if(f[2]==="user")return'<label for="'+id+'">'+f[1]+'</label><select id="'+id+'"><option value="">—</option>'+us.map(u=>'<option'+(u.nome===v?" selected":"")+'>'+esc(u.nome)+'</option>').join("")+'</select>';
+  if(f[2]==="textarea")return'<label for="'+id+'">'+f[1]+'</label><textarea id="'+id+'" style="min-height:70px">'+esc(v)+'</textarea>';
+  if(f[2]==="check")return o.eventoId?'<p class="note">Já está no Google Agenda.</p>':'<label class="check"><input type="checkbox" id="'+id+'"'+(GAS?"":" disabled")+'><span>'+f[1]+(GAS?"":" (no app instalado)")+'</span></label>';
+  return'<label for="'+id+'">'+f[1]+(f[3]?' <small>'+esc(f[3])+'</small>':'')+'</label><input id="'+id+'" type="'+(f[2]==="bairro"?"text":f[2])+'"'+(f[2]==="bairro"?' list="dlBairros"':'')+' value="'+esc(v)+'">'}).join("")+
+ '<div class="err" id="ffErr"></div><div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap"><button class="btn gold sm" id="ffOk">Salvar</button><button class="btn ghost sm" id="ffX">Cancelar</button>'+(o.id?'<button class="btn ghost sm" id="ffDel" style="margin-left:auto;color:var(--red)">Excluir</button>':'')+'</div>');
+ $("ffX").onclick=fecha;
+ if($("ffDel"))$("ffDel").onclick=()=>ask("Excluir este "+NOMES[col]+"?","Excluir").then(ok=>{if(ok)call("excluir",S.token,col,o.id).then(()=>{S.D[col]=S.D[col].filter(y=>y.id!==o.id);toast("Excluído");fecha();renderTab()}).catch(e=>toast(e.message))});
+ $("ffOk").onclick=function(){const n={id:o.id||""};FORMS[col].forEach(f=>{const el=$("ff_"+f[0]);if(!el)return;n[f[0]]=f[2]==="check"?el.checked:el.value.trim()});if(!n[FORMS[col][0][0]]){$("ffErr").textContent="Preencha: "+FORMS[col][0][1];return}this.disabled=true;call("salvar",S.token,col,n).then(r=>{subst(col,r);fecha();toast("Salvo");renderTab()}).catch(e=>{$("ffErr").textContent=e.message;this.disabled=false})}}
+
+/* ============================== DOCUMENTOS ============================== */
+const FDOC={q:"",tipo:"",st:""};
+window.tDocs=function(){const h=hoje();const f=S.D.Documentos.filter(d=>(!FDOC.tipo||d.tipo===FDOC.tipo)&&(!FDOC.st||d.status===FDOC.st)&&(!FDOC.q||(d.numero+" "+d.assunto+" "+d.destinatario+" "+d.protocolo+" "+(d.caso||"")).toLowerCase().includes(FDOC.q.toLowerCase()))).sort((a,b)=>(b.data||"").localeCompare(a.data||""));
+ const venc=d=>["Protocolado","Aguardando resposta"].includes(d.status)&&d.prazoResposta&&d.prazoResposta<h;
+ $("tabBody").innerHTML='<div class="card"><div class="toolbar"><input id="doq" placeholder="Buscar número, assunto, órgão, caso…" value="'+esc(FDOC.q)+'"><select id="dot"><option value="">Todos os tipos</option>'+DOC_TIPOS.map(t=>'<option'+(t===FDOC.tipo?" selected":"")+'>'+t+'</option>').join("")+'</select><select id="dos"><option value="">Todas as situações</option>'+DOC_ST.map(t=>'<option'+(t===FDOC.st?" selected":"")+'>'+t+'</option>').join("")+'</select><button class="btn navy sm" id="doGerar">Gerar documento</button><button class="btn gold sm" id="doNovo">+ Registrar manualmente</button>'+(S.eu.perfil!=="atendente"?'<button class="btn ghost sm" id="doCSV">Exportar</button>':'')+'</div>'+
+ '<p class="note" style="margin-top:0">Numeração automática por tipo (próximos: Ofício '+esc(String(S.cfg&&S.cfg.proxOficio||""))+'/'+esc(String(S.cfg&&S.cfg.ano||""))+' · Indicação '+esc(String(S.cfg&&S.cfg.proxIndicacao||""))+' · Requerimento '+esc(String(S.cfg&&S.cfg.proxRequerimento||""))+'). Documentos sem resposta após o prazo ficam em vermelho — gere uma <b>reiteração</b> pelo botão Gerar documento.</p><div style="overflow:auto"><table class="tb"><thead><tr><th>Tipo / nº</th><th>Data</th><th>Destinatário</th><th>Assunto</th><th>Prazo</th><th>Situação</th></tr></thead><tbody>'+
+ (f.length?f.map(d=>'<tr class="cl" data-id="'+esc(d.id)+'"><td><b>'+esc(d.tipo)+'</b><br><span class="mono">'+esc(d.numero||"s/n")+'</span></td><td>'+dd(d.data)+'</td><td>'+esc(d.destinatario)+'</td><td>'+esc(d.assunto)+((d.protocolo||d.caso)?'<br><span class="m">'+[d.protocolo?'Demanda '+esc(d.protocolo):'',d.caso?'Caso '+esc(d.caso):''].filter(Boolean).join(' · ')+'</span>':'')+(d.link?'<br><a href="'+esc(d.link)+'" target="_blank" rel="noopener" onclick="event.stopPropagation()">abrir documento</a>':'')+'</td><td>'+(d.prazoResposta?(venc(d)?'<span class="tag venc">'+dd(d.prazoResposta)+'</span>':dd(d.prazoResposta)):'—')+'</td><td><span class="tag '+(d.status==="Respondido"?"s-resolvida":d.status==="Arquivado"?"s-arquivada":d.status==="Rascunho"?"s-analise":"s-encaminhada")+'">'+esc(d.status)+'</span></td></tr>').join(""):'<tr><td colspan="6"><div class="empty">Nenhum documento.</div></td></tr>')+'</tbody></table></div></div>';
+ $("doq").oninput=()=>{FDOC.q=$("doq").value;clearTimeout(window.__dt);window.__dt=setTimeout(()=>{tDocs();$("doq").focus();$("doq").setSelectionRange(99,99)},300)};
+ $("dot").onchange=()=>{FDOC.tipo=$("dot").value;tDocs()};$("dos").onchange=()=>{FDOC.st=$("dos").value;tDocs()};
+ $("doGerar").onclick=()=>dlgDocumento({});$("doNovo").onclick=()=>formulario("Documentos",{tipo:"Ofício",data:h,status:"Rascunho",prazoResposta:maisDias(20)});
+ if($("doCSV"))$("doCSV").onclick=()=>exportar(f,["tipo","numero","data","destinatario","assunto","protocolo","caso","prazoResposta","status","resposta","link","criadoPor"],"documentos");
+ $("tabBody").querySelectorAll("tr[data-id]").forEach(tr=>tr.onclick=()=>formulario("Documentos",S.D.Documentos.find(d=>d.id===tr.dataset.id)));
+};
+
+/* ============================== AGENDA / CONTATOS / CONSULTAS ============================== */
+let AGV="prox";
+window.tAgenda=function(){const h=hoje();let a=S.D.Agenda.slice().sort((x,y)=>(x.data+x.hora).localeCompare(y.data+y.hora));if(AGV==="prox")a=a.filter(x=>x.data>=h);if(AGV==="ant")a=a.filter(x=>x.data<h).reverse();
+ const grupos={};a.forEach(x=>(grupos[x.data]=grupos[x.data]||[]).push(x));const dia=s=>{const d=new Date(s+"T12:00:00");return isNaN(d)?s:d.toLocaleDateString("pt-BR",{weekday:"long",day:"2-digit",month:"long"})};
+ $("tabBody").innerHTML='<div class="card"><div class="toolbar"><select id="agV"><option value="prox">Próximos</option><option value="ant">Anteriores</option><option value="">Todos</option></select><button class="btn gold sm" id="agN">+ Compromisso</button></div>'+(Object.keys(grupos).length?Object.keys(grupos).map(k=>'<h3 style="margin:16px 0 6px;font-size:14px;text-transform:capitalize;color:var(--navy3)">'+esc(dia(k))+'</h3>'+grupos[k].map(x=>'<div class="item" data-id="'+esc(x.id)+'" style="margin-bottom:6px"><div class="t"><b>'+esc(x.hora||"—")+' · '+esc(x.titulo)+'</b><span class="tag s-encaminhada">'+esc(x.tipo)+'</span></div><div class="m">'+[x.local,x.bairro,x.participantes,x.responsavel].filter(Boolean).map(esc).join(" · ")+(x.eventoId?' · 📅 Google Agenda':'')+'</div>'+(x.notas?'<div class="m" style="margin-top:4px">'+esc(x.notas)+'</div>':'')+'</div>').join("")).join(""):'<div class="empty">Nenhum compromisso.</div>')+'</div>';
+ $("agV").value=AGV;$("agV").onchange=()=>{AGV=$("agV").value;tAgenda()};$("agN").onclick=()=>formulario("Agenda",{data:h,hora:"09:00",tipo:"Reunião",responsavel:S.eu.nome});
+ $("tabBody").querySelectorAll(".item[data-id]").forEach(el=>el.onclick=()=>formulario("Agenda",S.D.Agenda.find(x=>x.id===el.dataset.id)));
+};
+let CQ="";
+window.tContatos=function(){const f=S.D.Contatos.filter(c=>!CQ||(c.nome+" "+c.orgao+" "+c.cargo).toLowerCase().includes(CQ.toLowerCase())).sort((a,b)=>String(a.orgao).localeCompare(String(b.orgao))||String(a.nome).localeCompare(String(b.nome)));
+ $("tabBody").innerHTML='<div class="card"><div class="toolbar"><input id="cq" placeholder="Buscar nome, órgão, cargo…" value="'+esc(CQ)+'"><button class="btn gold sm" id="cN">+ Contato</button></div><div style="overflow:auto"><table class="tb"><thead><tr><th>Nome</th><th>Cargo / órgão</th><th>Telefone</th><th>E-mail</th></tr></thead><tbody>'+(f.length?f.map(c=>{const t=String(c.telefone||"").replace(/\D/g,"");return'<tr class="cl" data-id="'+esc(c.id)+'"><td><b>'+esc(c.nome)+'</b>'+(c.notas?'<br><span class="m">'+esc(c.notas)+'</span>':'')+'</td><td>'+esc(c.cargo)+'<br><span class="m">'+esc(c.orgao)+'</span></td><td>'+(t?'<a href="tel:'+t+'" onclick="event.stopPropagation()">'+esc(c.telefone)+'</a>':'—')+'</td><td>'+(c.email?'<a href="mailto:'+esc(c.email)+'" onclick="event.stopPropagation()">'+esc(c.email)+'</a>':'—')+'</td></tr>'}).join(""):'<tr><td colspan="4"><div class="empty">Nenhum contato.</div></td></tr>')+'</tbody></table></div></div>';
+ $("cq").oninput=()=>{CQ=$("cq").value;clearTimeout(window.__ct);window.__ct=setTimeout(()=>{tContatos();$("cq").focus();$("cq").setSelectionRange(99,99)},300)};$("cN").onclick=()=>formulario("Contatos",{});
+ $("tabBody").querySelectorAll("tr[data-id]").forEach(tr=>tr.onclick=()=>formulario("Contatos",S.D.Contatos.find(c=>c.id===tr.dataset.id)));
+};
+window.tConsultas=function(){const cs=S.D.Consultas.slice().sort((a,b)=>(b.criado||"").localeCompare(a.criado||""));
+ $("tabBody").innerHTML='<div class="card"><div class="toolbar"><button class="btn gold sm" id="cpN">+ Nova consulta pública</button></div>'+(cs.length?cs.map(c=>{let v={};try{v=JSON.parse(c.votos||"{}")}catch(e){}const ops=String(c.opcoes||"").split(/\n|\|/).map(s=>s.trim()).filter(Boolean),tot=Object.values(v).reduce((a,b)=>a+b,0);return'<div class="card" style="box-shadow:none;margin-top:12px"><div style="display:flex;justify-content:space-between;gap:8px"><h3>'+esc(c.titulo)+'</h3><span><span class="tag '+(c.ativa==="Sim"?"s-resolvida":"s-arquivada")+'">'+(c.ativa==="Sim"?"Aberta":"Encerrada")+'</span> <button class="btn ghost sm" data-ed="'+esc(c.id)+'">Editar</button></span></div><p class="sub">'+esc(c.pergunta)+' · '+tot+' voto(s)'+(c.publica==="Sim"?' · resultado público':'')+'</p>'+barras(ops.reduce((o,k)=>(o[k]=v[k]||0,o),{}),"",12)+'</div>'}).join(""):'<div class="empty">Nenhuma consulta criada.</div>')+'</div>';
+ $("cpN").onclick=()=>formulario("Consultas",{ativa:"Sim",publica:"Não"});$("tabBody").querySelectorAll("[data-ed]").forEach(b=>b.onclick=()=>formulario("Consultas",S.D.Consultas.find(c=>c.id===b.dataset.ed)));
+};
+
+/* ============================== RELATÓRIOS ============================== */
+const REL={de:"",ate:"",bai:"",cat:"",can:""};
+window.tRel=function(){if(!REL.de){const d=new Date();REL.de=d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-01";REL.ate=hoje()}
+ const inP=s=>s&&s.slice(0,10)>=REL.de&&s.slice(0,10)<=REL.ate;
+ const cruza=x=>(!REL.bai||x.bairro===REL.bai)&&(!REL.cat||x.categoria===REL.cat)&&(!REL.can||x.canal===REL.can);
+ const D=S.D.Demandas.filter(cruza),rec=D.filter(x=>inP(x.criado)),res=D.filter(x=>x.status==="Resolvida"&&inP(x.resolvido||x.atualizado));
+ const tempos=res.filter(x=>x.resolvido).map(x=>(new Date(x.resolvido)-new Date(x.criado))/864e5),tm=tempos.length?Math.round(tempos.reduce((a,b)=>a+b,0)/tempos.length):null;
+ const docs=S.D.Documentos.filter(d=>inP(d.data)),ag=S.D.Agenda.filter(a=>inP(a.data)),notas=D.filter(x=>x.nota&&inP(x.resolvido||x.atualizado)).map(x=>+x.nota);
+ const dt_=conta(docs,d=>d.tipo),ct=conta(rec,x=>x.canal),bt=conta(rec,x=>x.bairro),cat=conta(rec,x=>x.categoria);
+ const fx=conta(rec.filter(x=>G.idadeDe(x.nascimento)!=null),x=>{const i=G.idadeDe(x.nascimento);return i<16?"Até 15":i<30?"16 a 29":i<45?"30 a 44":i<60?"45 a 59":"60+"});
+ const top=o=>Object.keys(o).sort((a,b)=>o[b]-o[a]).slice(0,3).join(", ")||"—";
+ const lista=o=>Object.keys(o).sort((a,b)=>o[b]-o[a]).map(k=>o[k]+" "+k.toLowerCase()).join(", ");
+ const txt="PRESTAÇÃO DE CONTAS DO MANDATO\nGabinete da Vereadora Michelle Fial — Câmara Municipal de Vespasiano/MG\nPeríodo: "+dd(REL.de)+" a "+dd(REL.ate)+"\n\n"+
+ "• Demandas da população recebidas: "+rec.length+(rec.length?" ("+lista(ct)+")":"")+".\n• Demandas resolvidas no período: "+res.length+(tm!=null?", com tempo médio de "+tm+" dia(s) entre o pedido e a solução":"")+".\n"+(notas.length?"• Satisfação dos cidadãos atendidos: "+(notas.reduce((a,b)=>a+b,0)/notas.length).toFixed(1)+" de 5 ("+notas.length+" avaliação(ões)).\n":"")+
+ "• Documentos expedidos: "+(docs.length?lista(dt_):"nenhum")+".\n• Bairros com mais demandas: "+top(bt)+".\n• Temas mais demandados: "+top(cat)+".\n"+
+ "\nO gabinete segue recebendo demandas pelo Gabinete Digital, com protocolo e acompanhamento"+(S.url?": "+S.url:"")+".";
+ $("tabBody").innerHTML='<div class="card noprint"><div class="toolbar"><label style="margin:0">De</label><input type="date" id="rDe" value="'+REL.de+'"><label style="margin:0">Até</label><input type="date" id="rAte" value="'+REL.ate+'"><select id="rBai"><option value="">Todos os bairros</option>'+[...new Set(S.D.Demandas.map(x=>x.bairro).filter(Boolean))].sort().map(b=>'<option'+(b===REL.bai?" selected":"")+'>'+esc(b)+'</option>').join("")+'</select><select id="rCat"><option value="">Todas as categorias</option>'+CATS.map(c=>'<option'+(c[0]===REL.cat?" selected":"")+'>'+esc(c[0])+'</option>').join("")+'</select><select id="rCan"><option value="">Todos os canais</option>'+["WhatsApp","Presencial","Telefone","Rede social","Sessão/Evento","E-mail","Site"].map(c=>'<option'+(c===REL.can?" selected":"")+'>'+c+'</option>').join("")+'</select><button class="btn navy sm" onclick="window.print()">Imprimir / PDF</button></div><p class="note" style="margin:4px 0 0">Cruze os dados à vontade: período × bairro × categoria × canal. Os números, os gráficos e o texto mudam juntos. Idade entra no gráfico de faixa etária e nos filtros da aba Demandas.</p></div>'+
+ '<div class="kpis" style="margin-top:14px"><div class="kpi k1"><div class="l">Recebidas</div><div class="v">'+rec.length+'</div></div><div class="kpi k4"><div class="l">Resolvidas</div><div class="v">'+res.length+'</div></div><div class="kpi k5"><div class="l">Tempo médio</div><div class="v">'+(tm!=null?tm+"d":"—")+'</div></div><div class="kpi k3"><div class="l">Documentos</div><div class="v">'+docs.length+'</div></div><div class="kpi k2"><div class="l">Compromissos</div><div class="v">'+ag.length+'</div></div><div class="kpi k6"><div class="l">Satisfação</div><div class="v">'+(notas.length?(notas.reduce((a,b)=>a+b,0)/notas.length).toFixed(1):"—")+'</div></div></div>'+
+ '<div class="g2"><div class="card"><h2 style="font-size:15px">Demandas por bairro</h2>'+barras(bt,"",10)+'</div><div class="card"><h2 style="font-size:15px">Por tema</h2>'+barras(cat,"bc",10)+'</div><div class="card"><h2 style="font-size:15px">Por canal</h2>'+barras(ct)+'</div><div class="card"><h2 style="font-size:15px">Por faixa etária</h2>'+barras(fx,"bc")+'</div><div class="card"><h2 style="font-size:15px">Documentos por tipo</h2>'+barras(dt_,"bc")+'</div></div>'+
+ '<div class="card" style="margin-top:14px"><h2>Texto de prestação de contas</h2><p class="sub noprint">Pronto para colar no informativo, no site ou na tribuna. Revise antes de publicar.</p><pre class="out" id="rTxt">'+esc(txt)+'</pre><div class="noprint" style="display:flex;gap:8px;margin-top:10px"><button class="btn gold sm" id="rCp">Copiar texto</button><button class="btn ghost sm" id="rCsv">Exportar demandas do período</button></div></div>';
+ $("rDe").onchange=()=>{REL.de=$("rDe").value;tRel()};$("rAte").onchange=()=>{REL.ate=$("rAte").value;tRel()};$("rBai").onchange=()=>{REL.bai=$("rBai").value;tRel()};$("rCat").onchange=()=>{REL.cat=$("rCat").value;tRel()};$("rCan").onchange=()=>{REL.can=$("rCan").value;tRel()};
+ $("rCp").onclick=()=>copiar(txt);$("rCsv").onclick=()=>exportar(rec,["protocolo","criado","canal","status","categoria","bairro","endereco","nome","tel","email","instagram","redes","nascimento","cpf","caso","descricao","responsavel","prioridade","oficio","indicacao","resposta","resolvido","nota"],"demandas-periodo");
+};
+
+/* ============================== EQUIPE E AJUSTES ============================== */
+window.tEquipe=function(){$("tabBody").innerHTML='<div class="card"><div class="toolbar"><button class="btn gold sm" id="uN">+ Novo usuário</button></div><p class="note" style="margin-top:0"><b>Atendente</b>: cadastro e acompanhamento (funil, demandas, casos, mapa, documentos, agenda, contatos). <b>Coordenação</b>: tudo isso + consultas públicas, relatórios, exportações e exclusões. <b>Administrador</b>: tudo, inclusive equipe, ajustes e LGPD. Login recomendado: o CPF de cada um.</p><table class="tb"><thead><tr><th>Nome</th><th>Usuário</th><th>Perfil</th><th>Situação</th></tr></thead><tbody>'+S.D.Usuarios.map(u=>'<tr class="cl" data-id="'+esc(u.id)+'"><td><b>'+esc(u.nome)+'</b></td><td class="mono">'+esc(u.login)+'</td><td>'+(u.perfil==="admin"?"Administrador":u.perfil==="atendente"?"Atendente":"Coordenação")+'</td><td><span class="tag '+(u.ativo==="Não"?"s-arquivada":"s-resolvida")+'">'+(u.ativo==="Não"?"Inativo":"Ativo")+'</span></td></tr>').join("")+'</tbody></table></div>';
+ $("uN").onclick=()=>usuario({perfil:"atendente",ativo:"Sim"});$("tabBody").querySelectorAll("tr[data-id]").forEach(tr=>tr.onclick=()=>usuario(S.D.Usuarios.find(u=>u.id===tr.dataset.id)));
+};
+function usuario(u){modal('<h2>'+(u.id?"Editar":"Novo")+' usuário</h2><label>Nome</label><input id="uNo" value="'+esc(u.nome||"")+'"><label>Usuário (login) <small>— recomendado: o CPF do funcionário</small></label><input id="uLo" value="'+esc(u.login||"")+'" autocapitalize="off" placeholder="000.000.000-00"><div class="row"><div><label>Perfil</label><select id="uPe"><option value="atendente">Atendente — cadastro e acompanhamento</option><option value="equipe">Coordenação — + consultas e relatórios</option><option value="admin">Administrador — tudo</option></select></div><div><label>Situação</label><select id="uAt"><option>Sim</option><option>Não</option></select></div></div><label>'+(u.id?"Nova senha <small>(em branco para manter)</small>":"Senha <small>(mínimo 8 caracteres)</small>")+'</label><input id="uSe" type="password" autocomplete="new-password"><div class="err" id="uErr"></div><div style="display:flex;gap:8px;margin-top:12px"><button class="btn gold sm" id="uOk">Salvar</button><button class="btn ghost sm" id="uX">Cancelar</button></div>');
+ $("uPe").value=u.perfil||"atendente";$("uAt").value=u.ativo||"Sim";$("uX").onclick=fecha;
+ $("uOk").onclick=function(){this.disabled=true;call("salvarUsuario",S.token,{id:u.id||"",nome:$("uNo").value.trim(),login:$("uLo").value.trim(),perfil:$("uPe").value,ativo:$("uAt").value},$("uSe").value).then(r=>{subst("Usuarios",r);fecha();toast("Usuário salvo");renderTab()}).catch(e=>{$("uErr").textContent=e.message;this.disabled=false})}}
+window.minhaSenha=function(){modal('<h2>Minha senha</h2><label>Senha atual</label><input id="sA" type="password" autocomplete="current-password"><label>Nova senha <small>(mínimo 8 caracteres)</small></label><input id="sN" type="password" autocomplete="new-password"><div class="err" id="sErr"></div><div style="display:flex;gap:8px;margin-top:12px"><button class="btn gold sm" id="sOk">Trocar senha</button><button class="btn ghost sm" id="sX">Cancelar</button></div>');$("sX").onclick=fecha;$("sOk").onclick=()=>call("trocarSenha",S.token,$("sA").value,$("sN").value).then(()=>{fecha();toast("Senha alterada")}).catch(e=>$("sErr").textContent=e.message)};
+window.tConfig=function(){const C=S.cfg||{};
+ const campos=[["prefeito","Nome do Prefeito (destinatário das indicações)"],["assinatura","Assinatura nos documentos"],["cargo","Cargo (abaixo da assinatura)"],["endereco","Endereço do gabinete"],["cep","CEP"],["telefone","Telefone / Telefax"],["email","E-mail do gabinete"],["site","Site"]];
+ $("tabBody").innerHTML='<div class="card" style="max-width:720px"><h2>Ajustes dos documentos</h2><p class="sub">Esses dados saem no cabeçalho e na assinatura de ofícios, indicações e requerimentos.</p>'+campos.map(c=>'<label>'+c[1]+'</label><input id="cf_'+c[0]+'" value="'+esc(C[c[0]]||"")+'">').join("")+
+ '<h3 style="margin-top:16px;font-size:15px">Numeração de '+esc(String(C.ano||""))+'</h3><p class="note">Ajuste se o gabinete já emitiu documentos fora do aplicativo.</p><div class="g3"><div><label>Próximo Ofício</label><input id="cf_proxOficio" type="number" min="1" value="'+esc(String(C.proxOficio||1))+'"></div><div><label>Próxima Indicação</label><input id="cf_proxIndicacao" type="number" min="1" value="'+esc(String(C.proxIndicacao||1))+'"></div><div><label>Próximo Requerimento</label><input id="cf_proxRequerimento" type="number" min="1" value="'+esc(String(C.proxRequerimento||1))+'"></div></div>'+
+ '<div class="err" id="cfErr"></div><button class="btn gold" id="cfOk" style="margin-top:12px">Salvar ajustes</button></div>';
+ $("cfOk").onclick=function(){this.disabled=true;const o={};campos.forEach(c=>o[c[0]]=$("cf_"+c[0]).value.trim());["proxOficio","proxIndicacao","proxRequerimento"].forEach(k=>o[k]=$("cf_"+k).value);
+  call("salvarConfig",S.token,o).then(r=>{S.cfg=r;toast("Ajustes salvos");renderTab()}).catch(e=>{$("cfErr").textContent=e.message;this.disabled=false})};
+};
+window.exportar=function(rows,cols,nome){const csv=cols.join(";")+"\n"+rows.map(x=>cols.map(c=>'"'+String(x[c]==null?"":x[c]).replace(/"/g,'""').replace(/\r?\n/g," ")+'"').join(";")).join("\n");
+ modal('<h2>Exportar ('+rows.length+' linha(s))</h2><p class="sub">Baixe o arquivo ou copie e cole no Excel / Google Planilhas.</p><pre class="out" style="white-space:pre">'+esc(csv.slice(0,20000))+'</pre><div style="display:flex;gap:8px;margin-top:12px"><button class="btn gold sm" id="exB">Baixar CSV</button><button class="btn ghost sm" id="exC">Copiar</button><button class="btn ghost sm" id="exF">Fechar</button></div>');
+ $("exF").onclick=fecha;$("exC").onclick=()=>copiar(csv);$("exB").onclick=()=>{try{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob(["﻿"+csv],{type:"text/csv;charset=utf-8"}));a.download=nome+"-"+hoje()+".csv";document.body.appendChild(a);a.click();a.remove()}catch(e){toast("Use o botão Copiar")}}};
+})();
+
+</script>
+</body>
+</html>
