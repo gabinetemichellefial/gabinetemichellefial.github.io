@@ -681,8 +681,7 @@ const LOCAL={
   B.Documentos.push(d);
   const grupo=casoId?B.Demandas.filter(x=>x.caso===casoId):(base?[base]:[]);
   grupo.forEach(x=>{if(base&&x.protocolo===base.protocolo&&SEQ==="seqO"){x.oficio=num}
-   const ST2=["Cadastro","Instrução","Encaminhada"];
-   if(ST2.indexOf(x.status)>-1&&x.status!=="Encaminhada"){x.status="Encaminhada";x.faseDesde=new Date().toISOString();lhist(x.protocolo,eu.nome,"Status","Encaminhada (automático — documento gerado)")}
+   
    lhist(x.protocolo,eu.nome,"Documento",TIPO+" nº "+num+" gerado")});
   grava();
   return{numero:num,url:"",texto:docTexto(p.modelo,num,p,B.cfg),documento:d,demandas:B.Demandas.map(x=>Object.assign({},x))}},
@@ -945,6 +944,11 @@ function vai(tab,sel){S.tab=tab;if(sel!==undefined)S.sel=sel;renderTabs();render
 function renderTab(){({funil:tFunil,demandas:tDemandas,casos:tCasos,mapa:tMapa,documentos:tDocs,agenda:tAgenda,contatos:tContatos,consultas:tConsultas,relatorios:tRel,equipe:tEquipe,config:tConfig}[S.tab]||tFunil)()}
 function subst(col,o,k){k=k||"id";const a=S.D[col],i=a.findIndex(x=>x[k]===o[k]);if(i>-1)a[i]=o;else a.push(o)}
 function salvaDemanda(p,c,nota){return call("atualizarDemanda",S.token,p,c,nota||"").then(r=>{subst("Demandas",r,"protocolo");return r})}
+/* 28/11/2026: etapas obrigatórias para avançar de fase (o servidor confere a mesma regra) */
+const OBRIG={"Cadastro":[0,1,3],"Instrução":[0,2],"Encaminhada":[0,1,2,3],"Resposta do órgão":[3,4],"Resposta ao cidadão":[0,1,2]};
+const chefe=()=>S.eu&&(S.eu.perfil==="admin"||S.eu.perfil==="gestor");
+function faltaObrig(st,ets){const f=(ets||{})[st]||[];return(OBRIG[st]||[]).filter(i=>f.indexOf(i)<0)}
+function fasesLivres(x){const i=STATUS.indexOf(x.status),o=[x.status];if(!OBRIG[x.status]||faltaObrig(x.status,etapasDe(x)).length)return o;const n=STATUS[i+1];if(n&&n!=="Arquivada")o.push(n);if(x.status==="Cadastro")o.push("Encaminhada");return o}
 function pctEtapas(x){const done=etapasDe(x)[x.status]||[],tot=(SUBETAPAS[x.status]||[]).length;return tot?Math.round(done.length/tot*100):0}
 
 /* ============================== FUNIL (CRM) ============================== */
@@ -980,6 +984,7 @@ function tFunil(){const D=S.D.Demandas,h=hoje(),us=S.D.Usuarios.filter(u=>u.ativ
  funil.addEventListener("dragover",e=>{const col=e.target.closest(".fcol");if(!col||!dragP)return;e.preventDefault();funil.querySelectorAll(".fcol").forEach(x=>x.classList.toggle("alvo",x===col))});
  funil.addEventListener("drop",e=>{const col=e.target.closest(".fcol");if(!col||!dragP)return;e.preventDefault();const st=col.dataset.st,p=dragP;dragP=null;
   const x=S.D.Demandas.find(y=>y.protocolo===p);if(!x||x.status===st)return tFunil();
+  if(fasesLivres(x).indexOf(st)<0){toast(chefe()?"Fora da regra: abra a demanda, mude a fase e escreva a justificativa na Nota interna.":"Para mudar de fase, marque as etapas obrigatórias (*). Fora da ordem, só a Administradora ou o Gestor de confiança.");return tFunil()}
   salvaDemanda(p,{status:st}).then(r=>{toast(p+" → "+st);renderTabs();tFunil();if(st==="Resolvida"&&r.tel)ask("Avisar o cidadão pelo WhatsApp que a demanda foi resolvida?","Abrir WhatsApp").then(ok=>{if(ok)window.open(waLink(r),"_blank","noopener")})}).catch(e2=>{toast("Erro: "+e2.message);tFunil()})});
 }
 function fFiltra(){const q=FF.q.toLowerCase();return S.D.Demandas.filter(x=>(!FF.cat||x.categoria===FF.cat)&&(!FF.bai||x.bairro===FF.bai)&&(!FF.resp||(FF.resp==="—"?!x.responsavel:x.responsavel===FF.resp))&&(!q||(x.protocolo+" "+x.nome+" "+x.descricao+" "+x.bairro).toLowerCase().includes(q)))}
@@ -1055,8 +1060,9 @@ function abrirDemanda(p){
  (x.fotoId?'<div id="dxFoto" style="margin-top:8px"><button class="btn ghost sm" id="dxBtnFoto">📷 Ver foto</button></div>':'')+
  (anx.length?'<div style="margin-top:8px">'+anx.map(a=>'<button class="btn ghost sm" data-anx="'+esc(a.id)+'" style="margin:2px 4px 2px 0">📎 '+esc(a.nome)+'</button>').join("")+'</div>':'')+
  (irmas.length?'<div class="resp" style="border-color:#8E44AD"><b>Mesmo caso:</b> '+irmas.map(y=>'<a href="#" data-irma="'+esc(y.protocolo)+'">'+esc(y.protocolo)+'</a>').join(", ")+'<div class="note">Cada registro é mais um comprovante na cobrança. Gere um documento citando todos.</div></div>':'')+
- '<h3 style="margin-top:14px;font-size:14px">Subetapas da fase “'+esc(x.status)+'”</h3><div class="subs" id="dxSubs">'+subs.map((s,i)=>'<label class="si'+(done.indexOf(i)>-1?" ok":"")+'"><input type="checkbox" data-si="'+i+'"'+(done.indexOf(i)>-1?" checked":"")+'><span>'+esc(s)+'</span></label>').join("")+'</div>'+
- '<div class="row" style="margin-top:8px"><div><label>Fase</label><select id="dxSt">'+STATUS.map(s=>'<option'+(s===x.status?" selected":"")+'>'+s+'</option>').join("")+'</select></div><div><label>Prioridade</label><select id="dxPr">'+PRIOR.map(s=>'<option'+(s===x.prioridade?" selected":"")+'>'+s+'</option>').join("")+'</select></div></div>'+
+ '<h3 style="margin-top:14px;font-size:14px">Subetapas da fase “'+esc(x.status)+'”</h3><div class="subs" id="dxSubs">'+subs.map((s,i)=>'<label class="si'+(done.indexOf(i)>-1?" ok":"")+'"><input type="checkbox" data-si="'+i+'"'+(done.indexOf(i)>-1?" checked":"")+'><span>'+esc(s)+((OBRIG[x.status]||[]).indexOf(i)>-1?' <b style="color:#E0A800" title="Obrigatória para mudar de fase">*</b>':'')+'</span></label>').join("")+'</div>'+
+ (OBRIG[x.status]?'<p class="m" style="margin:4px 0 0;font-size:12px">* obrigatória para avançar de fase.'+(chefe()?' Como '+(S.eu.perfil==="admin"?"Administradora":"Gestor de confiança")+', você pode mudar a fase sem elas, escrevendo a justificativa na Nota interna.':' Fora da ordem, só a Administradora ou o Gestor de confiança mudam a fase.')+'</p>':'')+
+ '<div class="row" style="margin-top:8px"><div><label>Fase</label><select id="dxSt">'+(chefe()?STATUS:fasesLivres(x)).map(s=>'<option'+(s===x.status?" selected":"")+'>'+s+'</option>').join("")+'</select></div><div><label>Prioridade</label><select id="dxPr">'+PRIOR.map(s=>'<option'+(s===x.prioridade?" selected":"")+'>'+s+'</option>').join("")+'</select></div></div>'+
  '<div class="row"><div><label>Responsável</label><select id="dxRe"><option value="">—</option>'+us.map(u=>'<option'+(u.nome===x.responsavel?" selected":"")+'>'+esc(u.nome)+'</option>').join("")+'</select></div><div><label>Prazo interno</label><input id="dxPz" type="date" value="'+esc(x.prazo)+'"></div></div>'+
  '<div class="resp" style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap"><span><b>Documento oficial</b><br><span class="note">Ofício, reiteração, indicação ou requerimento, nos modelos do gabinete.</span></span><span style="display:flex;gap:6px;flex-wrap:wrap">'+(x.oficioUrl?'<a class="btn ghost sm" href="'+esc(x.oficioUrl)+'" target="_blank" rel="noopener">Abrir '+esc(x.oficio)+'</a>':'')+'<button class="btn navy sm" id="dxDoc">Gerar documento</button></span></div>'+
  '<label>Protocolo no órgão</label><input id="dxInd" value="'+esc(x.indicacao)+'" placeholder="Ex.: Protocolo 4567/2026 em 10/11/2026">'+
@@ -1072,16 +1078,18 @@ function abrirDemanda(p){
  $("modalCard").querySelectorAll("[data-guia]").forEach(b=>b.onclick=()=>G.abreGuia(b.dataset.guia));$("modalCard").querySelectorAll("[data-irma]").forEach(a=>a.onclick=e=>{e.preventDefault();abrirDemanda(a.dataset.irma)});
  $("dxSubs").addEventListener("change",e=>{const cb=e.target.closest("[data-si]");if(!cb)return;cb.parentElement.classList.toggle("ok",cb.checked);
   const ets=etapasDe(x);ets[x.status]=[...$("dxSubs").querySelectorAll("[data-si]")].filter(c=>c.checked).map(c=>+c.dataset.si);
-  const tot=(SUBETAPAS[x.status]||[]).length,nxt=STATUS[STATUS.indexOf(x.status)+1];
-  const completa=tot>0&&ets[x.status].length===tot&&nxt&&x.status!=="Resolvida"&&x.status!=="Arquivada";
-  salvaDemanda(p,completa?{etapas:ets,status:nxt}:{etapas:ets}).then(r=>{
-   if(completa){toast("✅ Fase concluída — movida automaticamente para “"+nxt+"”");renderTabs();if(S.tab==="funil")tFunil();abrirDemanda(p);
-    if((nxt==="Resolvida"||nxt==="Resposta ao cidadão")&&r.tel)setTimeout(()=>ask("Avisar o cidadão pelo WhatsApp?","Abrir WhatsApp").then(ok=>{if(ok)window.open(waLink(r),"_blank","noopener")}),300)}
+  const nxt=STATUS[STATUS.indexOf(x.status)+1],antes=faltaObrig(x.status,etapasDe(x)).length;
+  const pronta=OBRIG[x.status]&&antes>0&&!faltaObrig(x.status,ets).length&&nxt&&nxt!=="Arquivada";
+  salvaDemanda(p,{etapas:ets}).then(r=>{Object.assign(x,r);
+   if(pronta)ask("Etapas obrigatórias de “"+esc(x.status)+"” concluídas. Mover a demanda para “"+esc(nxt)+"”?","Mover de fase").then(ok=>{if(!ok){if(S.tab==="funil")tFunil();return}
+    salvaDemanda(p,{status:nxt}).then(r2=>{toast(p+" → "+nxt);renderTabs();if(S.tab==="funil")tFunil();abrirDemanda(p);
+     if((nxt==="Resolvida"||nxt==="Resposta ao cidadão")&&r2.tel)setTimeout(()=>ask("Avisar o cidadão pelo WhatsApp?","Abrir WhatsApp").then(o2=>{if(o2)window.open(waLink(r2),"_blank","noopener")}),300)}).catch(er=>toast(er.message))});
    else if(S.tab==="funil")tFunil()}).catch(er=>toast(er.message))});
  $("dxDoc").onclick=()=>{fecha();dlgDocumento({protocolo:p})};
  $("dxCaso").onclick=()=>dlgCaso(x);
  if($("dxLGPD"))$("dxLGPD").onclick=()=>ask("Remover nome, contatos, CPF, redes, foto, vídeo e anexos desta demanda? Não pode ser desfeito.","Remover dados").then(ok=>{if(ok)call("anonimizarDemanda",S.token,p).then(r=>{subst("Demandas",r,"protocolo");toast("Dados removidos");fecha();renderTab()}).catch(e=>toast(e.message))});
  $("dxSalvar").onclick=function(){const b=this;b.disabled=true;const c={status:$("dxSt").value,prioridade:$("dxPr").value,responsavel:$("dxRe").value,prazo:$("dxPz").value,indicacao:$("dxInd").value.trim(),resposta:$("dxResp").value.trim()};if($("dxTermo")){c.termo=$("dxTermo").value;c.pendencias=$("dxPend").value.trim()}
+  if(c.status!==x.status&&fasesLivres(x).indexOf(c.status)<0&&$("dxNota").value.replace(/\s/g,"").length<10){toast("Mudança de fase fora da regra: escreva a justificativa na Nota interna (mínimo de 10 caracteres).");$("dxNota").focus();b.disabled=false;return}
   salvaDemanda(p,c,$("dxNota").value.trim()).then(r=>{toast("Demanda atualizada");renderTabs();renderTab();fecha();if(c.status!==x.status&&r.tel)ask("Fase alterada para “"+esc(c.status)+"”. Avisar o cidadão pelo WhatsApp?","Abrir WhatsApp").then(ok=>{if(ok)window.open(waLink(r),"_blank","noopener")})}).catch(e=>{toast("Erro: "+e.message);b.disabled=false})};
 }
 function dlgCaso(x){
@@ -1307,7 +1315,6 @@ window.exportar=function(rows,cols,nome){const csv=cols.join(";")+"\n"+rows.map(
  modal('<h2>Exportar ('+rows.length+' linha(s))</h2><p class="sub">Baixe o arquivo ou copie e cole no Excel / Google Planilhas.</p><pre class="out" style="white-space:pre">'+esc(csv.slice(0,20000))+'</pre><div style="display:flex;gap:8px;margin-top:12px"><button class="btn gold sm" id="exB">Baixar CSV</button><button class="btn ghost sm" id="exC">Copiar</button><button class="btn ghost sm" id="exF">Fechar</button></div>');
  $("exF").onclick=fecha;$("exC").onclick=()=>copiar(csv);$("exB").onclick=()=>{try{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob(["﻿"+csv],{type:"text/csv;charset=utf-8"}));a.download=nome+"-"+hoje()+".csv";document.body.appendChild(a);a.click();a.remove()}catch(e){toast("Use o botão Copiar")}}};
 })();
-
 </script>
 </body>
 </html>
