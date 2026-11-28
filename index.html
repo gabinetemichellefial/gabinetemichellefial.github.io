@@ -717,8 +717,13 @@ const G=window.__GD,{CATS,STATUS,PRIOR,CANAIS,SUBETAPAS,DESTINOS,DEST_CAT,ST_COR
 /* ============================== NAVEGAÇÃO ============================== */
 const PUB=["inicio","nova","ok","minhas","consulta","mapa","consultas","login","app"];
 const S=window.__GS={token:"",eu:null,D:null,tab:"funil",sel:null,url:"",cfg:null};
+/* login lembrado neste aparelho: recarregar a página não pede senha de novo */
+const SES_K="gd_ses";function sesSalva(){try{localStorage.setItem(SES_K,JSON.stringify({t:S.token,eu:S.eu}))}catch(e){}}function sesApaga(){try{localStorage.removeItem(SES_K);localStorage.removeItem("gd_view")}catch(e){}}
+try{const s0=JSON.parse(localStorage.getItem(SES_K)||"null");if(s0&&s0.t){S.token=s0.t;S.eu=s0.eu}}catch(e){}
+G.sesSalva=sesSalva;G.sesApaga=sesApaga;
 function show(v){
   if(v==="gabinete")v=S.token?"app":"login";
+  try{localStorage.setItem("gd_view",v==="app"?"app":"")}catch(e){}
   PUB.forEach(x=>$("v-"+x).classList.toggle("hide",x!==v));
   const gab=v==="login"||v==="app";
   $("hero").classList.toggle("hide",gab||v!=="inicio");
@@ -917,7 +922,7 @@ function abreGuia(id,extra){const g=GUIAS[id];if(!g)return;
  $("gX").onclick=fecha}
 G.abreGuia=abreGuia;
 /* entrada por link */
-function abrirPorParametros(par){if(par.p){$("cProto").value=String(par.p).toUpperCase();show("consulta");$("cPin").focus()}else if(par.v==="gabinete")show("gabinete");else if(par.v==="nova"){novaReset();show("nova")}else if(par.v==="coletiva")abreColetiva(par.c&&CAMP[par.c]?par.c:"");else if(par.v==="mapa")show("mapa");else if(par.v==="minhas")show("minhas")}
+function abrirPorParametros(par){let vw="";try{vw=localStorage.getItem("gd_view")}catch(e){}if(!par.p&&!par.v&&S.token&&vw==="app"){show("app");return}if(par.p){$("cProto").value=String(par.p).toUpperCase();show("consulta");$("cPin").focus()}else if(par.v==="gabinete")show("gabinete");else if(par.v==="nova"){novaReset();show("nova")}else if(par.v==="coletiva")abreColetiva(par.c&&CAMP[par.c]?par.c:"");else if(par.v==="mapa")show("mapa");else if(par.v==="minhas")show("minhas")}
 if(!window.GD_API&&GAS&&google.script.url)google.script.url.getLocation(l=>abrirPorParametros(l.parameter||{}));
 else{const q={};location.search.replace(/^\?/,"").split("&").forEach(kv=>{const p=kv.split("=");if(p[0])q[p[0]]=decodeURIComponent(p[1]||"")});if(location.hash==="#gabinete")q.v="gabinete";abrirPorParametros(q)}
 })();
@@ -927,14 +932,14 @@ const G=window.__GD,S=window.__GS,{CATS,STATUS,PRIOR,CANAIS,SUBETAPAS,DESTINOS,D
 
 /* ============================== LOGIN E CARGA ============================== */
 $("btnLogin").addEventListener("click",entrar);$("lPass").addEventListener("keydown",e=>{if(e.key==="Enter")entrar()});
-function entrar(){$("errLogin").textContent="";call("login",$("lUser").value,$("lPass").value).then(r=>{if(!r){$("errLogin").textContent="Usuário ou senha incorretos.";return}S.token=r.token;S.eu=r.eu;$("lPass").value="";show("app")}).catch(x=>$("errLogin").textContent=x.message)}
-function carregar(){$("tabBody").innerHTML='<div class="empty">Carregando…</div>';const tm=setTimeout(()=>{if(!S.D)$("tabBody").innerHTML='<div class="empty">Está demorando… <button class="btn ghost sm" onclick="location.reload()">Recarregar</button></div>'},15000);call("painel",S.token).then(d=>{clearTimeout(tm);S.D=d;S.eu=d.eu;S.url=window.GD_PUBLIC||d.url;S.cfg=d.cfg;renderTabs();renderTab()}).catch(x=>{clearTimeout(tm);if(/sess/i.test(x.message)){S.token="";show("login");$("errLogin").textContent=x.message}else $("tabBody").innerHTML='<div class="empty">Erro: '+esc(x.message)+'</div>'})}
+function entrar(){$("errLogin").textContent="";call("login",$("lUser").value,$("lPass").value).then(r=>{if(!r){$("errLogin").textContent="Usuário ou senha incorretos.";return}S.token=r.token;S.eu=r.eu;G.sesSalva();$("lPass").value="";show("app")}).catch(x=>$("errLogin").textContent=x.message)}
+function carregar(){$("tabBody").innerHTML='<div class="empty">Carregando…</div>';const tm=setTimeout(()=>{if(!S.D)$("tabBody").innerHTML='<div class="empty">Está demorando… <button class="btn ghost sm" onclick="location.reload()">Recarregar</button></div>'},15000);call("painel",S.token).then(d=>{clearTimeout(tm);S.D=d;S.eu=d.eu;S.url=window.GD_PUBLIC||d.url;S.cfg=d.cfg;renderTabs();renderTab()}).catch(x=>{clearTimeout(tm);if(/sess/i.test(x.message)){S.token="";G.sesApaga();show("login");$("errLogin").textContent=x.message}else $("tabBody").innerHTML='<div class="empty">Erro: '+esc(x.message)+'</div>'})}
 window.__carregar=carregar;
 const TABS=[["funil","Funil"],["demandas","Demandas"],["casos","Casos"],["mapa","Mapa"],["documentos","Documentos"],["agenda","Agenda"],["contatos","Contatos"],["consultas","Consultas"],["relatorios","Relatórios"],["equipe","Equipe"],["config","Ajustes"]];
 function renderTabs(){const D=S.D,nov=D.Demandas.filter(x=>x.status==="Cadastro").length;
  const oc=(S.eu.perfil==="admin"||S.eu.perfil==="gestor")?[]:S.eu.perfil==="atendente"?["consultas","relatorios","equipe","config"]:["equipe","config"];if(oc.indexOf(S.tab)>=0)S.tab="funil";
  $("tabs").innerHTML=TABS.filter(t=>oc.indexOf(t[0])<0).map(t=>'<button class="tab'+(S.tab===t[0]?" on":"")+'" data-tab="'+t[0]+'">'+t[1]+(t[0]==="funil"&&nov?'<span class="bd'+(S.D.Demandas.some(x=>{const l=LIMITE_FASE[x.status];return aberta(x)&&l!=null&&diasEm(x.faseDesde||x.criado)>l})?' pisca':'')+'">'+nov+'</span>':'')+'</button>').join("")+'<span style="margin-left:auto;display:flex;gap:6px;align-items:center"><span class="m">'+esc(S.eu.nome)+'</span><button class="tab" id="tSenha">Minha senha</button><button class="tab" id="tSair">Sair</button></span>';
- $("tSair").onclick=()=>{call("sair",S.token).catch(()=>{});S.token="";S.D=null;S.sel=null;show("inicio")};$("tSenha").onclick=minhaSenha}
+ $("tSair").onclick=()=>{call("sair",S.token).catch(()=>{});G.sesApaga();S.token="";S.D=null;S.sel=null;show("inicio")};$("tSenha").onclick=minhaSenha}
 $("tabs").addEventListener("click",e=>{const t=e.target.closest("[data-tab]");if(!t)return;S.tab=t.dataset.tab;renderTabs();renderTab()});
 function vai(tab,sel){S.tab=tab;if(sel!==undefined)S.sel=sel;renderTabs();renderTab();window.scrollTo(0,0)}
 function renderTab(){({funil:tFunil,demandas:tDemandas,casos:tCasos,mapa:tMapa,documentos:tDocs,agenda:tAgenda,contatos:tContatos,consultas:tConsultas,relatorios:tRel,equipe:tEquipe,config:tConfig}[S.tab]||tFunil)()}
